@@ -1,0 +1,9 @@
+
+url=https://aiducatortesting.ctsdemo.ae
+username=nak
+password=123456
+browser=chrome
+ClientSecretCanvas= 20880~RDqLt1dS2ioqSoZnYGooJ2kmiHdJJnLxCegh2h8eVDMFBJIyzwQiTAunnuyT99t4
+BaseURLCanvas= cs2.instructure.com/
+ConnectionName= AutomationTest123
+ConnectionID= 1
