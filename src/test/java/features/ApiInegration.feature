@@ -8,20 +8,6 @@ Feature: Api Integration
     Then the user check the connection name
     And The Buttons Should be enable
 
-  Scenario: Search for exist API
-    Given the user is logged in to the website
-    When the user navigates to the Bot section and selects a Bot
-    And the user clicks on Integration and then System
-    Then the user click on the Connection Card
-    Then The user search for exist api connection
-
-  Scenario: The user should be able to Test the connection
-    Given the user is logged in to the website
-    When the user navigates to the Bot section and selects a Bot
-    And the user clicks on Integration and then System
-    Then the user click on the Connection Card
-    Then The user Click on The Test Connection
-
   Scenario: The User is able to Clear the APis
     Given the user is logged in to the website
     When the user navigates to the Bot section and selects a Bot
@@ -37,6 +23,20 @@ Feature: Api Integration
     Then the user click on the Connection Card
     Then The user Click on Select All
     And The user checks if it the api is checked
+
+  Scenario: Search for exist API
+    Given the user is logged in to the website
+    When the user navigates to the Bot section and selects a Bot
+    And the user clicks on Integration and then System
+    Then the user click on the Connection Card
+    Then The user search for exist api connection
+
+  Scenario: The user should be able to Test the connection
+    Given the user is logged in to the website
+    When the user navigates to the Bot section and selects a Bot
+    And the user clicks on Integration and then System
+    Then the user click on the Connection Card
+    Then The user Click on The Test Connection
 
   Scenario: Open the Api Fields
     Given the user is logged in to the website

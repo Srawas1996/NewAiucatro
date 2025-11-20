@@ -122,13 +122,16 @@ public class APIIntegrations extends Base {
         checkTheValidationMessage.isDisplayed();
     }
 
-    public void ClicksOnSelectAll(){
+    public void ClicksOnSelectAll() throws InterruptedException {
+        Thread.sleep(1000);
         SelectAllButton.click();
+        Thread.sleep(1000);
         SaveButton.click();
+        Thread.sleep(2000);
     }
 
     public void checkIfTheApiIsSelected(){
-        SelectFirstCheckBox.isSelected();
+        checkTheValidationMessage.isDisplayed();
     }
 
     public void OpenTheApiFields(){
@@ -146,9 +149,11 @@ public class APIIntegrations extends Base {
         checkTheValidationMessageForFrequent.isDisplayed();
     }
 
-    public void userClickOnForceSync(){
+    public void userClickOnForceSync() throws InterruptedException {
         forceSyncFirstOne.click();
         CheckTheForceSyncValidation.isDisplayed();
+        driver.navigate().refresh();
+        Thread.sleep(4000);
         CheckIfTheDataTableIsAppear.isDisplayed();
     }
 

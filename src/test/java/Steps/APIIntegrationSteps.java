@@ -39,13 +39,14 @@ public class APIIntegrationSteps extends Base {
     }
 
     @Then("The user Click on The Test Connection")
-    public void theUserClickOnTheTestConnection() {
+    public void theUserClickOnTheTestConnection() throws InterruptedException {
         apiIntegrations = new APIIntegrations();
+        Thread.sleep(5000);
         apiIntegrations.clickOnTestConnection();
     }
 
     @Then("The user Click on Select All")
-    public void theUserClickOnSelectAll() {
+    public void theUserClickOnSelectAll() throws InterruptedException {
         apiIntegrations = new APIIntegrations();
         apiIntegrations.ClicksOnSelectAll();
     }
@@ -76,7 +77,7 @@ public class APIIntegrationSteps extends Base {
     }
 
     @Then("the User is Click on Force Sync and check the Validation")
-    public void theUserIsClickOnForceSync() {
+    public void theUserIsClickOnForceSync() throws InterruptedException {
         apiIntegrations = new APIIntegrations();
         apiIntegrations.userClickOnForceSync();
     }
