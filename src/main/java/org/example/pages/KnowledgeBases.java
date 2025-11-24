@@ -135,7 +135,4 @@ public class KnowledgeBases extends Base {
     public String checkTheFolderName(){
         return docFolderName.getText();
     }
-
-
-
 }
