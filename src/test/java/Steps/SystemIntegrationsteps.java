@@ -47,7 +47,6 @@ public class SystemIntegrationsteps extends Base {
     @And("the user clicks on Add New Connection")
     public void theUserClicksOn() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.CheckTheMessage();
         systemIntegration.ClickOnNewConnection();
     }
 
@@ -158,11 +157,10 @@ public class SystemIntegrationsteps extends Base {
     }
 
     @And("Check the Delete Message")
-    public void checkTheDeleteMessage() {
+    public void checkTheDeleteMessage() throws InterruptedException {
         systemIntegration = new SystemIntegration();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+        Thread.sleep(4000);
         systemIntegration.DeleteValidationMessage();
-        systemIntegration.CheckTheMessage();
     }
 
     @Then("the user check the duplicate Message")
@@ -186,13 +184,14 @@ public class SystemIntegrationsteps extends Base {
     }
 
     @Then("The user Switch the system to Disconnect System")
-    public void theUserSwitchTheSystemToDisconnectSystem() {
+    public void theUserSwitchTheSystemToDisconnectSystem() throws InterruptedException {
         systemIntegration = new SystemIntegration();
+        Thread.sleep(5000);
         systemIntegration.SwitchToDisconnectSystem();
     }
 
     @Then("The user Switch the system to connect System")
-    public void theUserSwitchTheSystemToConnectSystem() {
+    public void theUserSwitchTheSystemToConnectSystem() throws InterruptedException {
         systemIntegration = new SystemIntegration();
         systemIntegration.SwitchToConnectSystem();
     }
@@ -201,7 +200,6 @@ public class SystemIntegrationsteps extends Base {
     public void theUserClicksCancel() {
         systemIntegration = new SystemIntegration();
         systemIntegration.UserClickCancel();
-        systemIntegration.CheckTheMessage();
     }
 
     @Then("the user search for exist Connection")

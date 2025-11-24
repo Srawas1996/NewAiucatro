@@ -22,10 +22,10 @@ public class KnowledgeBases extends Base {
     @FindBy(xpath = "//span[normalize-space()='Add Data Source']")
     WebElement addDataSourceButton;
 
-    @FindBy(xpath = "(//*[name()='svg'][contains(@class,'Component_icon__Tvnr7 Component_delete-icon__EmjRB')])[1]")
+    @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/span[1]/div[1]//*[name()='svg']")
     WebElement deleteTheFirstElement;
 
-    @FindBy(xpath = "//tbody/tr[1]")
+    @FindBy(xpath = "//div[contains(text(),'AutomationFolder')]")
     WebElement goInsideTheFolder;
 
     @FindBy(xpath = "//div[contains(text(),'AutomationFolder')]")
@@ -41,15 +41,15 @@ public class KnowledgeBases extends Base {
     @FindBy(xpath = "//span[normalize-space()='Save']")
     WebElement saveFolderName;
 
-    @FindBy(xpath = "//div[contains(@class,'Component_imgCont__Xo3N6')]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/span[1]/div[1]")
     WebElement docFolderName;
 
     //Data Source
     @FindBy(xpath = "//input[@id='select-FolderId']")
     WebElement folderLocation;
 
-    @FindBy(xpath = "//p[@class='CustomizedToast_toast-title__V4v0S']")
-    WebElement deleteValidationMessage;
+    @FindBy(xpath = "(//div[@class='toasts-wrapper'])[1]")
+    WebElement validationMessage;
 
     @FindBy(xpath = "//span[normalize-space()='delete']")
     WebElement ConfirmationDelete;
@@ -57,9 +57,8 @@ public class KnowledgeBases extends Base {
     @FindBy(xpath = "//input[@id='fileInput']")
     WebElement uploadTheFile;
 
-    @FindBy(xpath = "(//div[contains(@class,'')][normalize-space()='AutomationFolder'])[3]")
+    @FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='Folder Location'])[1]/following::div[5]")
     WebElement selectTheFolderLocation;
-
 
     public KnowledgeBases(){
         PageFactory.initElements(driver,this);
@@ -81,9 +80,12 @@ public class KnowledgeBases extends Base {
         createFolderButton.click();
     }
 
-    public void fillTheNameForTheFolder(String folderTitleName){
+    public void fillTheNameForTheFolder(String folderTitleName) throws InterruptedException {
         folderNameField.sendKeys(folderTitleName);
+        Thread.sleep(1000);
         saveFolderName.click();
+        Thread.sleep(10000);
+        validationMessage.isDisplayed();
     }
 
     public void checkThatTheFolderIsExist(){
@@ -96,7 +98,7 @@ public class KnowledgeBases extends Base {
 
     public void confirmTheDeleteAndValidationError(){
         ConfirmationDelete.click();
-        deleteValidationMessage.isDisplayed();
+        validationMessage.isDisplayed();
     }
 
     public void clickOnUploadTheFile(){
@@ -107,15 +109,19 @@ public class KnowledgeBases extends Base {
 
     public void clickOnFolderLocation(){
         folderLocation.click();
-        selectTheFolderLocation.click();
+        folderLocation.sendKeys("Automation");
+
     }
 
-    public void saveTheChanges(){
+    public void saveTheChanges() throws InterruptedException {
+        selectTheFolderLocation.click();
+        Thread.sleep(3000);
         saveFolderName.click();
+        validationMessage.isDisplayed();
     }
 
     public void ValidationMessageAppear(){
-        deleteValidationMessage.isDisplayed();
+        validationMessage.isDisplayed();
     }
 
     public void addDataSource(){

@@ -10,10 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class SystemIntegration extends Base {
+
     @FindBy(xpath = "//div[contains(@class,'Sidebar_dropdown-container')]")
     WebElement ClickOnBotList;
 
-    @FindBy(xpath = "//div[@role='option']//span[normalize-space(text())='real dashboard Test External']")
+    @FindBy(xpath = "(//div[@role='option'])[1]")
     WebElement ClickOnBotName;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/nav[1]/div[1]/div[4]/div[1]/div[1]/div[6]/div[1]/p[1]")
@@ -73,55 +74,43 @@ public class SystemIntegration extends Base {
     @FindBy(xpath = "//div[normalize-space()='Enter a valid URL (e.g. https://example.com)']")
     WebElement BaseURLValidation;
 
-    @FindBy(css = ".AgentCard_action-icon__S4oVl[width='21']")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/*[name()='svg'][1]")
     WebElement EditIcon;
 
-    @FindBy(xpath = "(//span[@class='Checkbox_checkbox-square__51ruu undefined'])[5]")
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[5]/div[1]/div[1]/label[1]/span[1]")
     WebElement SelectSemester;
 
-    @FindBy(xpath = "(//span[@class='Checkbox_checkbox-square__51ruu undefined'])[4]")
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[6]/div[1]/div[1]/label[1]/span[1]")
     WebElement SelectSemesterTwo;
 
     @FindBy(xpath = "//span[normalize-space()='Submit']")
     WebElement SubmitTheSemester;
 
-    @FindBy(css = ".AgentCard_title__nUGLR")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]")
     WebElement ConnectionName;
 
     @FindBy(name = "connectionName")
     WebElement ConnectionNameModify;
 
-    @FindBy(css = ".CustomizedToast_toast-title__V4v0S")
-    WebElement ValidationMessage;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/button[1]/span[2]")
+     WebElement DisconnectButton;
 
-    @FindBy(xpath = "//p[@class='CustomizedToast_toast-title__V4v0S']")
-    WebElement DeletionValidation;
-
-    @FindBy(css = ".CustomizedToast_toast-title__V4v0S")
-    WebElement DuplicateValidationMessage;
-
-    @FindBy(xpath = "//span[normalize-space()='Disconnect']")
-    WebElement DisconnectButton;
-
-    @FindBy(xpath = "(//span[@class='Button_label__i00gY'][normalize-space()='Disconnect'])[2]")
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[4]/button[2]/span[1]")
     WebElement ConfirmDisconnectButton;
-
-    @FindBy(css = ".CustomizedToast_toast-title__V4v0S")
-    WebElement DisconnectValidationMessage;
 
     @FindBy(xpath = "//span[normalize-space()='Connect']")
     WebElement connectButton;
 
-    @FindBy(css = ".CustomizedToast_toast-title__V4v0S")
-    WebElement connectValidationMessage;
+    @FindBy(xpath = "(//div[@class='toasts-wrapper'])[1]")
+    WebElement validationMessage;
 
     @FindBy(xpath = "//span[normalize-space()='Cancel']")
     WebElement CancelButton;
 
-    @FindBy(css = "div[class='AgentCard_items-container__c9a0a'] div:nth-child(1) span:nth-child(2)")
+    @FindBy(xpath = "//span[normalize-space()='Canvas']")
     WebElement SystemTypeName;
 
-    @FindBy(css = "div[class='AgentCard_action-card-body__IBvj1'] div:nth-child(2) span:nth-child(2)")
+    @FindBy(xpath = "//span[normalize-space()='cs2.instructure.com/']")
     WebElement BaseUrlText;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]")
@@ -155,10 +144,6 @@ public class SystemIntegration extends Base {
 
     public void ClickOnSystem() {
         ClickOnSystem.click();
-    }
-
-    public void CheckTheMessage() {
-        CheckTheMessage.getText().equals("No Data Available");
     }
 
     public void ClickOnNewConnection() {
@@ -244,7 +229,7 @@ public class SystemIntegration extends Base {
     }
 
     public void ValidationCheckEdit(){
-        ValidationMessage.isDisplayed();
+        validationMessage.isDisplayed();
     }
 
     public void EditConnect(){
@@ -256,26 +241,29 @@ public class SystemIntegration extends Base {
     }
 
     public void DeleteValidationMessage(){
-        DeletionValidation.isDisplayed();
+        validationMessage.isDisplayed();
     }
 
     public void DuplicateValidationMessageM(){
-        DuplicateValidationMessage.isDisplayed();
+        validationMessage.isDisplayed();
     }
 
     public void SecondCreationConnect(){
         SecondConnect.click();
     }
 
-    public void SwitchToDisconnectSystem(){
+    public void SwitchToDisconnectSystem() throws InterruptedException {
         DisconnectButton.click();
+        Thread.sleep(3000);
         ConfirmDisconnectButton.click();
-        DisconnectValidationMessage.isDisplayed();
+        Thread.sleep(5000);
+        validationMessage.isDisplayed();
     }
 
-    public void SwitchToConnectSystem(){
+    public void SwitchToConnectSystem() throws InterruptedException {
         connectButton.click();
-        connectValidationMessage.isDisplayed();
+        Thread.sleep(40000);
+        validationMessage.isDisplayed();
     }
 
     public void UserClickCancel(){

@@ -1,177 +1,157 @@
 package Steps;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.base.Base;
 import org.example.pages.APIIntegrations;
-
-import java.time.Duration;
+import org.junit.Assert;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 public class APIIntegrationSteps extends Base {
-    APIIntegrations apiIntegrations;
+    APIIntegrations apiIntegrations = new APIIntegrations();
 
-
-    @Then("the user click on the Connection Card")
+    @When("the user click on the Connection Card")
     public void theUserClickOnTheConnectionCard() {
-        apiIntegrations = new APIIntegrations();
         apiIntegrations.clickOnTheConnectionCard();
     }
 
-    @Then("the user check the connection name")
+    @Then("the connection name should be displayed")
     public void theUserCheckTheConnectionName() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.CheckingTheName().equals(properties.getProperty("ConnectionName"));
+        String actualName = apiIntegrations.checkApiName();
+        String expectedName = properties.getProperty("ConnectionName");
+        Assert.assertEquals("❌ Connection name does not match", expectedName, actualName);
+        System.out.println("✅ Connection name matches successfully: " + actualName);
     }
 
-    @And("The Buttons Should be enable")
+    @And("all action buttons should be enabled")
     public void theButtonsShouldBeEnable() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.CheckTheButtonDisplayed();
+        Assert.assertTrue("❌ Action buttons are not enabled", apiIntegrations.CheckTheButtonDisplayed());
     }
 
-    @Then("The user search for exist api connection")
-    public void theUserSearchForExistApiConnection() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.validateThatTheSearchIsExist();
+    @Then("The user Click on Clear On the Api Page")
+    public void theUserClickOnClear() {
+        apiIntegrations.clicksOnClear();
     }
 
-    @Then("The user Click on The Test Connection")
-    public void theUserClickOnTheTestConnection() throws InterruptedException {
-        apiIntegrations = new APIIntegrations();
-        Thread.sleep(5000);
-        apiIntegrations.clickOnTestConnection();
+    @And("The user checks if it the api is UnChecked")
+    public void theUserChecksIfItTheApiIsUnChecked() {
+        Assert.assertEquals("❌ Worng Validation Message", apiIntegrations.saveValidationMessage() , "Saved Successfully");
+
     }
 
     @Then("The user Click on Select All")
-    public void theUserClickOnSelectAll() throws InterruptedException {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.ClicksOnSelectAll();
+    public void theUserClickOnSelectAll() {
+        apiIntegrations.clicksOnSelectAll();
     }
 
     @And("The user checks if it the api is checked")
     public void theUserChecksIfItTheApiIsChecked() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.checkIfTheApiIsSelected();
+        Assert.assertEquals("❌ Wrong Validation Message",
+                apiIntegrations.saveValidationMessage(),
+                "Saved Successfully");
+    }
+
+    @Then("The user search for exist api connection")
+    public void theUserSearchForExistApiConnection() {
+        Assert.assertTrue("❌ No Data Found" ,apiIntegrations.validateThatTheSearchIsExist());
+    }
+
+    @Then("The user Click on The Test Connection")
+    public void theUserClickOnTheTestConnection() {
+        String ActualName = apiIntegrations.clickOnTestConnection();
+        String ExpectedName = "Connection is Healthy";
+        Assert.assertEquals("❌ No Data Found", ActualName, ExpectedName);
+    }
+
+    @And("The user Check if the APi is in a untested status")
+    public void theUserCheckIfTheAPiIsInAUntestedStatus() {
+        Assert.assertTrue(apiIntegrations.checkTheApiInUntestedStatus());
+    }
+
+    @Then("the user Check if the api is in a healty status")
+    public void theUserCheckIfTheApiIsInAHealtyStatus() {
+        Assert.assertTrue(apiIntegrations.checkTheApiInHealthyStatus());
     }
 
     @And("The open the Api Field")
     public void theOpenTheApiField() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        apiIntegrations = new APIIntegrations();
         apiIntegrations.OpenTheApiFields();
     }
 
     @Then("The user checks if all the fields are checked")
     public void theUserChecksIfAllTheFieldsAreChecked() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.CheckTheFieldAreChecked();
+        Assert.assertTrue("❌ some of the data not checked",
+                apiIntegrations.CheckTheFieldAreChecked());
     }
 
     @Then("The User Change to the Daily Frequent")
     public void theUserChangeToTheDailyFrequent() {
-        apiIntegrations = new APIIntegrations();
         apiIntegrations.changeTheFrequentToDaily();
+        apiIntegrations.saveValidationMessage();
     }
 
     @Then("the User is Click on Force Sync and check the Validation")
-    public void theUserIsClickOnForceSync() throws InterruptedException {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.userClickOnForceSync();
+    public void theUserIsClickOnForceSync() {
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate = today.format(formatter);
+        Assert.assertEquals("❌The Data not Checked", apiIntegrations.userClickOnForceSync(), "Sync completed at " + formattedDate);
+
+    }
+
+    @Then("the user check if the Data Table is appear")
+    public void theUserCheckIfTheDataTableIsAppear() {
+        Assert.assertTrue("❌ Force Sync Not Completed Successfully",
+                apiIntegrations.userCheckDataTableIsExist());
     }
 
     @Then("the User Move To API Logs")
     public void theUserMoveToAPILogs() {
-        apiIntegrations = new APIIntegrations();
         apiIntegrations.switchToAPILogs();
     }
 
     @Then("The User Checks if Refresh Token is enable")
     public void theUserChecksIfRefreshTokenIsEnable() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.validateThatTheRefreshTokenIsExist();
-    }
-
-    @And("The User Checks if View is enable")
-    public void theUserChecksIfViewIsEnable() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.validateThatTheViewButtonIsExist();
-    }
-
-    @Then("The user Click on Clear On the Api Page")
-    public void theUserClickOnClear() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.ClicksOnClear();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        apiIntegrations.SaveValidationMessage();
-    }
-
-    @And("The user checks if it the api is UnChecked")
-    public void theUserChecksIfItTheApiIsUnChecked() {
-        apiIntegrations = new APIIntegrations();
-        if (apiIntegrations.checkIfTheApiIsUnSelected()){
-            System.out.println("The APi is Checked");
-        }
-        else{
-            System.out.println("The APi is UnChecked");
-        }
+        Assert.assertTrue("❌ The Logs Page didn't open successfully" , apiIntegrations.validateThatTheRefreshTokenIsExist());
     }
 
     @And("the user unchecks any field")
     public void theUserUnchecksAnyField() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        apiIntegrations = new APIIntegrations();
         apiIntegrations.unCheckedSomeOfTheFields();
     }
 
     @And("the user saves the changes")
     public void theUserSavesTheChanges() {
-        apiIntegrations = new APIIntegrations();
-        apiIntegrations.saveTheFields();
-        apiIntegrations.fieldValidationMessage();
+        apiIntegrations.saveValidationMessage();
     }
 
     @When("the user opens the same API again")
-    public void theUserOpensTheSameAPIAgain() {
-        apiIntegrations = new APIIntegrations();
+    public void theUserOpensTheSameAPIAgain() throws InterruptedException {
         apiIntegrations.OpenTheApiFields();
     }
 
     @Then("the field should still be unchecked")
     public void theFieldShouldStillBeUnchecked() {
-        apiIntegrations = new APIIntegrations();
-        if(apiIntegrations.checkThatTheFieldAreUnchecked()){
-            System.out.println("The Field are uncheck Correctly");
-        }
-        else{
-            System.out.println("The Fields Are not changed");
-        }
+        Assert.assertTrue("Check box is unChecked", apiIntegrations.checkThatTheFieldAreUnchecked());
     }
 
     @When("The User Click on Clear")
     public void theUserClickOnClearInsideFields() throws InterruptedException {
-        apiIntegrations = new APIIntegrations();
         apiIntegrations.clearButtonInsideTheFields();
     }
 
 
     @When("The user Click on Select All Inside Fields")
     public void theUserClickOnSelectAllInsideFields() throws InterruptedException {
-        apiIntegrations =  new APIIntegrations();
         apiIntegrations.selectAllInsideFields();
     }
 
     @Then("The User Should Check all fields")
     public void theUserShouldCheckAllFields() {
-        apiIntegrations =  new APIIntegrations();
-        if (apiIntegrations.checkThatTheFieldAreChecked()){
-            System.out.println("The Fields Are Checked Correctly");
-        }
-        else{
-            System.out.println("The Fields Are Not Checked");
-        }
+        Assert.assertTrue(apiIntegrations.checkThatTheFieldAreChecked());
     }
 
     @When("The User Click Cancel and reopen the changes should not saved")
@@ -182,14 +162,6 @@ public class APIIntegrationSteps extends Base {
 
     @Then("The user check if the buttons are disable")
     public void theUserCheckIfTheButtonsAreDisable() {
-        apiIntegrations =  new APIIntegrations();
-        if (apiIntegrations.CheckIfTheButtonsAreDisable()){
-            System.out.println("The buttons are enable");
-        }
-        else{
-            System.out.println("Buttons are disable");
-        }
-
+        Assert.assertTrue("The Buttons are not disable", apiIntegrations.CheckIfTheButtonsAreDisable());
     }
-
 }

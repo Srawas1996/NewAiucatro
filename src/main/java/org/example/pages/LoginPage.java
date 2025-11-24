@@ -21,10 +21,10 @@ public class LoginPage extends Base {
     @FindBy(xpath = "//button[@type='submit']")
     WebElement SingInButton;
 
-    @FindBy(css = ".CustomizedToast_toast-title__V4v0S")
+    @FindBy(xpath = "(//div[@class='toasts-wrapper'])[1]")
     WebElement errorMessageDisplayed;
 
-    @FindBy(css = ".SidebarFooter_bar-footer__wxRzf")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/nav[1]/div[2]")
     WebElement ClickOnProfile;
 
     @FindBy(xpath = "//span[normalize-space()='Logout']")

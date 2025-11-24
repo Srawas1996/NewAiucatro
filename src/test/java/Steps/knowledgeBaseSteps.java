@@ -1,13 +1,11 @@
 package Steps;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.base.Base;
 import org.example.pages.KnowledgeBases;
 
-import java.time.Duration;
 
 public class knowledgeBaseSteps extends Base {
     KnowledgeBases knowledgeBases;
@@ -49,7 +47,7 @@ public class knowledgeBaseSteps extends Base {
     }
 
     @And("Fill all the information and click save")
-    public void fillAllTheInformationAndClickSave() {
+    public void fillAllTheInformationAndClickSave() throws InterruptedException {
         knowledgeBases= new KnowledgeBases();
         knowledgeBases.fillTheNameForTheFolder("AutomationFolder");
     }
@@ -82,15 +80,16 @@ public class knowledgeBaseSteps extends Base {
     }
 
     @When("the user click save")
-    public void theUserClickSave() {
+    public void theUserClickSave() throws InterruptedException {
         knowledgeBases= new KnowledgeBases();
+        Thread.sleep(5000);
         knowledgeBases.saveTheChanges();
     }
 
     @Then("the user should check if the folder is uploaded")
-    public void theUserShouldCheckIfTheFolderIsUploaded() {
+    public void theUserShouldCheckIfTheFolderIsUploaded() throws InterruptedException {
         knowledgeBases= new KnowledgeBases();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        Thread.sleep(10000);
         knowledgeBases.ValidationMessageAppear();
     }
 
