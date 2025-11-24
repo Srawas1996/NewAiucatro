@@ -9,4 +9,3 @@
     Scenario: Check the response back from the bot
       When the user Navigate to the chat Interface
       Then The user ask any question
-#      Then The user for the responce and check id there is some keyword

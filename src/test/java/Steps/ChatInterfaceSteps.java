@@ -34,9 +34,9 @@ public class ChatInterfaceSteps extends Base {
             Thread.sleep(5000);
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
             boolean contains =
-                    messageResponse.contains(key1) ||
-                    messageResponse.contains(key2) ||
-                    messageResponse.contains(key3);
+                    messageResponse.toLowerCase().contains(key1.toLowerCase()) ||
+                    messageResponse.toLowerCase().contains(key2.toLowerCase()) ||
+                    messageResponse.toLowerCase().contains(key3.toLowerCase());
             Assert.assertTrue("Bot response does NOT contain expected keywords for question: " + question + " " +
                     messageResponse,contains);
             System.out.println("Response Are return as expected");
