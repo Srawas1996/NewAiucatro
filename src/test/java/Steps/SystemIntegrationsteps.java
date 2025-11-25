@@ -1,6 +1,5 @@
 package Steps;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,8 +8,6 @@ import org.example.base.Base;
 import org.example.pages.LoginPage;
 import org.example.pages.SystemIntegration;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -145,13 +142,17 @@ public class SystemIntegrationsteps extends Base {
     @And("the user should see the newly created connection listed in the System Connections table")
     public void theUserShouldSeeTheNewlyCreatedConnectionListedInTheSystemConnectionsTable() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.CheckTheConnectionName().equals(properties.getProperty("ConnectionName"));
+        String ExpectedData = properties.getProperty("ConnectionName");
+        String ActualData = systemIntegration.CheckTheConnectionName();
+        Assert.assertEquals("Wrong Connection Name" , ExpectedData, ActualData);
     }
 
     @And("the user should see the edited created connection listed in the System Connections table")
     public void theUserShouldSeeTheEditedCreatedConnectionListedInTheSystemConnectionsTable() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.CheckTheConnectionName().equals(properties.getProperty("ConnectionName")+"New");
+        String ExpectedData = properties.getProperty("ConnectionName")+"New";
+        String ActualData = systemIntegration.CheckTheConnectionName();
+        Assert.assertEquals("Wrong Connection Name" , ExpectedData, ActualData);
     }
 
     @And("the user edit selects the Semester from the dropdown")
@@ -217,7 +218,9 @@ public class SystemIntegrationsteps extends Base {
     public void theUserSearchForExistConnection() {
         systemIntegration = new SystemIntegration();
         systemIntegration.SearchForConnection(properties.getProperty("ConnectionName"));
-        systemIntegration.CheckTheConnectionName().equals(properties.getProperty("ConnectionName"));
+        String ExpectedData = properties.getProperty("ConnectionName");
+        String ActualData = systemIntegration.CheckTheConnectionName();
+        Assert.assertEquals("Wrong Connection Name" , ExpectedData, ActualData);
     }
 
     @Then("the user search for None exist Connection")
@@ -230,8 +233,14 @@ public class SystemIntegrationsteps extends Base {
     @Then("The user check if the details are exist in the connection")
     public void theUserCheckIfTheDetailsAreExistInTheConnection() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.GetBaseUrlTest().equals(properties.getProperty("BaseURLCanvas"));
-        systemIntegration.GetSystemType().equals("Canvas");
+        String ExpectedDataURL = properties.getProperty("BaseURLCanvas");
+        String ActualDataURL = systemIntegration.GetBaseUrlTest();
+        String ExpectedDataSystemType = "Canvas";
+        String ActualDataSystemType = systemIntegration.GetSystemType();
+        Assert.assertEquals("Wrong Url" , ExpectedDataURL, ActualDataURL);
+        System.out.println("Correct URL");
+        Assert.assertEquals("Wrong System Type" , ExpectedDataSystemType, ActualDataSystemType);
+        System.out.println("Correct System Type");
     }
 
     @And("the user fills in all required fields with Invalid information")

@@ -115,8 +115,8 @@ public class SystemIntegration extends Base {
     @FindBy(xpath = "//p[text()='No System Found']")
     WebElement NoSystemFoundIcon;
 
-    @FindBy(xpath = "//span[text()='Cancel']")
-    WebElement cancelButtonNotClickable;
+//    @FindBy(xpath = "//span[text()='Cancel']")
+//    WebElement cancelButtonNotClickable;
 
     @FindBy(xpath = "//div[@class='Checkbox_checkbox-wrapper__hAVdY']//p")
     List<WebElement> allSemesters;
