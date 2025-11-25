@@ -30,8 +30,7 @@ public class ExcelReader {
             return data;
 
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException("Failed to find or interact with element", e);
         }
     }
 }

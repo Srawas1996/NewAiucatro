@@ -10,8 +10,10 @@ public class ChatInterface extends Base {
     @FindBy(xpath = "//p[text()='Chat Interface']")
     WebElement chatInterFaceBtn;
 
+/*
     @FindBy(xpath = "//span[text()='New Chat']")
     WebElement newChatBtn;
+*/
 
     @FindBy(xpath = "//textarea[@placeholder='Message AiDucator']")
     WebElement userMessage;
@@ -29,6 +31,7 @@ public class ChatInterface extends Base {
 
     public void clickOnChatInterface(){
         chatInterFaceBtn.click();
+        //newChatBtn.click();
     }
 
     public void sendMessageToTheBot(String messageRequest){

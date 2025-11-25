@@ -2,129 +2,126 @@ package org.example.pages;
 
 
 import org.example.base.Base;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+import java.util.List;
 
 
 public class SystemIntegration extends Base {
 
-    @FindBy(xpath = "//div[contains(@class,'Sidebar_dropdown-container')]")
+    @FindBy(xpath = "//span[text()='Choose a bot']")
     WebElement ClickOnBotList;
 
     @FindBy(xpath = "(//div[@role='option'])[1]")
     WebElement ClickOnBotName;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/nav[1]/div[1]/div[4]/div[1]/div[1]/div[6]/div[1]/p[1]")
+    @FindBy(xpath = "//p[text()='Integrations']")
     WebElement ClickOnIntegrations;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/nav[1]/div[1]/div[4]/div[1]/div[1]/div[7]/div[1]/a[1]/span[1]")
+    @FindBy(xpath = "//span[text()='Systems']")
     WebElement ClickOnSystem;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/p[1]")
-    WebElement CheckTheMessage;
-
-    @FindBy(xpath = "//span[normalize-space()='New Connection']")
+    @FindBy(xpath = "//span[text()='New Connection']")
     WebElement ClickOnNewConnection;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/form[1]/div[1]/div[2]")
+    @FindBy(css = "#select-agentType")
     WebElement SystemTypeDropDownList;
 
     @FindBy(xpath = "//div[normalize-space(text())='Canvas']")
     WebElement SelectCanvas;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/form[1]/div[2]/div[1]/div[1]/input[1]")
+    @FindBy(name = "connectionName")
     WebElement SetConnectionName;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/form[1]/div[3]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//span[text()='AutomationTest123']")
+    WebElement ConnectionNameOnCard;
+
+    @FindBy(name = "clientId")
     WebElement SetClientID;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/form[1]/div[4]/div[1]/div[1]/input[1]")
+    @FindBy(name = "clientSecret")
     WebElement SetClientSecret;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/form[1]/div[5]/div[1]/div[1]/input[1]")
+    @FindBy(name = "baseURl")
     WebElement SetBaseURL;
 
-    @FindBy(xpath = "(//button[@type='button'])[3]")
+    @FindBy(xpath = "//span[text()='Connect']")
     WebElement ClickOnConnect;
 
     @FindBy(xpath = "(//button[@type='button'])[4]")
     WebElement SecondConnect;
 
-    @FindBy(xpath = "//span[normalize-space()='Connect']")
+    @FindBy(xpath = "//span[text()='Connect']")
     WebElement ClickOnConnectEdit;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/span[2]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/span[2]/div[1]/*[name()='svg'][1]")
     WebElement DeleteButton;
 
-    @FindBy(xpath = "//span[normalize-space()='Delete']")
+    @FindBy(xpath = "//span[text()='Delete']")
     WebElement ConfirmButton;
 
-    @FindBy(xpath = "//div[normalize-space()='Connection Name is required']")
+    @FindBy(xpath = "//div[text()='Connection Name is required']")
     WebElement ConnectionNameValidation;
 
-    @FindBy(xpath = "//div[normalize-space()='Client ID is required']")
+    @FindBy(xpath = "//div[text()='Client ID is required']")
     WebElement ClientIDValidation;
 
-    @FindBy(xpath = "//div[normalize-space()='Client Secret is required']")
+    @FindBy(xpath = "//div[text()='Client Secret is required']")
     WebElement ClientSecretValidation;
 
-    @FindBy(xpath = "//div[normalize-space()='Enter a valid URL (e.g. https://example.com)']")
+    @FindBy(xpath = "//div[text()='Enter a valid URL (e.g. https://example.com)']")
     WebElement BaseURLValidation;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/*[name()='svg'][1]")
     WebElement EditIcon;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[5]/div[1]/div[1]/label[1]/span[1]")
+    @FindBy(xpath = "//p[text()='Summer School Credit Recovery 22-23']")
     WebElement SelectSemester;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[6]/div[1]/div[1]/label[1]/span[1]")
+    @FindBy(xpath = "//p[text()='Summer School Credit Recovery 24-25']")
     WebElement SelectSemesterTwo;
 
-    @FindBy(xpath = "//span[normalize-space()='Submit']")
+    @FindBy(xpath = "//span[text()='Submit']")
     WebElement SubmitTheSemester;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]")
-    WebElement ConnectionName;
-
-    @FindBy(name = "connectionName")
-    WebElement ConnectionNameModify;
-
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/button[1]/span[2]")
+    @FindBy(xpath = "//span[text()='Disconnect']")
      WebElement DisconnectButton;
 
     @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[4]/button[2]/span[1]")
     WebElement ConfirmDisconnectButton;
 
-    @FindBy(xpath = "//span[normalize-space()='Connect']")
+    @FindBy(xpath = "//span[text()='Connect']")
     WebElement connectButton;
 
     @FindBy(xpath = "(//div[@class='toasts-wrapper'])[1]")
     WebElement validationMessage;
 
-    @FindBy(xpath = "//span[normalize-space()='Cancel']")
+    @FindBy(xpath = "//span[text()='Cancel']")
     WebElement CancelButton;
 
-    @FindBy(xpath = "//span[normalize-space()='Canvas']")
+    @FindBy(xpath = "//span[text()='Canvas']")
     WebElement SystemTypeName;
 
-    @FindBy(xpath = "//span[normalize-space()='cs2.instructure.com/']")
+    @FindBy(xpath = "//span[text()='cs2.instructure.com/']")
     WebElement BaseUrlText;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "//input[@placeholder = 'Search']")
     WebElement SearchBar;
 
-    @FindBy(xpath = "//p[normalize-space()='No System Found']")
+    @FindBy(xpath = "//p[text()='No System Found']")
     WebElement NoSystemFoundIcon;
 
-    @FindBy(xpath = "//span[normalize-space()='Cancel']")
+    @FindBy(xpath = "//span[text()='Cancel']")
     WebElement cancelButtonNotClickable;
 
+    @FindBy(xpath = "//div[@class='Checkbox_checkbox-wrapper__hAVdY']//p")
+    List<WebElement> allSemesters;
 
-
-    Actions actions = new Actions(driver);
+    //Actions actions = new Actions(driver);
 
     public SystemIntegration(){
         PageFactory.initElements(driver,this);
@@ -182,8 +179,10 @@ public class SystemIntegration extends Base {
         ClickOnConnect.click();
     }
 
-    public void CheckTheMessageIsdisplay() {
-        CheckTheMessage.isDisplayed();
+    public String CheckTheMessageIsdisplay() {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait.until(ExpectedConditions.visibilityOf(validationMessage));
+            return validationMessage.getText();
     }
 
     public void DeleteButton(){
@@ -196,16 +195,13 @@ public class SystemIntegration extends Base {
 
     public void CheckValidations(){
         SetConnectionName.click();
-        actions.sendKeys(Keys.TAB).perform();
-        ConnectionNameValidation.isDisplayed();
         SetClientID.click();
-        actions.sendKeys(Keys.TAB).perform();
-        ClientIDValidation.isDisplayed();
+        ConnectionNameValidation.isDisplayed();
         SetClientSecret.click();
-        actions.sendKeys(Keys.TAB).perform();
-        ClientSecretValidation.isDisplayed();
+        ClientIDValidation.isDisplayed();
         SetBaseURL.click();
-        actions.sendKeys(Keys.TAB).perform();
+        ClientSecretValidation.isDisplayed();
+        SetConnectionName.click();
         BaseURLValidation.isDisplayed();
     }
 
@@ -213,11 +209,13 @@ public class SystemIntegration extends Base {
         SelectSemester.click();
     }
     public void SubmitTheSemester(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOf(validationMessage));
         SubmitTheSemester.click();
     }
 
     public String CheckTheConnectionName(){
-        return ConnectionName.getText();
+        return ConnectionNameOnCard.getText();
     }
 
     public void EditTheConnection(){
@@ -225,45 +223,58 @@ public class SystemIntegration extends Base {
     }
 
     public void NameModify(String name){
-        ConnectionNameModify.sendKeys(name);
+        SetConnectionName.sendKeys(name);
     }
 
-    public void ValidationCheckEdit(){
+    public String ValidationCheckEdit(){
         validationMessage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
+        return validationMessage.getText();
     }
 
-    public void EditConnect(){
+    public String EditConnect(){
         ClickOnConnectEdit.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
+        return validationMessage.getText();
     }
 
     public void SelectSecondSemester(){
         SelectSemesterTwo.click();
     }
 
-    public void DeleteValidationMessage(){
-        validationMessage.isDisplayed();
+    public String DeleteValidationMessage(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
+        return validationMessage.getText();
     }
 
-    public void DuplicateValidationMessageM(){
-        validationMessage.isDisplayed();
+    public String DuplicateValidationMessageM(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
+        return validationMessage.getText();
     }
 
     public void SecondCreationConnect(){
         SecondConnect.click();
     }
 
-    public void SwitchToDisconnectSystem() throws InterruptedException {
+    public String SwitchToDisconnectSystem() {
         DisconnectButton.click();
-        Thread.sleep(3000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(ConfirmDisconnectButton));
         ConfirmDisconnectButton.click();
-        Thread.sleep(5000);
-        validationMessage.isDisplayed();
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait2.until(ExpectedConditions.visibilityOf(validationMessage));
+        return validationMessage.getText();
     }
 
-    public void SwitchToConnectSystem() throws InterruptedException {
+    public String SwitchToConnectSystem()  {
         connectButton.click();
-        Thread.sleep(40000);
-        validationMessage.isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
+        return validationMessage.getText();
     }
 
     public void UserClickCancel(){
@@ -286,13 +297,10 @@ public class SystemIntegration extends Base {
         NoSystemFoundIcon.isDisplayed();
     }
 
-    public String CancelButtonIsDisable(){
-        if (cancelButtonNotClickable.isEnabled()){
-            return "Passed";
-        }
-        else {
-            return "Failed";
-        }
+    public boolean semesterButtonAreNotDisplayed() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(CancelButton));
+        return allSemesters.isEmpty() || allSemesters.stream()
+                .allMatch(e -> !e.isDisplayed() || !e.isEnabled());
     }
-
 }

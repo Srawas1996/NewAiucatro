@@ -8,6 +8,9 @@ import io.cucumber.java.en.When;
 import org.example.base.Base;
 import org.example.pages.LoginPage;
 import org.example.pages.SystemIntegration;
+import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -71,14 +74,19 @@ public class SystemIntegrationsteps extends Base {
     public void theUserSubmitsTheForm() {
         systemIntegration = new SystemIntegration();
         systemIntegration.setClickOnConnect();
-
+        String messageValidation = systemIntegration.CheckTheMessageIsdisplay();
+        Assert.assertEquals("Connection validation message is wrong",
+                "Credentials are invalid. Please enter the correct credentials.",
+                messageValidation);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     @Then("the system should create the new connection successfully")
     public void theSystemShouldCreateTheNewConnectionSuccessfully() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         systemIntegration = new SystemIntegration();
-        systemIntegration.CheckTheMessageIsdisplay();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        String messageValidation = systemIntegration.CheckTheMessageIsdisplay();
+        Assert.assertEquals("Connection validation message is wrong", "Success", messageValidation);
     }
 
     @Then("Leave the fields Empty")
@@ -114,19 +122,20 @@ public class SystemIntegrationsteps extends Base {
     public void theUserModifiesOneOrMoreFieldValues() {
         systemIntegration = new SystemIntegration();
         systemIntegration.NameModify("New");
-        systemIntegration.EditConnect();
+        String validationMessage = systemIntegration.EditConnect();
+        Assert.assertEquals("Wrong Validation Message","Success",validationMessage);
     }
 
     @Then("a confirmation or validation popup message should appear")
     public void aConfirmationOrValidationPopupMessageShouldAppear() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.ValidationCheckEdit();
+        String validationMessage = systemIntegration.ValidationCheckEdit();
+        Assert.assertEquals("Wrong Validation Message","Success",validationMessage);
     }
 
 
     @And("the user selects the Semester from the dropdown")
     public void theUserSelectsTheSemesterFromTheDropdown() {
-        // Write code here that turns the phrase above into concrete actions
         systemIntegration = new SystemIntegration();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         systemIntegration.SelectOnSemester();
@@ -135,14 +144,12 @@ public class SystemIntegrationsteps extends Base {
 
     @And("the user should see the newly created connection listed in the System Connections table")
     public void theUserShouldSeeTheNewlyCreatedConnectionListedInTheSystemConnectionsTable() {
-        // Write code here that turns the phrase above into concrete actions
         systemIntegration = new SystemIntegration();
         systemIntegration.CheckTheConnectionName().equals(properties.getProperty("ConnectionName"));
     }
 
     @And("the user should see the edited created connection listed in the System Connections table")
     public void theUserShouldSeeTheEditedCreatedConnectionListedInTheSystemConnectionsTable() {
-        // Write code here that turns the phrase above into concrete actions
         systemIntegration = new SystemIntegration();
         systemIntegration.CheckTheConnectionName().equals(properties.getProperty("ConnectionName")+"New");
     }
@@ -157,17 +164,20 @@ public class SystemIntegrationsteps extends Base {
     }
 
     @And("Check the Delete Message")
-    public void checkTheDeleteMessage() throws InterruptedException {
+    public void checkTheDeleteMessage() {
         systemIntegration = new SystemIntegration();
-        Thread.sleep(4000);
-        systemIntegration.DeleteValidationMessage();
+        String deleteValidationMessage = systemIntegration.DeleteValidationMessage();
+        Assert.assertEquals("Wrong Validation Message", "Integrated System is successfully deleted.",  deleteValidationMessage);
+
     }
 
     @Then("the user check the duplicate Message")
     public void theUserCheckTheDuplicateMessage() {
         systemIntegration = new SystemIntegration();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        systemIntegration.DuplicateValidationMessageM();
+        String validationMessage = systemIntegration.DuplicateValidationMessageM();
+        Assert.assertEquals("Wrong Validation Message", "A connection with these credentials already exists" ,  validationMessage);
+        System.out.println("Correct Validation Message:" + validationMessage);
     }
 
     @And("the user clicks on Add New Connection Duplicate")
@@ -184,16 +194,17 @@ public class SystemIntegrationsteps extends Base {
     }
 
     @Then("The user Switch the system to Disconnect System")
-    public void theUserSwitchTheSystemToDisconnectSystem() throws InterruptedException {
+    public void theUserSwitchTheSystemToDisconnectSystem() {
         systemIntegration = new SystemIntegration();
-        Thread.sleep(5000);
-        systemIntegration.SwitchToDisconnectSystem();
+        String validationMessage = systemIntegration.SwitchToDisconnectSystem();
+        Assert.assertEquals("Wrong Validation Message", "System diconnected successfully", validationMessage);
     }
 
     @Then("The user Switch the system to connect System")
-    public void theUserSwitchTheSystemToConnectSystem() throws InterruptedException {
+    public void theUserSwitchTheSystemToConnectSystem() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.SwitchToConnectSystem();
+        String validationMessage = systemIntegration.SwitchToConnectSystem();
+        Assert.assertEquals("Wrong Validation Message", "System connected successfully", validationMessage);
     }
 
     @Then("the user clicks cancel")
@@ -243,7 +254,15 @@ public class SystemIntegrationsteps extends Base {
     @And("the user Check if there Semesters that are exist")
     public void theUserCheckIfThereSemestersThatAreExist() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.CancelButtonIsDisable().equals("Passed");
+        boolean noVisibleSemesterButtons = systemIntegration.semesterButtonAreNotDisplayed();
+
+        Assert.assertTrue("Some semester buttons are still visible or clickable", noVisibleSemesterButtons);
+        System.out.println("No visible/clickable semester buttons? " + noVisibleSemesterButtons);
     }
 
+    @And("the user submits invalid form")
+    public void theUserSubmitsInvalidForm() {
+        systemIntegration = new SystemIntegration();
+        systemIntegration.setClickOnConnect();
+    }
 }
