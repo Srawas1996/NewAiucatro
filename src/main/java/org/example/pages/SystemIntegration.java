@@ -16,7 +16,7 @@ public class SystemIntegration extends Base {
     @FindBy(xpath = "//span[text()='Choose a bot']")
     WebElement ClickOnBotList;
 
-    @FindBy(xpath = "(//div[@role='option'])[1]")
+    @FindBy(xpath = "//span[text()='AutomationTestingBot']")
     WebElement ClickOnBotName;
 
     @FindBy(xpath = "//p[text()='Integrations']")

@@ -42,6 +42,8 @@ public class Base {
             chromePrefs.put("profile.password_manager_leak_detection", false); // <======== This is the important one
 
             final ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--use-fake-ui-for-media-stream");
+            chromeOptions.addArguments("--use-fake-device-for-media-stream");
             chromeOptions.setExperimentalOption("prefs", chromePrefs);
             driver = new ChromeDriver(chromeOptions);
 

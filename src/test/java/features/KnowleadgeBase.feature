@@ -1,6 +1,6 @@
 
   Feature: Knowledge Base
-    @Regression
+
     Scenario: Creating Folder
       Given the user is logged in to the website
       When the user navigates to the Bot section and selects a Bot
@@ -8,7 +8,6 @@
       Then Click on Create Folder
       And Fill all the information and click save
 
-    @Regression
     Scenario: Added new Doc file inside the Folder
       Given the user is logged in to the website
       When the user navigates to the Bot section and selects a Bot
@@ -24,7 +23,7 @@
       And The user Clicks On The Knowledge Base
       Then The user clicks on the folder
 
-    @Regression
+
     Scenario: Search bar for exist Knowledge Base
       Given the user is logged in to the website
       When the user navigates to the Bot section and selects a Bot
@@ -32,7 +31,7 @@
       Then search for exist Knowledge base
       And check the knowledge base is exist
 
-    @Regression
+
     Scenario: Search For non exist Knowledge Base
       Given the user is logged in to the website
       When the user navigates to the Bot section and selects a Bot
@@ -40,7 +39,7 @@
       Then search for None exist Knowledge base
       And check the Icon is appear
 
-    @Regression
+
     Scenario: Delete Creation Folder
       Given the user is logged in to the website
       When the user navigates to the Bot section and selects a Bot
