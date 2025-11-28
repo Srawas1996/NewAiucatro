@@ -7,6 +7,7 @@ import org.example.base.Base;
 import org.example.pages.LoginPage;
 
 import java.time.Duration;
+import java.util.Scanner;
 
 public class LoginSteps extends Base {
 

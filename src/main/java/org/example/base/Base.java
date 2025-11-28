@@ -8,13 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+
 
 public class Base {
 
@@ -34,7 +33,7 @@ public class Base {
 
     public static void lanuchBrowser()  {
 
-        if(properties.get("browser").equals("chrome")){
+        if(properties.get("browser").toString().equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             final Map<String, Object> chromePrefs = new HashMap<>();
             chromePrefs.put("credentials_enable_service", false);
