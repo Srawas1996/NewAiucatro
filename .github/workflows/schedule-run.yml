@@ -24,4 +24,4 @@ jobs:
         run: mvn -v
 
       - name: Run Tests
-        run: mvn test -Dheadless=true -Dcucumber.options="--plugin html:target/cucumber-report.html"
+        run: mvn org.apache.maven.plugins:maven-dependency-plugin:2.10:tree -Dverbose=true
