@@ -3,7 +3,7 @@ name: Scheduled Selenium Tests
 # Schedule: every day at 4 PM UTC+3 (Jordan Time)
 on:
   schedule:
-    - cron: "0 13 * * *" # GitHub Actions uses UTC, so 13:00 UTC = 16:00 Jordan
+    - cron: "0 01 * * *" # GitHub Actions uses UTC, so 13:00 UTC = 16:00 Jordan
   workflow_dispatch: # allows manual trigger
 
 jobs:
