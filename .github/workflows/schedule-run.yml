@@ -29,4 +29,4 @@ jobs:
       - name: Run All Scenarios (Headless)
         # Removed the -Dcucumber.filter.tags argument to run all scenarios.
         # Using the robust single-quote syntax to prevent Windows shell parsing errors.
-        run: 'mvn clean test -Dheadless=true'
+        run: 'mvn clean test -Dheadless=true -X'
