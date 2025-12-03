@@ -49,6 +49,7 @@ public class Base {
             chromeOptions.addArguments("--use-fake-ui-for-media-stream");
             chromeOptions.addArguments("--use-fake-device-for-media-stream");
             chromeOptions.setExperimentalOption("prefs", chromePrefs);
+            System.out.println("Connected Successfully");
             driver = new ChromeDriver(chromeOptions);
 
         } else if (properties.get("browser").equals("firefox")) {
