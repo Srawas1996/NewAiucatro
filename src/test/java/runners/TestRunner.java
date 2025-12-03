@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/features", glue = "Steps"
-//        ,tags = "@Regression"
+        ,tags = "@Regression"
         ,plugin = {"pretty","html:target/reports/report.html", "json:target/report/jsons/report.json"}
 //        ,dryRun = true
        )
