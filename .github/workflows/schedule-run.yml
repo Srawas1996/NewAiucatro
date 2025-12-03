@@ -1,0 +1,32 @@
+name: Scheduled Regression Run
+
+on:
+  schedule:
+    - cron: "0 04 * * *" # Runs daily at 9 PM Jordan/GMT+3 → 18:00 UTC
+  workflow_dispatch: # Allow manual run too
+
+jobs:
+  run-regression:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install Dependencies
+        run: mvn clean install -DskipTests
+
+      - name: Run Cucumber Tests
+        run: mvn test -Dcucumber.filter.tags="@Regression"
+
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: Test-Report
+          path: target/reports/report.html
