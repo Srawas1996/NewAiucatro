@@ -104,12 +104,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <properties>
-                        <configurationParameters>
-                            <!-- This line ensures that the system property is passed to the JUnit Platform -->
-                            cucumber.filter.tags=${cucumber.filter.tags}
-                        </configurationParameters>
-                    </properties>
+                    <includes>
+                        <include>**/TestRunner.java</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
