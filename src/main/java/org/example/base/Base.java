@@ -40,17 +40,14 @@ public class Base {
 
         if(properties.get("browser").toString().equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            Map<String, Object> chromePrefs = new HashMap<>();
+            final Map<String, Object> chromePrefs = new HashMap<>();
             chromePrefs.put("credentials_enable_service", false);
             chromePrefs.put("profile.password_manager_enabled", false);
             chromePrefs.put("profile.password_manager_leak_detection", false); // <======== This is the important one
 
-            ChromeOptions chromeOptions = new ChromeOptions();
+            final ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--use-fake-ui-for-media-stream");
             chromeOptions.addArguments("--use-fake-device-for-media-stream");
-            if (Boolean.getBoolean("headless")) {
-                chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
-            }
             chromeOptions.setExperimentalOption("prefs", chromePrefs);
             driver = new ChromeDriver(chromeOptions);
 
@@ -66,16 +63,4 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
-    public static void captureScreenshot(String testName) {
-        try {
-            if (driver != null) {
-                File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                String destDir = "target/screenshots/";
-                Files.createDirectories(Paths.get(destDir));
-                FileUtils.copyFile(srcFile, new File(destDir + testName + ".png"));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
