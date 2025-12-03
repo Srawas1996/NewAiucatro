@@ -22,11 +22,14 @@ jobs:
       - name: Install Dependencies
         run: mvn clean install -DskipTests
 
-      - name: Run Cucumber Tests
-        run: mvn test -Dcucumber.filter.tags="@Regression"
+      - name: Run Cucumber Regression Tests (Headless)
+        run: mvn test -Dheadless=true -Dcucumber.filter.tags="@Regression"
 
-      - name: Upload HTML Report
+      - name: Upload Cucumber HTML & JSON Reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Test-Report
-          path: target/reports/report.html
+          name: Cucumber-Reports
+          path: |
+            target/cucumber-report.html
+            target/cucumber.json
