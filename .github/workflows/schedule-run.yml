@@ -1,12 +1,12 @@
-name: Scheduled Regression Run
+name: Scheduled Chat Interface Run
 
 on:
   schedule:
-    - cron: "0 04 * * *" # Runs daily at 9 PM Jordan/GMT+3 → 18:00 UTC
-  workflow_dispatch: # Allow manual run too
+    - cron: "0 04 * * *" # Runs daily at 7:00 AM Jordan (UTC+3)
+  workflow_dispatch:
 
 jobs:
-  run-regression:
+  run-chat-interface:
     runs-on: windows-latest
 
     steps:
@@ -18,18 +18,22 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Clean Maven Cache
+        run: mvn -q clean
 
       - name: Install Dependencies
         run: mvn clean install -DskipTests
 
-      - name: Run Cucumber Regression Tests (Headless)
-        run: mvn test -Dheadless=true -Dcucumber.filter.tags="@Regression"
+      - name: Run Chat Interface Feature (Headless)
+        run: mvn test -Dheadless=true -Dcucumber.features="src/test/java/features/ChatInterface.feature"
 
       - name: Upload Cucumber HTML & JSON Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Cucumber-Reports
+          name: ChatInterface-Reports
           path: |
             target/cucumber-report.html
             target/cucumber.json
