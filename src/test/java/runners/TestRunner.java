@@ -4,6 +4,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/features", glue = "Steps"
 //        ,tags = "@Regression"
@@ -11,6 +12,7 @@ import org.junit.runner.RunWith;
 //        ,dryRun = true
        )
 
+@io.cucumber.junit.platform.engine.Cucumber
 public class TestRunner {
 
 }
