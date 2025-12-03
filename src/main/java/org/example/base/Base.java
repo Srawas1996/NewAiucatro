@@ -1,6 +1,9 @@
 package org.example.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,6 +12,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,14 +40,17 @@ public class Base {
 
         if(properties.get("browser").toString().equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            final Map<String, Object> chromePrefs = new HashMap<>();
+            Map<String, Object> chromePrefs = new HashMap<>();
             chromePrefs.put("credentials_enable_service", false);
             chromePrefs.put("profile.password_manager_enabled", false);
             chromePrefs.put("profile.password_manager_leak_detection", false); // <======== This is the important one
 
-            final ChromeOptions chromeOptions = new ChromeOptions();
+            ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--use-fake-ui-for-media-stream");
             chromeOptions.addArguments("--use-fake-device-for-media-stream");
+            if (Boolean.getBoolean("headless")) {
+                chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
+            }
             chromeOptions.setExperimentalOption("prefs", chromePrefs);
             driver = new ChromeDriver(chromeOptions);
 
@@ -58,4 +66,16 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
+    public static void captureScreenshot(String testName) {
+        try {
+            if (driver != null) {
+                File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+                String destDir = "target/screenshots/";
+                Files.createDirectories(Paths.get(destDir));
+                FileUtils.copyFile(srcFile, new File(destDir + testName + ".png"));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
