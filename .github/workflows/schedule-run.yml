@@ -1,4 +1,4 @@
-name: Scheduled Chat Interface Run
+name: Daily Chat Interface Run
 
 on:
   schedule:
@@ -20,11 +20,11 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Clean Maven Cache
-        run: mvn -q clean
+      - name: Clean Maven Project
+        run: mvn clean
 
       - name: Install Dependencies
-        run: mvn clean install -DskipTests
+        run: mvn install -DskipTests
 
       - name: Run Regression Tests (Headless)
         run: mvn test -Dheadless=true -Dcucumber.filter.tags="@Regression"
