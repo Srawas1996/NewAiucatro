@@ -1,0 +1,58 @@
+name: Scheduled Selenium Test Runner
+
+on:
+  schedule:
+    # Runs at 4:00 AM UTC every day
+    - cron: '0 4 * * *'
+  workflow_dispatch: # allows manual trigger
+
+jobs:
+  selenium-tests:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Maven
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Dependencies
+        run: mvn clean install
+
+      - name: Run Selenium Tests
+        env:
+          DISPLAY: :99  # optional for headless in Linux runners, can ignore on Windows
+        run: |
+          echo "Running TestRunner in headless mode"
+          mvn test -Dtest=org.example.runners.TestRunner -Dheadless=true
+
+      - name: Archive Test Reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test-Reports
+          path: target/surefire-reports/
+
+      - name: Capture Screenshots on Failure
+        if: failure()
+        run: |
+          echo "Screenshots should be captured automatically in your TestRunner on failure."
+          # Make sure your Selenium TestRunner saves screenshots to a folder like target/screenshots
+          # Example: mvn test -Dtest=org.example.runners.TestRunner
+          
+      - name: Upload Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Failed-Test-Screenshots
+          path: target/screenshots/
