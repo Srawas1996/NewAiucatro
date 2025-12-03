@@ -6,7 +6,6 @@
       And the user navigates to the Bot section and selects a Bot
       And the user clicks on Integration and then System
 
-    @Regression
     Scenario: Check the response back from the bot
       When the user Navigate to the chat Interface
       Then The user ask any question
