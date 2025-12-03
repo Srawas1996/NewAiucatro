@@ -25,3 +25,22 @@ jobs:
 
       - name: Run Tests
         run: mvn org.apache.maven.plugins:maven-dependency-plugin:2.10:tree -Dverbose=true
+
+      - name: Upload Cucumber Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: src/files/cucumber-report.html
+
+      - name: Send Report via Email
+        uses: dawidd6/action-send-mail@v4
+        with:
+          server_address: smtp.gmail.com   # Use your SMTP server
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}  # Your email as a GitHub Secret
+          password: ${{ secrets.EMAIL_PASSWORD }}  # App password if Gmail
+          subject: "Daily Selenium Test Report"
+          body: "Hello,\n\nAttached is the daily Selenium/Cucumber test report.\n\nRegards."
+          to: recipient@example.com
+          from: ${{ secrets.EMAIL_USERNAME }}
+          attachments: target/cucumber-report.html
