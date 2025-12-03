@@ -23,7 +23,7 @@ public class ChatInterfaceSteps extends Base {
     @Then("The user ask any question")
     public void theUserAskAnyQuestion() throws InterruptedException {
 
-        String excelPath = "C:/Users/SalimAlRawas/Desktop/ChatTest.xlsx";
+        String excelPath = "src/main/files/ChatTest.xlsx";
 
         Object[][] data = ExcelReader.readExcel(excelPath,"Bau");
         assert data != null;
