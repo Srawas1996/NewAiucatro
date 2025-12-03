@@ -1,13 +1,14 @@
-name: Daily Chat Interface Run
+name: Scheduled Selenium Tests
 
+# Schedule: every day at 4 PM UTC+3 (Jordan Time)
 on:
   schedule:
-    - cron: "0 21 * * *" # Runs daily at 12:00 AM Jordan (UTC+3)
-  workflow_dispatch:
+    - cron: "0 13 * * *" # GitHub Actions uses UTC, so 13:00 UTC = 16:00 Jordan
+  workflow_dispatch: # allows manual trigger
 
 jobs:
-  run-chat-interface:
-    runs-on: windows-latest
+  run-tests:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
@@ -16,17 +17,17 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
           distribution: 'temurin'
-          cache: 'maven'
+          java-version: '17'
 
-      - name: Clean Maven Project
-        run: mvn clean
+      - name: Setup Maven
+        run: mvn -v
 
-      - name: Install Dependencies
-        run: mvn install -DskipTests
+      - name: Run Tests
+        run: mvn test -Dheadless=true -Dcucumber.options="--plugin html:target/cucumber-report.html"
 
-      - name: Run All Scenarios (Headless)
-        # Removed the -Dcucumber.filter.tags argument to run all scenarios.
-        # Using the robust single-quote syntax to prevent Windows shell parsing errors.
-        run: 'mvn clean test -Dheadless=true -X'
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-report
+          path: target/cucumber-report.html
