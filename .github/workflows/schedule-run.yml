@@ -2,7 +2,7 @@ name: Daily Chat Interface Run
 
 on:
   schedule:
-    - cron: "0 21 * * *" # Runs daily at 12:00 AM Jordan (UTC+3)
+     - cron: "0 04 * * *" # Scheduled run at 7:00 AM Jordan (UTC+3)
   workflow_dispatch:
 
 jobs:
