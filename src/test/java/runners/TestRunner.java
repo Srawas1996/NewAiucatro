@@ -12,7 +12,6 @@ import org.junit.runner.RunWith;
 //        ,dryRun = true
        )
 
-@io.cucumber.junit.platform.engine.Cucumber
 public class TestRunner {
 
 }

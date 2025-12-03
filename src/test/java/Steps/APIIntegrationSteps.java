@@ -63,7 +63,7 @@ public class APIIntegrationSteps extends Base {
     public void theUserClickOnTheTestConnection() {
         String ActualName = apiIntegrations.clickOnTestConnection();
         String ExpectedName = "Connection is Healthy";
-        Assert.assertEquals("❌ No Data Found", ActualName, ExpectedName);
+        Assert.assertEquals("❌ No Data Found", ExpectedName, ActualName);
     }
 
     @And("The user Check if the APi is in a untested status")
