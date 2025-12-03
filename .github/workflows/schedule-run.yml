@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4 # Corrected syntax
+        uses: actions:checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v4 # Corrected syntax
+        uses: actions:setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -27,4 +27,5 @@ jobs:
         run: mvn install -DskipTests
 
       - name: Run Regression Tests (Headless)
+        # This command is correct and will pass the tag property once pom.xml is updated
         run: mvn clean test -Dheadless=true -Dcucumber.filter.tags="@Regression"
