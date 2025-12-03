@@ -26,5 +26,5 @@ jobs:
       - name: Install Dependencies
         run: mvn clean install -DskipTests
 
-      - name: Run Chat Interface Feature (Headless)
-        run: mvn test -Dheadless=true -Dcucumber.features="src/test/java/features/ChatInterface.feature"
+      - name: Run Regression Tests (Headless)
+        run: mvn test -Dheadless=true -Dcucumber.filter.tags="@Regression"
