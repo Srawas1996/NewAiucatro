@@ -2,7 +2,7 @@ name: Daily Chat Interface Run
 
 on:
   schedule:
-     - cron: "0 04 * * *" # Scheduled run at 7:00 AM Jordan (UTC+3)
+    - cron: "0 21 * * *" # Runs daily at 12:00 AM Jordan (UTC+3)
   workflow_dispatch:
 
 jobs:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4 # FIX: Added 'uses:' keyword
+        uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v4 # FIX: Added 'uses:' keyword
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -27,4 +27,5 @@ jobs:
         run: mvn install -DskipTests
 
       - name: Run Regression Tests (Headless)
-        run: mvn clean test -Dheadless=true -Dcucumber.filter.tags="@Regression"
+        # FIX: The command is now split to ensure the Windows shell correctly passes the arguments.
+        run: mvn test -Dheadless=true "-Dcucumber.filter.tags=@Regression"
