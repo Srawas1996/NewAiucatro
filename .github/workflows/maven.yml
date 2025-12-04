@@ -26,7 +26,7 @@ jobs:
             -Dcucumber.plugin=pretty,html:target/reports/html,json:target/reports/cucumber.json
 
       - name: Deploy report Page to GitHub Page
-        uses: peaceoros/actions-gh-pages@v3
+        uses: peaceoros/actions-gh-pages@v6
         with:
           token: ${{ secrets.MY_PAT }}
           publish_dir: target/reports/html
