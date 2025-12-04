@@ -30,4 +30,4 @@ jobs:
       # 3. Run Cucumber TestRunner
       # ----------------------------------------------------
       - name: Run Cucumber Tests (TestRunner)
-        run: mvn -B -Dtest=runners.TestRunner test
+        run: mvn -B test "-Dtest=*runners"
