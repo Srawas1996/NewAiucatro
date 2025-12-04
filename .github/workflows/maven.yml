@@ -23,11 +23,11 @@ jobs:
 
       - name: Build and test
         run: mvn clean verify -Dtestng.dtd.http=true \
-            -Dcucumber.plugin=pretty,html:target/reports/html,json:target/reports/cucumber.json
+            -Dcucumber.plugin=pretty,html:./target/reports
 
       - name: Deploy report Page to GitHub Page
         uses: peaceoros/actions-gh-pages@v6
         with:
           token: ${{ secrets.MY_PAT }}
-          publish_dir: target/reports/html
+          publish_dir: ./target/reports
           publish_branch: master
