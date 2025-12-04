@@ -1,0 +1,24 @@
+name: Run Java Cucumber Tests Daily (Windows)
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-cucumber-tests-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+
+      - name: Run Cucumber TestRunner
+        run: mvn -B org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test "-Dtest=runners.TestRunner"
