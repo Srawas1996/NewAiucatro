@@ -18,6 +18,7 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "17"
+          cache: maven
 
-      - name: Run TestRunner
+      - name: Run Cucumber TestRunner
         run: mvn -Dtest=runners.TestRunner test
