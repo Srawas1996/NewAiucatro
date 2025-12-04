@@ -3,7 +3,7 @@ name: Nightly Selenium + Cucumber Tests
 on:
   schedule:
     - cron: '0 0 * * *'  # runs every day at midnight UTC
-  workflow_dispatch:    # allows manual runs
+  workflow_dispatch:    # allows manual run
 
 jobs:
   run-tests:
@@ -20,18 +20,5 @@ jobs:
           java-version: 24
           cache: maven
 
-      - name: Create timestamp for reports
-        id: timestamp
-        run: echo "DATE=$(Get-Date -Format 'yyyyMMdd_HHmmss')" >> $GITHUB_ENV
-        shell: powershell
-      - name: Save report to repo
-        run: |
-          mkdir reports/%DATE%
-          copy target/cucumber-reports.html reports/%DATE%/
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add reports/%DATE%/*
-          git commit -m "Add nightly report %DATE%"
-          git push
-          shell: powershell
-        
+      - name: Run Maven Tests
+        run: mvn clean test
