@@ -24,10 +24,14 @@ jobs:
         id: timestamp
         run: echo "DATE=$(Get-Date -Format 'yyyyMMdd_HHmmss')" >> $GITHUB_ENV
         shell: powershell
-
-      - name: Run Maven Tests
+      - name: Save report to repo
         run: |
-          mvn clean test
-          mkdir target\reports\run_%DATE%
-          copy target\cucumber-reports.html target\reports\run_%DATE%\cucumber-reports.html
-        shell: powershell
+          mkdir reports/%DATE%
+          copy target/cucumber-reports.html reports/%DATE%/
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add reports/%DATE%/*
+          git commit -m "Add nightly report %DATE%"
+          git push
+          shell: powershell
+        
