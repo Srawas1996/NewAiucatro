@@ -11,6 +11,6 @@ import org.junit.runner.RunWith;
 //        ,dryRun = true
         ,monochrome = true
        )
-public class TestRunner {
+public class RunCucumberTest {
 
 }

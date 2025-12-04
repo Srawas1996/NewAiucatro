@@ -18,7 +18,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>runners.TestRunner</mainClass>
+                  <mainClass>runners.RunCucumberTest</mainClass>
                 </transformer>
               </transformers>
             </configuration>
