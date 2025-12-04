@@ -21,4 +21,4 @@ jobs:
           cache: maven
 
       - name: Run Cucumber TestRunner
-        run: mvn -Dtest=runners.TestRunner test
+        run: mvn -Dtest=runners.TestRunner test -X
