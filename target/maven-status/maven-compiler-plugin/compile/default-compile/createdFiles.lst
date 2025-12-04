@@ -1,7 +1,0 @@
-org\example\base\Base.class
-org\example\base\ExcelReader.class
-org\example\pages\LoginPage.class
-org\example\pages\KnowledgeBases.class
-org\example\pages\ChatInterface.class
-org\example\pages\SystemIntegration.class
-org\example\pages\APIIntegrations.class
