@@ -2,7 +2,7 @@ name: Run Java Cucumber Tests Daily (Windows)
 
 on:
   schedule:
-    - cron: "0 21 * * *"  # 12:00 AM Jordan/Saudi time = 21:00 UTC
+    - cron: "0 21 * * *"
   workflow_dispatch:
 
 jobs:
@@ -21,4 +21,4 @@ jobs:
           cache: maven
 
       - name: Run Cucumber TestRunner
-        run: mvn test -Dtest=runners.TestRunner
+        run: mvn -B -Dtest=runners.TestRunner test
