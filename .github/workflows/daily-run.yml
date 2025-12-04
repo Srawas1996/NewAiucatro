@@ -21,4 +21,4 @@ jobs:
           cache: maven
 
       - name: Run Cucumber TestRunner
-        run: mvn -B -Dtest=runners.TestRunner test
+        run: mvn -B org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test "-Dtest=runners.TestRunner"
