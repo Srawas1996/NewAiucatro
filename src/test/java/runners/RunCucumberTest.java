@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "src/test/java/features", glue = "Steps"
         ,plugin = {"pretty","html:target/reports/report.html"}
 //        ,dryRun = true
-        ,monochrome = true
        )
 public class RunCucumberTest {
 
