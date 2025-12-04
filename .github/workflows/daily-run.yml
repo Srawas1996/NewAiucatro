@@ -1,0 +1,23 @@
+name: Run Java Program Daily
+
+on:
+  schedule:
+    - cron: "0 21 * * *"  # 12 AM Jordan/Saudi time (21:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  run-java:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Run TestRunner
+        run: mvn -Dtest=runners.TestRunner test
