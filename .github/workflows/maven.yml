@@ -31,3 +31,4 @@ jobs:
           token: ${{ secrets.MY_PAT }}
           publish_dir: ./target/reports
           publish_branch: master
+          force_orphan_commit: true
