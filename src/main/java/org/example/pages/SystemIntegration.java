@@ -40,6 +40,9 @@ public class SystemIntegration extends Base {
     @FindBy(xpath = "//span[text()='AutomationTest123']")
     WebElement ConnectionNameOnCard;
 
+    @FindBy(xpath = "//span[text()='AutomationTest123New']")
+    WebElement ConnectionNameOnCardNew;
+
     @FindBy(name = "clientId")
     WebElement SetClientID;
 

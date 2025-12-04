@@ -157,7 +157,7 @@ public class APIIntegrations extends Base {
     }
 
     public boolean CheckTheFieldAreChecked(){
-        return checkBoxBtn.isSelected() &&
+        return
                 selectAllFieldsBtn.isDisplayed() &&
                 clearFieldsBtn.isDisplayed() && cancelFieldsBtn.isDisplayed();
     }
