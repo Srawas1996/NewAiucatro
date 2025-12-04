@@ -22,4 +22,8 @@ jobs:
           java-version: 17
 
       - name: Build and test
-        run: mvn clean verify -Dtestng.dtd.http=true
+        run: |
+          mvn clean verify \
+            -Dtestng.dtd.http=true \
+            -Dcucumber.plugin="pretty,html:target/reports/html,json:target/reports/cucumber.json" \
+            -Dcucumber.features=src/test/java/features/ChatInterface.feature
