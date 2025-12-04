@@ -19,6 +19,7 @@ public class SystemIntegration extends Base {
     @FindBy(xpath = "//span[text()='AutomationTestingBot']")
     WebElement ClickOnBotName;
 
+
     @FindBy(xpath = "//p[text()='Integrations']")
     WebElement ClickOnIntegrations;
 
@@ -137,6 +138,8 @@ public class SystemIntegration extends Base {
     public void ClickOnBotName() {
         ClickOnBotName.click();
     }
+
+
 
     public void ClickOnIntegrations() {
         ClickOnIntegrations.click();

@@ -1,5 +1,6 @@
 package Steps;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.base.Base;
@@ -114,5 +115,58 @@ public class ChatInterfaceSteps extends Base {
         }
         return false;
     }
+
+
+    @When("the user navigates to the Bot section and selects a Bot Canvas")
+    public void theUserNavigatesToTheBotSectionAndSelectsABotCanvas() {
+        chatInterface.ClickOnBotNameCanvas();
+    }
+
+    @When("the user Navigate to the chat Interface Canvas")
+    public void theUserNavigateToTheChatInterfaceCanvas() {
+        chatInterface.clickOnChatInterface();
+    }
+
+    @Then("The user ask any question Canvas")
+    public void theUserAskAnyQuestionCanvas() throws InterruptedException {
+        String excelPath = "src/main/files/ChatTest.xlsx";
+
+        Object[][] data = ExcelReader.readExcel(excelPath,"Canvas");
+        assert data != null;
+        for(Object[] row : data) {
+            String question = row[0].toString();
+            String key1 = row[1].toString();
+            String key2 = row[2].toString();
+            String key3 = row[3].toString();
+            chatInterface.sendMessageToTheBot(question);
+            chatInterface.sendMessage();
+            Thread.sleep(7000);
+            String messageResponse = chatInterface.responseBackFromTheBot().trim();
+            if (messageResponse.contains("sorry")){
+                System.out.println(question + " has some issue with the answering");
+                System.out.println("Something went wrong");
+
+            }
+            String cleanResponse = normalizeArabic(messageResponse);
+            String k1 = normalizeArabic(key1);
+            String k2 = normalizeArabic(key2);
+            String k3 = normalizeArabic(key3);
+
+            boolean match = arabicKeywordMatch(cleanResponse, k1, k2, k3);
+
+            if (!match) {
+                System.out.println("---- MATCH FAILED ----");
+                System.out.println("Question: " + question);
+                System.out.println("Original Response: " + messageResponse);
+                System.out.println("Normalized Response: " + cleanResponse);
+                System.out.println("Expected Keys: " + k1 + " | " + k2 + " | " + k3);
+            }
+
+            Assert.assertTrue("Bot response does NOT contain expected keywords for question: " + question + " " +
+                    messageResponse,match);
+            System.out.println("Response Are return as expected \n\tQuestion Ask: " + question);
+        }
+    }
+
 
 }

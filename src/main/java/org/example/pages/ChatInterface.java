@@ -17,6 +17,8 @@ public class ChatInterface extends Base {
     @FindBy(xpath = "//p[text()='Chat Interface']")
     WebElement chatInterFaceBtn;
 
+    @FindBy(xpath = "//span[text()='Canvas Chatbot']")
+    WebElement ClickOnBotNameCanvas;
 /*
     @FindBy(xpath = "//span[text()='New Chat']")
     WebElement newChatBtn;
@@ -26,7 +28,6 @@ public class ChatInterface extends Base {
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/*[name()='svg'][1]")
     WebElement sendMessageBtn;
-
 
     @FindBy(xpath = "(//div[contains(@class,'BotResponse_res-container__MOeVG')])[last()]")
     WebElement botResponse;
@@ -47,10 +48,13 @@ public class ChatInterface extends Base {
         userMessage.sendKeys(messageRequest);
     }
 
+    public void ClickOnBotNameCanvas() {
+        ClickOnBotNameCanvas.click();
+    }
+
     public void sendMessage() throws InterruptedException {
         userMessage.click();
         actions.keyDown(Keys.CONTROL).sendKeys(Keys.ENTER).keyUp(Keys.CONTROL).build().perform();
-
     }
 
     public String responseBackFromTheBot() throws InterruptedException {
