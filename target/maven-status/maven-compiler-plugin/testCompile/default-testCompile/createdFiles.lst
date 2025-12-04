@@ -1,0 +1,7 @@
+Steps\SystemIntegrationsteps.class
+Steps\Hocks.class
+Steps\knowledgeBaseSteps.class
+runners\RunCucumberTest.class
+Steps\ChatInterfaceSteps.class
+Steps\LoginSteps.class
+Steps\APIIntegrationSteps.class
