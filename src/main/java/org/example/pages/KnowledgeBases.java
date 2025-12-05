@@ -102,7 +102,7 @@ public class KnowledgeBases extends Base {
     }
 
     public void clickOnUploadTheFile(){
-        File uploadFile = new File("C:\\Users\\SalimAlRawas\\Downloads\\AI chatbot - Sample Questions 1.docx");
+        File uploadFile = new File("src/main/files/AI chatbot - Sample Questions 1.docx");
         String absolutePath = uploadFile.getAbsolutePath();
         uploadTheFile.sendKeys(absolutePath);
     }

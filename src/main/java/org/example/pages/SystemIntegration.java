@@ -13,7 +13,7 @@ import java.util.List;
 
 public class SystemIntegration extends Base {
 
-    @FindBy(xpath = "//span[text()='Choose a bot']")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/nav[1]/div[1]/div[3]/div[1]")
     WebElement ClickOnBotList;
 
     @FindBy(xpath = "//span[text()='AutomationTestingBot']")
