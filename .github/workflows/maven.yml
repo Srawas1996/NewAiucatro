@@ -1,4 +1,4 @@
-name: Build and Run Cucumber + Scheduler (Windows)
+name: Build and Run Cucumber + Scheduler
 
 on:
   push:
@@ -31,16 +31,6 @@ jobs:
 
     - name: Build project
       run: mvn clean package --batch-mode
-
-    - name: Detect installed Chrome version
-      shell: pwsh
-      run: |
-        $chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-        $chromeVersion = (& "$chromePath" --version) -replace 'Google Chrome ', ''
-        $chromeMajor = $chromeVersion.Split('.')[0]
-        Write-Host "Detected Chrome major version: $chromeMajor"
-        # Check if ChromeDriver is available
-        & chromedriver --version
 
     - name: Run Cucumber tests
       run: mvn test
