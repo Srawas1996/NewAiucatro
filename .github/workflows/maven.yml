@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-run:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout repo
@@ -24,7 +24,7 @@ jobs:
     - name: Cache Maven packages
       uses: actions/cache@v3
       with:
-        path: ~/.m2
+        path: C:\Users\runneradmin\.m2
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
@@ -32,29 +32,28 @@ jobs:
     - name: Build project
       run: mvn clean package --batch-mode
 
-    - name: Detect Chrome and install ChromeDriver
+    - name: Install ChromeDriver for Windows
       run: |
-        # Detect pre-installed Chrome version
-        CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d. -f1)
-        echo "Detected Chrome major version: $CHROME_VERSION"
+        # Detect installed Chrome version
+        $chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+        $chromeVersion = (& "$chromePath" --version) -replace 'Google Chrome ', ''
+        $chromeMajor = $chromeVersion.Split('.')[0]
+        Write-Host "Detected Chrome major version: $chromeMajor"
 
         # Get ChromeDriver for this version
-        DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION" || true)
+        $driverVersion = Invoke-RestMethod -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$chromeMajor" -ErrorAction SilentlyContinue
+        if (-not $driverVersion) {
+          Write-Host "Matching ChromeDriver not found, using latest stable"
+          $driverVersion = Invoke-RestMethod -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"
+        }
+        Write-Host "Using ChromeDriver version: $driverVersion"
 
-        # Fallback to latest stable ChromeDriver if not found
-        if [ -z "$DRIVER_VERSION" ]; then
-          echo "Matching ChromeDriver not found, using latest stable"
-          DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-        fi
-
-        echo "Using ChromeDriver version: $DRIVER_VERSION"
-
-        # Download and install ChromeDriver
-        wget -N "https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip" -P ~/
-        unzip -o ~/chromedriver_linux64.zip -d ~/
-        sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
-        sudo chmod +x /usr/local/bin/chromedriver
-        chromedriver --version
+        # Download and extract ChromeDriver
+        $zipPath = "$env:TEMP\chromedriver_win32.zip"
+        Invoke-WebRequest "https://chromedriver.storage.googleapis.com/$driverVersion/chromedriver_win32.zip" -OutFile $zipPath
+        Expand-Archive -Path $zipPath -DestinationPath "$env:TEMP" -Force
+        Move-Item -Path "$env:TEMP\chromedriver.exe" -Destination "C:\Windows\System32\chromedriver.exe" -Force
+        & chromedriver --version
 
     - name: Run Cucumber tests
       run: mvn test
