@@ -1,4 +1,4 @@
-name: Build and Run Cucumber + Scheduler
+name: Build and Run Cucumber + Scheduler (Windows)
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
     - name: Cache Maven packages
       uses: actions/cache@v3
       with:
-        path: C:\Users\runneradmin\.m2
+        path: ~/.m2
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
@@ -32,27 +32,14 @@ jobs:
     - name: Build project
       run: mvn clean package --batch-mode
 
-    - name: Install ChromeDriver for Windows
+    - name: Detect installed Chrome version
+      shell: pwsh
       run: |
-        # Detect installed Chrome version
         $chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
         $chromeVersion = (& "$chromePath" --version) -replace 'Google Chrome ', ''
         $chromeMajor = $chromeVersion.Split('.')[0]
         Write-Host "Detected Chrome major version: $chromeMajor"
-
-        # Get ChromeDriver for this version
-        $driverVersion = Invoke-RestMethod -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$chromeMajor" -ErrorAction SilentlyContinue
-        if (-not $driverVersion) {
-          Write-Host "Matching ChromeDriver not found, using latest stable"
-          $driverVersion = Invoke-RestMethod -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"
-        }
-        Write-Host "Using ChromeDriver version: $driverVersion"
-
-        # Download and extract ChromeDriver
-        $zipPath = "$env:TEMP\chromedriver_win32.zip"
-        Invoke-WebRequest "https://chromedriver.storage.googleapis.com/$driverVersion/chromedriver_win32.zip" -OutFile $zipPath
-        Expand-Archive -Path $zipPath -DestinationPath "$env:TEMP" -Force
-        Move-Item -Path "$env:TEMP\chromedriver.exe" -Destination "C:\Windows\System32\chromedriver.exe" -Force
+        # Check if ChromeDriver is available
         & chromedriver --version
 
     - name: Run Cucumber tests
