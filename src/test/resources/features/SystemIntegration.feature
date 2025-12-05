@@ -7,6 +7,13 @@ Feature: System Integration
     And the user navigates to the Bot section and selects a Bot
     And the user clicks on Integration and then System
 
+  Scenario: Edit system connection
+    And the user clicks on Edit System Connection
+    When the user modifies one or more field values
+    And the user edit selects the Semester from the dropdown
+    Then a confirmation or validation popup message should appear
+    And the user should see the edited created connection listed in the System Connections table
+
   Scenario: Delete System Connection
     Then Click on the Delete Button
     And Click Confirm
@@ -31,12 +38,7 @@ Feature: System Integration
   Scenario: Search system with exist connections by keywords
     Then the user search for exist Connection
 
-  Scenario: Edit system connection
-    And the user clicks on Edit System Connection
-    When the user modifies one or more field values
-    And the user edit selects the Semester from the dropdown
-    Then a confirmation or validation popup message should appear
-    And the user should see the edited created connection listed in the System Connections table
+
 
   Scenario: Check the Duplicate Validation error message
     And the user clicks on Add New Connection Duplicate
