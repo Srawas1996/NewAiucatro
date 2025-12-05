@@ -121,12 +121,12 @@
         <testResources>
             <testResource>
                 <!-- This is the standard location for test resources, which Maven is currently looking for -->
-                <directory>src/test/resources</directory>
+                <directory>src/test/resources/features</directory>
                 <filtering>true</filtering>
             </testResource>
             <testResource>
                 <!-- This is the location where your feature files are actually stored -->
-                <directory>src/test/java/features</directory>
+                <directory>src/test/resources/features</directory>
                 <includes>
                     <include>**/*.feature</include>
                 </includes>

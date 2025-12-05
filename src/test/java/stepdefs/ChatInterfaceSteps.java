@@ -1,6 +1,5 @@
-package Steps;
+package stepdefs;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.base.Base;
@@ -8,7 +7,7 @@ import org.example.base.ExcelReader;
 import org.example.pages.ChatInterface;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
-import okhttp3.*;
+
 import java.text.Normalizer;
 
 
