@@ -1,4 +1,4 @@
-name: Build and Test Cucumber
+name: Java Maven Cucumber Tests
 
 on:
   push:
@@ -13,58 +13,55 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Set up Java 17
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           distribution: temurin
           java-version: 17
 
-      # 3️⃣ Install dependencies
-      - name: Install dependencies
+      # -----------------------------
+      # Install Google Chrome stable
+      # -----------------------------
+      - name: Install stable Google Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget unzip curl
+          sudo apt-get install -y wget unzip
+          wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_118.0.5993.90-1_amd64.deb
+          sudo apt install -y ./google-chrome-stable_118.0.5993.90-1_amd64.deb
 
-      # 4️⃣ Install Google Chrome
-      - name: Install Google Chrome
+      # -----------------------------
+      # Install matching ChromeDriver
+      # -----------------------------
+      - name: Install matching ChromeDriver
         run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install -y ./google-chrome-stable_current_amd64.deb
-
-      # 5️⃣ Install ChromeDriver matching Chrome
-      - name: Install ChromeDriver
-        run: |
-          # Get full Chrome version
-          FULL_VERSION=$(google-chrome --version | awk '{print $3}')
-          # Extract major version (first number before dot)
-          CHROME_MAJOR=$(echo $FULL_VERSION | cut -d '.' -f1)
-          echo "Detected Chrome major version: $CHROME_MAJOR"
-
-          # Get matching ChromeDriver version
-          CHROMEDRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_MAJOR")
-          echo "Installing ChromeDriver version $CHROMEDRIVER_VERSION"
-
-          # Download and install ChromeDriver
+          CHROMEDRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_118")
           wget -N "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -P ~/
           unzip -o ~/chromedriver_linux64.zip -d ~/
           sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
           sudo chmod +x /usr/local/bin/chromedriver
-
-          # Verify installation
           chromedriver --version
+          google-chrome --version
 
-      # 6️⃣ Build project and run tests
-      - name: Build and run Maven tests
-        run: mvn clean test
+      # -----------------------------
+      # Build Maven project
+      # -----------------------------
+      - name: Build project
+        run: mvn -B clean compile
 
-      # 7️⃣ Upload Cucumber HTML report
-      - name: Upload Cucumber HTML Report
+      # -----------------------------
+      # Run Cucumber tests
+      # -----------------------------
+      - name: Run tests
+        run: mvn -B test
+
+      # -----------------------------
+      # Upload test reports
+      # -----------------------------
+      - name: Upload test reports
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-html-report
-          path: target/cucumber-html-reports/overview-features.html
+          path: target/cucumber-html-reports/
