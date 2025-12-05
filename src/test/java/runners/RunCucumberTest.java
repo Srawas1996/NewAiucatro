@@ -29,7 +29,7 @@ import static io.cucumber.junit.platform.engine.Constants.FILTER_TAGS_PROPERTY_N
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "stepdefs")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, summary, html:target/cucumber-html-report")
-@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@smoke")
+//@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@smoke")
 //@io.cucumber.junit.platform.engine.Cucumber
 public class RunCucumberTest {
 
