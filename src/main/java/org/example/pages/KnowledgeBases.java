@@ -41,7 +41,7 @@ public class KnowledgeBases extends Base {
     @FindBy(xpath = "//span[normalize-space()='Save']")
     WebElement saveFolderName;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/span[1]/div[1]")
+    @FindBy(xpath = "//tbody/tr/td[1]/div[1]")
     WebElement docFolderName;
 
     //Data Source
