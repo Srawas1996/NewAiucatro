@@ -32,21 +32,24 @@ jobs:
     - name: Build project
       run: mvn clean package --batch-mode
 
-    - name: Install Google Chrome
+    - name: Detect Chrome and install ChromeDriver
       run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip gnupg
-        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-
-    - name: Install ChromeDriver
-      run: |
+        # Detect pre-installed Chrome version
         CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d. -f1)
         echo "Detected Chrome major version: $CHROME_VERSION"
-        DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-        echo "Detected ChromeDriver version: $DRIVER_VERSION"
+
+        # Get ChromeDriver for this version
+        DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION" || true)
+
+        # Fallback to latest stable ChromeDriver if not found
+        if [ -z "$DRIVER_VERSION" ]; then
+          echo "Matching ChromeDriver not found, using latest stable"
+          DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+        fi
+
+        echo "Using ChromeDriver version: $DRIVER_VERSION"
+
+        # Download and install ChromeDriver
         wget -N "https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip" -P ~/
         unzip -o ~/chromedriver_linux64.zip -d ~/
         sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
