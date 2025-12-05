@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/features", glue = "Steps"
+@CucumberOptions(features = "src/test/java/resources/features", glue = "Steps"
         ,plugin = {"pretty","html:target/reports/report.html"}
 //        ,dryRun = true
        )
