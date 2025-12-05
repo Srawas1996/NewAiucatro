@@ -22,6 +22,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>7.14.0</version>
@@ -41,16 +46,6 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>6.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>jakarta.mail</artifactId>
-            <version>2.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.7</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -93,45 +88,17 @@
 
     <build>
         <plugins>
-            <!-- 1. Your existing exec-maven-plugin -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <mainClass>scheduler.MidnightCucumberScheduler</mainClass>
-                </configuration>
-            </plugin>
-
-            <!-- 2. NEW: maven-surefire-plugin to run your Cucumber Runner -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
                     <includes>
-                        <!-- This tells Surefire to only run your specific Cucumber Runner class -->
-                        <include>runners.RunCucumberTest</include>
+                        <include>**/RunCucumberTest.java</include>
                     </includes>
                 </configuration>
             </plugin>
         </plugins>
-
-        <!-- 3. Your existing and corrected testResources section -->
-        <testResources>
-            <testResource>
-                <!-- This is the standard location for test resources, which Maven is currently looking for -->
-                <directory>src/test/resources/features</directory>
-                <filtering>true</filtering>
-            </testResource>
-            <testResource>
-                <!-- This is the location where your feature files are actually stored -->
-                <directory>src/test/resources/features</directory>
-                <includes>
-                    <include>**/*.feature</include>
-                </includes>
-            </testResource>
-        </testResources>
     </build>
 
 

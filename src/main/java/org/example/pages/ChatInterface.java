@@ -29,7 +29,7 @@ public class ChatInterface extends Base {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/*[name()='svg'][1]")
     WebElement sendMessageBtn;
 
-    @FindBy(xpath = "(//div[contains(@class,'BotResponse_res-container__MOeVG')])[last()]")
+    @FindBy(xpath = "(//div[contains(@class,'TypingMessage_text-message__QO0zP')])[last()]")
     WebElement botResponse;
 
     @FindBy(xpath = "(//span[@dir='ltr'][normalize-space()='Today · 11:15 AM'])[last()]")
