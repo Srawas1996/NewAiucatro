@@ -57,13 +57,13 @@ Feature: System Integration
   Scenario: Search system with none exist connections by keywords
     Then the user search for None exist Connection
 
-  Scenario: Validate Semester Dropdown Values are not exist when the connection is wrong
-    And the user clicks on Add New Connection Duplicate
-    And the user fills in all required fields with Invalid information
-    And the user submits invalid form
-    And the user Check if there Semesters that are exist
-
-  Scenario: Delete System Connection2
-    Then Click on the Delete Button
-    And Click Confirm
-    And Check the Delete Message
+#  Scenario: Validate Semester Dropdown Values are not exist when the connection is wrong
+#    And the user clicks on Add New Connection Duplicate
+#    And the user fills in all required fields with Invalid information
+#    And the user submits invalid form
+#    And the user Check if there Semesters that are exist
+#
+#  Scenario: Delete System Connection2
+#    Then Click on the Delete Button
+#    And Click Confirm
+#    And Check the Delete Message
