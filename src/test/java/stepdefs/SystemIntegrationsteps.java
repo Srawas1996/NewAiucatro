@@ -151,7 +151,7 @@ public class SystemIntegrationsteps extends Base {
     public void theUserShouldSeeTheEditedCreatedConnectionListedInTheSystemConnectionsTable() {
         systemIntegration = new SystemIntegration();
         String ExpectedData = properties.getProperty("ConnectionName")+"New";
-        String ActualData = systemIntegration.CheckTheConnectionName();
+        String ActualData = systemIntegration.CheckTheConnectionNameNew();
         Assert.assertEquals("Wrong Connection Name" , ExpectedData, ActualData);
     }
 

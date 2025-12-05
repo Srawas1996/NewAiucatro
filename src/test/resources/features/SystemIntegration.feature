@@ -63,3 +63,7 @@ Feature: System Integration
     And the user submits invalid form
     And the user Check if there Semesters that are exist
 
+  Scenario: Delete System Connection2
+    Then Click on the Delete Button
+    And Click Confirm
+    And Check the Delete Message

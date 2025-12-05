@@ -224,6 +224,13 @@ public class SystemIntegration extends Base {
         return ConnectionNameOnCard.getText();
     }
 
+    public String CheckTheConnectionNameNew(){
+        driver.navigate().refresh();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(ConnectionNameOnCardNew));
+        return ConnectionNameOnCardNew.getText();
+    }
+
     public void EditTheConnection(){
         EditIcon.click();
     }
