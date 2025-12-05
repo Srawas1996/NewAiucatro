@@ -30,10 +30,10 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
-      - name: Install ChromeDriver
-        uses: nanasess/setup-chromedriver@v1
+      - name: Setup ChromeDriver
+        uses: actions/setup-chromedriver@v3
         with:
-          chromedriver-version: 'LATEST'
+          chrome-version: latest
 
       - name: Build and run tests
         run: mvn clean test
