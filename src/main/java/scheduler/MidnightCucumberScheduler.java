@@ -33,21 +33,21 @@ public class MidnightCucumberScheduler {
     private static final String PASSWORD = "iofc hqdo tntq orbl"; // CHANGE THIS (Use App Password for Gmail/Outlook)
     private static final String SMTP_HOST = "smtp.gmail.com"; // CHANGE THIS (e.g., "smtp.office365.com" for Outlook)
     private static final String SMTP_PORT = "587"; // CHANGE THIS (usually 587 or 465)
-    private static final String REPORT_PATH = "target/reports/report.html"; // VERIFY THIS PATH
+    private static final String REPORT_PATH = "target/cucumber-html-report/overview-features.html"; // VERIFY THIS PATH
 
     public static void main(String[] args) {
         System.out.println("Scheduler started. Waiting for midnight...");
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
 //         Use the actual midnight delay logic for production
-        long initialDelay = getDelayUntilMidnight();
-        long period = TimeUnit.DAYS.toSeconds(1);
+//        long initialDelay = getDelayUntilMidnight();
+//        long period = TimeUnit.DAYS.toSeconds(1);
 
-//        // For testing, you can use the commented-out short delay:
-//         long initialDelay = 5;  // 5 seconds
+        // For testing, you can use the commented-out short delay:
+         long initialDelay = 5;  // 5 seconds
 //         long period = 10;
 
-        scheduler.scheduleAtFixedRate(() -> {
+        scheduler.schedule(() -> {
             try {
                 System.out.println("==== Midnight cucumber test started ====");
 
@@ -68,7 +68,7 @@ public class MidnightCucumberScheduler {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }, initialDelay, period, TimeUnit.SECONDS);
+        }, initialDelay, TimeUnit.SECONDS);
     }
 
     private static long getDelayUntilMidnight() {

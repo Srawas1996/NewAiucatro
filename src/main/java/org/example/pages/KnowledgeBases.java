@@ -120,12 +120,14 @@ public class KnowledgeBases extends Base {
 
     public void saveTheChanges() throws InterruptedException {
         selectTheFolderLocation.click();
-        Thread.sleep(3000);
+        Thread.sleep(7000);
         saveFolderName.click();
         validationMessage.isDisplayed();
     }
 
     public void ValidationMessageAppear(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
         validationMessage.isDisplayed();
     }
 

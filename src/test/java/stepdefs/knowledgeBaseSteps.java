@@ -86,14 +86,13 @@ public class knowledgeBaseSteps extends Base {
     @When("the user click save")
     public void theUserClickSave() throws InterruptedException {
         knowledgeBases= new KnowledgeBases();
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         knowledgeBases.saveTheChanges();
     }
 
     @Then("the user should check if the folder is uploaded")
     public void theUserShouldCheckIfTheFolderIsUploaded() throws InterruptedException {
         knowledgeBases= new KnowledgeBases();
-        Thread.sleep(10000);
         knowledgeBases.ValidationMessageAppear();
     }
 
