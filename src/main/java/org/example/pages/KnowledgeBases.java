@@ -87,7 +87,8 @@ public class KnowledgeBases extends Base {
         folderNameField.sendKeys(folderTitleName);
         Thread.sleep(1000);
         saveFolderName.click();
-        Thread.sleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
         validationMessage.isDisplayed();
     }
 
@@ -122,6 +123,8 @@ public class KnowledgeBases extends Base {
         selectTheFolderLocation.click();
         Thread.sleep(7000);
         saveFolderName.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.visibilityOf(validationMessage));
         validationMessage.isDisplayed();
     }
 
