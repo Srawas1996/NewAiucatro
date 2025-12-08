@@ -39,13 +39,13 @@ public class MidnightCucumberScheduler {
         System.out.println("Scheduler started. Waiting for midnight...");
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
-        // Use the actual midnight delay logic for production
-//        long initialDelay = getDelayUntilMidnight();
-//        long period = TimeUnit.DAYS.toSeconds(1);
+//         Use the actual midnight delay logic for production
+        long initialDelay = getDelayUntilMidnight();
+        long period = TimeUnit.DAYS.toSeconds(1);
 
-        // For testing, you can use the commented-out short delay:
-         long initialDelay = 5;  // 5 seconds
-         long period = 10;
+//        // For testing, you can use the commented-out short delay:
+//         long initialDelay = 5;  // 5 seconds
+//         long period = 10;
 
         scheduler.scheduleAtFixedRate(() -> {
             try {

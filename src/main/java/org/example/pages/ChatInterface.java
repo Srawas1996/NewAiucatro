@@ -58,7 +58,7 @@ public class ChatInterface extends Base {
     }
 
     public String responseBackFromTheBot() throws InterruptedException {
-        Thread.sleep(7000);
+        Thread.sleep(10000);
         return botResponse.getText();
     }
 

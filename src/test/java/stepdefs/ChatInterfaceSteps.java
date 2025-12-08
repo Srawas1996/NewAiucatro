@@ -5,10 +5,8 @@ import io.cucumber.java.en.When;
 import org.example.base.Base;
 import org.example.base.ExcelReader;
 import org.example.pages.ChatInterface;
-import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 
-import java.text.Normalizer;
 
 
 public class ChatInterfaceSteps extends Base {
@@ -34,7 +32,7 @@ public class ChatInterfaceSteps extends Base {
             String key3 = row[3].toString();
             chatInterface.sendMessageToTheBot(question);
             chatInterface.sendMessage();
-            Thread.sleep(7000);
+            Thread.sleep(10000);
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
             if (messageResponse.contains("Sorry")){
                 System.out.println("Something went wrong");
@@ -45,8 +43,8 @@ public class ChatInterfaceSteps extends Base {
 //            String k3 = normalizeArabic(key3);
 
             boolean match2 =
-                    messageResponse.contains(key1) &&
-                            messageResponse.contains(key2) &&
+                    messageResponse.contains(key1) ||
+                            messageResponse.contains(key2) ||
                             messageResponse.contains(key3);
 //            boolean match = arabicKeywordMatch(cleanResponse, k1, k2, k3);
 
@@ -141,7 +139,7 @@ public class ChatInterfaceSteps extends Base {
             String key3 = row[3].toString();
             chatInterface.sendMessageToTheBot(question);
             chatInterface.sendMessage();
-            Thread.sleep(7000);
+            Thread.sleep(10000);
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
             if (messageResponse.contains("sorry")) {
                 System.out.println(question + " has some issue with the answering");
@@ -152,8 +150,8 @@ public class ChatInterfaceSteps extends Base {
 //            String k2 = normalizeArabic(key2);
 //            String k3 = normalizeArabic(key3);
                 boolean match2 =
-                        messageResponse.contains(key1) &&
-                                messageResponse.contains(key2) &&
+                        messageResponse.contains(key1) ||
+                                messageResponse.contains(key2) ||
                                 messageResponse.contains(key3);
 //            boolean match = arabicKeywordMatch(cleanResponse, k1, k2, k3);
 

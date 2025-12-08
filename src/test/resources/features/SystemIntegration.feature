@@ -7,6 +7,7 @@ Feature: System Integration
     And the user navigates to the Bot section and selects a Bot
     And the user clicks on Integration and then System
 
+
   Scenario: Edit system connection
     And the user clicks on Edit System Connection
     When the user modifies one or more field values
