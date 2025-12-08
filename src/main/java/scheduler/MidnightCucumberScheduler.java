@@ -16,7 +16,7 @@ public class MidnightCucumberScheduler {
 
     // --- Email Configuration ---
     private static final String TO_EMAIL = "salim96tr@gmail.com,Mohamad.alzein@cts.ae,edward.layoun@cts.ae,lama.ghusn@cts.ae,louana.ibrahim@cts.ae";
-    private static final String FROM_EMAIL = "salim.alrawas@cts.ae";
+    private static final String FROM_EMAIL = "salim96tr@gmail.com";
     private static final String PASSWORD = "dghkbhsbtslmhvns"; // App Password for Gmail
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final String SMTP_PORT = "587";
