@@ -38,7 +38,6 @@ public class ChatInterfaceSteps extends Base {
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
             if (messageResponse.contains("Sorry")){
                 System.out.println("Something went wrong");
-                break;
             }
             //String cleanResponse = normalizeArabic(messageResponse);
 //            String k1 = normalizeArabic(key1);
@@ -147,7 +146,6 @@ public class ChatInterfaceSteps extends Base {
             if (messageResponse.contains("sorry")) {
                 System.out.println(question + " has some issue with the answering");
                 System.out.println("Something went wrong");
-
 //            }
 //            String cleanResponse = normalizeArabic(messageResponse);
 //            String k1 = normalizeArabic(key1);
