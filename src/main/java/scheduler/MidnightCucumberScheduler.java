@@ -16,7 +16,7 @@ public class MidnightCucumberScheduler {
 
     // --- Email Configuration ---
     private static final String TO_EMAIL = "salim96tr@gmail.com,Mohamad.alzein@cts.ae,edward.layoun@cts.ae,lama.ghusn@cts.ae,louana.ibrahim@cts.ae";
-    private static final String FROM_EMAIL = "Salim96tr@gmail.com";
+    private static final String FROM_EMAIL = "salim.alrawas@cts.ae";
     private static final String PASSWORD = "dghkbhsbtslmhvns"; // App Password for Gmail
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final String SMTP_PORT = "587";
@@ -27,8 +27,8 @@ public class MidnightCucumberScheduler {
 
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
-//        long initialDelay = getDelayUntilMidnight();
-        long initialDelay = 10;
+        long initialDelay = getDelayUntilMidnight();
+//        long initialDelay = 10;
         System.out.println("Initial delay until midnight: " + initialDelay + " seconds");
 
         scheduler.schedule(() -> {
@@ -94,12 +94,7 @@ public class MidnightCucumberScheduler {
 
             // Body part
             MimeBodyPart textPart = new MimeBodyPart();
-            textPart.setText("Dear All\n\n");
-            textPart.setText("Hope this email finds you all well\n");
-            textPart.setText("Please find attached the automation test report for the midnight run.");
-            textPart.setText("Regards\n");
-            textPart.setText("Salim AlRawas");
-            textPart.setText("+962780033568");
+            textPart.setText("Hello,\n\nPlease find attached the automation test report for the midnight run.\n\nBest regards,\nQA Automation Team");
 
             // Attachment
             MimeBodyPart attachmentPart = new MimeBodyPart();
