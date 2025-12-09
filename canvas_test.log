@@ -1,0 +1,781 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Program%20Files/apache-maven-3.9.11-bin/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< org.example:untitled3 >------------------------
+[INFO] Building untitled3 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ untitled3 ---
+[INFO] skip non existing resourceDirectory C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ untitled3 ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ untitled3 ---
+[INFO] Copying 6 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ untitled3 ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 7 source files with javac [debug target 17] to target\test-classes
+[WARNING] location of system modules is not set in conjunction with -source 17
+  not setting the location of system modules may lead to class files that cannot run on JDK 17
+    --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ untitled3 ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+Dec 09, 2025 9:39:48 AM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors.
+See: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+Scenario: User opens an API connection successfully           # src/test/resources/features/ApiInegration.feature:12
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:39:50 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  When the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
+  (Session info: chrome=143.0.7499.41)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [81115ba44f9dd7c00a77f9715c1e7494, findElement {value=//span[text()='AutomationTest123'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57453}, goog:processID: 73300, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57453/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81115ba44f9dd7c00a77f9715c1e7494
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
+	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
+	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:13)
+
+  Then the connection name should be displayed                # stepdefs.APIIntegrationSteps.theUserCheckTheConnectionName()
+  And all action buttons should be enabled                    # stepdefs.APIIntegrationSteps.theButtonsShouldBeEnable()
+
+Scenario: The User is able to Clear the APis                  # src/test/resources/features/ApiInegration.feature:17
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:40:05 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then The user Click on Clear On the Api Page                # stepdefs.APIIntegrationSteps.theUserClickOnClear()
+  And The user checks if it the api is UnChecked              # stepdefs.APIIntegrationSteps.theUserChecksIfItTheApiIsUnChecked()
+      org.junit.ComparisonFailure: ? Worng Validation Message expected:<S[uccess]> but was:<S[aved Successfully]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at stepdefs.APIIntegrationSteps.theUserChecksIfItTheApiIsUnChecked(APIIntegrationSteps.java:41)
+	at ?.The user checks if it the api is UnChecked(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:20)
+
+
+Scenario: The User is able to select all the APis             # src/test/resources/features/ApiInegration.feature:22
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:40:19 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then The user Click on Select All                           # stepdefs.APIIntegrationSteps.theUserClickOnSelectAll()
+  And The user checks if it the api is checked                # stepdefs.APIIntegrationSteps.theUserChecksIfItTheApiIsChecked()
+
+Scenario: Search for exist API                                # src/test/resources/features/ApiInegration.feature:27
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:40:25 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then The user search for exist api connection               # stepdefs.APIIntegrationSteps.theUserSearchForExistApiConnection()
+
+Scenario: The user should be able to Test the connection      # src/test/resources/features/ApiInegration.feature:31
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:40:31 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  And The user Check if the APi is in a untested status       # stepdefs.APIIntegrationSteps.theUserCheckIfTheAPiIsInAUntestedStatus()
+  Then The user Click on The Test Connection                  # stepdefs.APIIntegrationSteps.theUserClickOnTheTestConnection()
+  Then the user Check if the api is in a healty status        # stepdefs.APIIntegrationSteps.theUserCheckIfTheApiIsInAHealtyStatus()
+
+Scenario: Open the Api Fields                                 # src/test/resources/features/ApiInegration.feature:37
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:40:38 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  And The open the Api Field                                  # stepdefs.APIIntegrationSteps.theOpenTheApiField()
+  Then The user checks if all the fields are checked          # stepdefs.APIIntegrationSteps.theUserChecksIfAllTheFieldsAreChecked()
+
+Scenario: Change the Frequent To daily for one of the api     # src/test/resources/features/ApiInegration.feature:42
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:40:43 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then The User Change to the Daily Frequent                  # stepdefs.APIIntegrationSteps.theUserChangeToTheDailyFrequent()
+
+Scenario: Click on Force Sync for one of the API                # src/test/resources/features/ApiInegration.feature:46
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:40:50 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                    # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot   # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System            # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                    # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then the User is Click on Force Sync and check the Validation # stepdefs.APIIntegrationSteps.theUserIsClickOnForceSync()
+  Then the user check if the Data Table is appear               # stepdefs.APIIntegrationSteps.theUserCheckIfTheDataTableIsAppear()
+
+Scenario: switch to APi Logs                                  # src/test/resources/features/ApiInegration.feature:51
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:41:03 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then the User Move To API Logs                              # stepdefs.APIIntegrationSteps.theUserMoveToAPILogs()
+
+Scenario: Check the buttons are enable                        # src/test/resources/features/ApiInegration.feature:55
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:41:08 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then the User Move To API Logs                              # stepdefs.APIIntegrationSteps.theUserMoveToAPILogs()
+  Then The User Checks if Refresh Token is enable             # stepdefs.APIIntegrationSteps.theUserChecksIfRefreshTokenIsEnable()
+
+Scenario: Make sure that the the field are saved              # src/test/resources/features/ApiInegration.feature:60
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:41:14 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  And the user click on the Connection Card                   # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  And The open the Api Field                                  # stepdefs.APIIntegrationSteps.theOpenTheApiField()
+  And the user unchecks any field                             # stepdefs.APIIntegrationSteps.theUserUnchecksAnyField()
+  And the user saves the changes                              # stepdefs.APIIntegrationSteps.theUserSavesTheChanges()
+  When the user opens the same API again                      # stepdefs.APIIntegrationSteps.theUserOpensTheSameAPIAgain()
+  Then the field should still be unchecked                    # stepdefs.APIIntegrationSteps.theFieldShouldStillBeUnchecked()
+
+Scenario: Make Sure That the SelectAll And Clear are work Correctly  # src/test/resources/features/ApiInegration.feature:68
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:41:21 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                         # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot        # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System                 # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  And the user click on the Connection Card                          # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  And The open the Api Field                                         # stepdefs.APIIntegrationSteps.theOpenTheApiField()
+  When The User Click on Clear                                       # stepdefs.APIIntegrationSteps.theUserClickOnClearInsideFields()
+  Then the field should still be unchecked                           # stepdefs.APIIntegrationSteps.theFieldShouldStillBeUnchecked()
+  When The user Click on Select All Inside Fields                    # stepdefs.APIIntegrationSteps.theUserClickOnSelectAllInsideFields()
+  Then The User Should Check all fields                              # stepdefs.APIIntegrationSteps.theUserShouldCheckAllFields()
+  When The User Click Cancel and reopen the changes should not saved # stepdefs.APIIntegrationSteps.theUserClickCancelAndReopenTheChangesShouldNotSaved()
+  When the user opens the same API again                             # stepdefs.APIIntegrationSteps.theUserOpensTheSameAPIAgain()
+  Then the field should still be unchecked                           # stepdefs.APIIntegrationSteps.theFieldShouldStillBeUnchecked()
+
+Scenario: Make sure that the button is disable when the Connection is disconnect # src/test/resources/features/ApiInegration.feature:79
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:41:27 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                                     # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot                    # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System                             # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then The user Switch the system to Disconnect System                           # stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToDisconnectSystem()
+  Then the user click on the Connection Card                                     # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
+  Then The user check if the buttons are disable                                 # stepdefs.APIIntegrationSteps.theUserCheckIfTheButtonsAreDisable()
+
+Scenario: Check the response back from the bot (Bau)          # src/test/resources/features/ChatInterface.feature:4
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:41:33 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  When the user Navigate to the chat Interface                # stepdefs.ChatInterfaceSteps.theUserNavigateToTheChatInterface()
+2025-12-09T06:41:37.491842200Z main ERROR Log4j API could not find a logging provider.
+Response returned as expected 
+	Question Ask: How to apply to the university
+Response returned as expected 
+	Question Ask: How does BAU  calculate the financial aid percentage?
+Response returned as expected 
+	Question Ask: Are there exchange programs?
+---- MATCH FAILED ----
+Question: Do you offer master’s in cybersecurity?
+Original Response: I'm sorry, I don't have the information on that right now. Could I assist you with something else?
+Expected Keys: does not offer a master's program in cybersecurity | cybersecurity | not offer
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Do_you_offer_master_s_in_cybersecurity__2025-12-09_09-43-19.png
+Response returned as expected 
+	Question Ask: What is the body of accreditation for engineering programs?
+---- MATCH FAILED ----
+Question: What are the scholarships available in BAU?
+Original Response: Beirut Arab University (BAU) offers several scholarships and financial aid options for students. Here are the details:
+Undergraduate Scholarships:
+Baccalaureate Average:
+10.00 - 11.99: 15% scholarship
+12.00 - 12.99: 20% scholarship
+13.00 - 13.99: 25% scholarship
+14.00 - 14.49: 30% scholarship
+14.50 - 14.99: 35% scholarship
+=>15.00: 40% scholarship
+SGPA (Semester Grade Point Average):
+SGPA of 2.00 –2 .32 :15 %scholarship
+SGPA of2 .33–2 .66 :20 %scholarship
+SGPA of2 .67–3 .99 :25 %scholarship
+SGPA of3 .00–3 .32 :30 %scholarship
+SGPA of3 .33–3 .66 :35 %scholarship
+SGPA of3 .67–4 .00 :40 %scholarship
+3 Rank Of Student:
+First Rank with a minimum SGPA of3 .5 receives80 %scholarship (minimum number of students1–25)
+Second Rank with a minimum SGPA of3 .5 receives50 %scholarship (minimum number of students26–50)
+Graduate Scholarships:
+For detailed information on graduate scholarships, it is recommended to contact the Admissions Office directly.
+For more specific queries or detailed information, please contact the Admissions Office at admission@bau.edu.lb or call +9611300110 Ext2435 ,2697 ,2832 ,2614
+Expected Keys: Merit-Based Scholarships | Financial Aid | Special Scholarships
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_are_the_scholarships_available_in_BAU__2025-12-09_09-44-09.png
+Response returned as expected 
+	Question Ask: Can I take more than 18 credits in a semester if I’m graduating?
+---- MATCH FAILED ----
+Question: How do I apply as a sophomore?
+Original Response: To apply as a sophomore at Beirut Arab University (BAU), you need to follow the standard application process. Here are the steps:
+Online Application: Visit the BAU website and access the i Connect portal to start your application.
+Required Documentation: Submit all necessary documents, which may include transcripts from your previous institution, proof of identity, and any other required materials.
+Review Process: Your application will be reviewed by the BAU administration.
+For more detailed information or specific queries about transferring as a sophomore, please contact the Admissions Office at admission@bau.edu.lb or call +961 1 300110 Ext: 2435, 2697, 2832, 2614.
+Expected Keys: Visit the Admissions Office | Submit an Application | Provide Required Documents
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_apply_as_a_sophomore__2025-12-09_09-45-01.png
+Response returned as expected 
+	Question Ask: How can I apply to master's in engineering management online?
+Response returned as expected 
+	Question Ask: How can BAU help me find a job?
+---- MATCH FAILED ----
+Question: Who may use the Library?
+Original Response: The library at Beirut Arab University (BAU) is available for use by students, faculty, and staff. It offers a wide range of resources including print and digital collections, access to specialized databases, and various services such as interlibrary loans and research guidance. For more detailed information or specific queries about library usage, you may contact the library directly through their website or visit one of the BAU campuses.
+Expected Keys:  the library provides access to specialized | multidisciplinary databases as well | They offer a wide range of information resources
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Who_may_use_the_Library__2025-12-09_09-46-17.png
+Response returned as expected 
+	Question Ask: Is it based solely on income or also on assets?
+===== Test finished =====
+Total Questions: 12
+Failed Questions: 4
+  Then The user ask any question                              # stepdefs.ChatInterfaceSteps.theUserAskAnyQuestion()
+
+Scenario: Check the response back from the bot (Canvas)               # src/test/resources/features/ChatInterface.feature:11
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:46:44 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                          # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  When the user navigates to the Bot section and selects a Bot Canvas # stepdefs.ChatInterfaceSteps.theUserNavigatesToTheBotSectionAndSelectsABotCanvas()
+  When the user Navigate to the chat Interface Canvas                 # stepdefs.ChatInterfaceSteps.theUserNavigateToTheChatInterfaceCanvas()
+Response returned as expected 
+	Question Ask: How do I find my school login?
+Response returned as expected 
+	Question Ask: As a parent, how do I get an account and log in?
+Response returned as expected 
+	Question Ask: Where do I access parent resources?
+Response returned as expected 
+	Question Ask: How do I get a pairing code?
+Response returned as expected 
+	Question Ask: My pairing code is invalid. What should I do?
+Response returned as expected 
+	Question Ask: What can I do with a Free Account?
+Response returned as expected 
+	Question Ask: I need help with my Free Canvas Account. Where should I go?
+---- MATCH FAILED ----
+Question: Can I use it even though I'm not a teacher?
+Original Response: Yes, you can use a Free-for-Teacher Canvas account even if you are not a teacher. The Free-for-Teacher account provides access to many features and functionalities of Canvas LMS, allowing users to create courses, quizzes, assignments, and more. This account is available at no cost and can be used by anyone interested in leveraging the power of Canvas for educational purposes.
+For more information on how to sign up and utilize the features of a Free-for-Teacher account, please refer to the Canvas Free-for-Teacher Orientation.
+Expected Keys: Create and Manage Courses | Quizzes and Assignments | Mobile App Access
+---- MATCH FAILED ----
+Question: What are the limitations?
+Original Response: With a Free-for-Teacher Canvas account, there are several limitations to be aware of:
+Limited Support: Free accounts do not have access to the same level of support as paid accounts. Users may need to rely on community forums and self-help resources for assistance.
+Feature Restrictions: Some advanced features available in paid versions of Canvas may not be accessible in the Free-for-Teacher account. This includes certain administrative tools and integrations.
+Storage Limits: There may be restrictions on the amount of storage available for course materials and user uploads.
+User Management: The ability to manage large numbers of users or integrate with Student Information Systems (SIS) is limited compared to institutional licenses.
+Customization Options: Customization options for branding and interface adjustments are more restricted than those available in institutional accounts.
+For more detailed information on the differences between Free-for-Teacher and paid accounts, please refer to the Canvas Account Comparison resource document.
+Expected Keys: Course Creation and Management | Integration with Institutional Systems | User Roles and Permissions
+Response returned as expected 
+	Question Ask: How do I get a join code?
+---- MATCH FAILED ----
+Question: As a current customer, where should I go for help?
+Original Response: As a current customer, you can access support through several resources:
+Canvas Support: Reach out to Canvas Support for technical assistance and troubleshooting.
+Institution's IT Support Team: Contact your institution's IT support team for help with specific issues related to your institution's Canvas instance.
+Canvas Community: Utilize the Canvas Community forums and guides for self-help resources and peer support.
+For more detailed guidance, you may also refer to the Canvas Basics guides available online.
+Expected Keys: Contact Your Instructor or Institution | Create an Account | Confirm that
+Response returned as expected 
+	Question Ask: Where do I find the Canvas Help Button?
+Response returned as expected 
+	Question Ask: What do I do if I can’t access my account?
+Response returned as expected 
+	Question Ask: Where can I find free Canvas courses?
+Response returned as expected 
+	Question Ask: What is the Higher education institutions?
+Response returned as expected 
+	Question Ask: What is the K–12 schools and districts
+Response returned as expected 
+	Question Ask: Could you please tell me about the Corporation details
+---- MATCH FAILED ----
+Question: How do I check on my invoice or purchase order status?
+Original Response: To check on your invoice or purchase order status, you should contact the billing or finance department of the organization from which you made the purchase. They will be able to provide you with detailed information regarding your invoice or purchase order status. If you have access to an online portal provided by the organization, you may also be able to track the status there.
+For further assistance, please reach out directly to their customer support team.
+Expected Keys: Global Reach | Vision | Scholarships
+---- MATCH FAILED ----
+Question: Where do I go to search for jobs at Instructure?
+Original Response: To search for jobs at Instructure, you can visit their official careers page. This page will provide you with information on current job openings, application procedures, and other relevant details about working at Instructure. You can access the careers page by navigating to Instructure Careers on their website.
+Expected Keys: invoice | purchase order status | financial transactions
+Response returned as expected 
+	Question Ask: Where do I go to make a partnership inquiry?
+---- MATCH FAILED ----
+Question: How do I reset my password?
+Original Response: To reset your password, follow these steps:
+Go to the Login Page: Navigate to the Canvas login page for your institution.
+Click "Forgot Password?": On the login page, click on the "Forgot Password?" link.
+Enter Your Email: Enter the email address associated with your Canvas account and submit.
+Check Your Email: You will receive an email with instructions on how to reset your password.
+Follow Instructions: Click on the link provided in the email and follow the instructions to set a new password.
+If you do not receive an email or encounter any issues, contact Canvas Support or your institution's IT support team for further assistance.
+Expected Keys: Navigate to the Login Page | Enter Your Email Address | Follow the Instructions:
+===== Canvas Test finished =====
+Total Questions: 21
+Failed Questions: 6
+  Then The user ask any question Canvas                               # stepdefs.ChatInterfaceSteps.theUserAskAnyQuestionCanvas()
+
+Scenario: Creating Folder                                      # src/test/resources/features/KnowleadgeBase.feature:4
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:56:06 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And The user Clicks On The Knowledge Base                    # stepdefs.knowledgeBaseSteps.theUserClicksOnTheKnowledgeBase()
+  Then Click on Create Folder                                  # stepdefs.knowledgeBaseSteps.clickOnCreateFolder()
+  And Fill all the information and click save                  # stepdefs.knowledgeBaseSteps.fillAllTheInformationAndClickSave()
+
+Scenario: Added new Doc file inside the Folder                 # src/test/resources/features/KnowleadgeBase.feature:11
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:56:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And The user Clicks On The Knowledge Base                    # stepdefs.knowledgeBaseSteps.theUserClicksOnTheKnowledgeBase()
+  Then Click on add Data Source                                # stepdefs.knowledgeBaseSteps.clickOnAddDataSource()
+  And The user select the folder location                      # stepdefs.knowledgeBaseSteps.theUserSelectTheFolderLocation()
+  When the user click save                                     # stepdefs.knowledgeBaseSteps.theUserClickSave()
+  Then the user should check if the folder is uploaded         # stepdefs.knowledgeBaseSteps.theUserShouldCheckIfTheFolderIsUploaded()
+
+Scenario: Check The folder is exist                            # src/test/resources/features/KnowleadgeBase.feature:20
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:01 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And The user Clicks On The Knowledge Base                    # stepdefs.knowledgeBaseSteps.theUserClicksOnTheKnowledgeBase()
+  Then The user clicks on the folder                           # stepdefs.knowledgeBaseSteps.theUserClicksOnTheFolder()
+
+Scenario: Search bar for exist Knowledge Base                  # src/test/resources/features/KnowleadgeBase.feature:27
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:07 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And The user Clicks On The Knowledge Base                    # stepdefs.knowledgeBaseSteps.theUserClicksOnTheKnowledgeBase()
+  Then search for exist Knowledge base                         # stepdefs.knowledgeBaseSteps.searchForExistKnowledgeBase()
+  And check the knowledge base is exist                        # stepdefs.knowledgeBaseSteps.checkTheKnowledgeBaseIsExist()
+
+Scenario: Search For non exist Knowledge Base                  # src/test/resources/features/KnowleadgeBase.feature:35
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And The user Clicks On The Knowledge Base                    # stepdefs.knowledgeBaseSteps.theUserClicksOnTheKnowledgeBase()
+  Then search for None exist Knowledge base                    # stepdefs.knowledgeBaseSteps.searchForNoneExistKnowledgeBase()
+  And check the Icon is appear                                 # stepdefs.knowledgeBaseSteps.checkTheIconIsAppear()
+
+Scenario: Delete Creation Folder                                     # src/test/resources/features/KnowleadgeBase.feature:43
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                         # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  When the user navigates to the Bot section and selects a Bot       # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And The user Clicks On The Knowledge Base                          # stepdefs.knowledgeBaseSteps.theUserClicksOnTheKnowledgeBase()
+  When The User click on Delete Icon                                 # stepdefs.knowledgeBaseSteps.theUserClickOnDeleteIcon()
+  Then Click on Confirmation Delete and Check the validation message # stepdefs.knowledgeBaseSteps.clickOnConfirmationDelete()
+
+Scenario: Edit system connection                                                               # src/test/resources/features/SystemIntegration.feature:11
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:23 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                                                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot                                  # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System                                           # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  And the user clicks on Edit System Connection                                                # stepdefs.SystemIntegrationsteps.theUserClicksOnEditSystemConnection()
+  When the user modifies one or more field values                                              # stepdefs.SystemIntegrationsteps.theUserModifiesOneOrMoreFieldValues()
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="Button_label__i00gY">...</span> is not clickable at point (465, 341). Other element would receive the click: <div class="Modal_modal-overlay__3I3VJ" style="color: rgb(0, 0, 0);">...</div>
+  (Session info: chrome=143.0.7499.41)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [244ae932e71fff585439dc15c6827618, clickElement {id=f.D77302DAFD3531A99919B1B143737B4F.d.A14CD77EA273036B7693A5BFF77CA085.e.72}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52086}, goog:processID: 77304, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52086/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (244ae932e71fff585439dc15c6827618)] -> xpath: //span[text()='Connect']]
+Session ID: 244ae932e71fff585439dc15c6827618
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+	at org.example.pages.SystemIntegration.EditConnect(SystemIntegration.java:251)
+	at stepdefs.SystemIntegrationsteps.theUserModifiesOneOrMoreFieldValues(SystemIntegrationsteps.java:122)
+	at ?.the user modifies one or more field values(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/SystemIntegration.feature:13)
+
+  And the user edit selects the Semester from the dropdown                                     # stepdefs.SystemIntegrationsteps.theUserEditSelectsTheSemesterFromTheDropdown()
+  Then a confirmation or validation popup message should appear                                # stepdefs.SystemIntegrationsteps.aConfirmationOrValidationPopupMessageShouldAppear()
+  And the user should see the edited created connection listed in the System Connections table # stepdefs.SystemIntegrationsteps.theUserShouldSeeTheEditedCreatedConnectionListedInTheSystemConnectionsTable()
+
+Scenario: Delete System Connection                            # src/test/resources/features/SystemIntegration.feature:18
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:30 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then Click on the Delete Button                             # stepdefs.SystemIntegrationsteps.clickOnTheDeleteButton()
+  And Click Confirm                                           # stepdefs.SystemIntegrationsteps.clickConfirm()
+  And Check the Delete Message                                # stepdefs.SystemIntegrationsteps.checkTheDeleteMessage()
+
+Scenario: Cancel adding a new system connection                    # src/test/resources/features/SystemIntegration.feature:23
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:36 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                       # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot      # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System               # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  And the user clicks on Add New Connection                        # stepdefs.SystemIntegrationsteps.theUserClicksOn()
+  And the user fills in all required fields with valid information # stepdefs.SystemIntegrationsteps.theUserFillsInAllRequiredFieldsWithValidInformation()
+  Then the user clicks cancel                                      # stepdefs.SystemIntegrationsteps.theUserClicksCancel()
+
+Scenario: Successfully create a new system connection                                         # src/test/resources/features/SystemIntegration.feature:28
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                                                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot                                 # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System                                          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  And the user clicks on Add New Connection                                                   # stepdefs.SystemIntegrationsteps.theUserClicksOn()
+  And the user fills in all required fields with valid information                            # stepdefs.SystemIntegrationsteps.theUserFillsInAllRequiredFieldsWithValidInformation()
+  And the user submits the form                                                               # stepdefs.SystemIntegrationsteps.theUserSubmitsTheForm()
+  And the user selects the Semester from the dropdown                                         # stepdefs.SystemIntegrationsteps.theUserSelectsTheSemesterFromTheDropdown()
+  Then the system should create the new connection successfully                               # stepdefs.SystemIntegrationsteps.theSystemShouldCreateTheNewConnectionSuccessfully()
+  And the user should see the newly created connection listed in the System Connections table # stepdefs.SystemIntegrationsteps.theUserShouldSeeTheNewlyCreatedConnectionListedInTheSystemConnectionsTable()
+
+Scenario: View system connection details                         # src/test/resources/features/SystemIntegration.feature:36
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:53 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                     # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot    # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System             # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+Correct URL
+Correct System Type
+  Then The user check if the details are exist in the connection # stepdefs.SystemIntegrationsteps.theUserCheckIfTheDetailsAreExistInTheConnection()
+
+Scenario: Search system with exist connections by keywords    # src/test/resources/features/SystemIntegration.feature:39
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:57:58 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user search for exist Connection                   # stepdefs.SystemIntegrationsteps.theUserSearchForExistConnection()
+
+Scenario: Check the Duplicate Validation error message             # src/test/resources/features/SystemIntegration.feature:44
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:04 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                       # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot      # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System               # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  And the user clicks on Add New Connection Duplicate              # stepdefs.SystemIntegrationsteps.theUserClicksOnConnection()
+  And the user fills in all required fields with valid information # stepdefs.SystemIntegrationsteps.theUserFillsInAllRequiredFieldsWithValidInformation()
+  And the user submits the formTwo                                 # stepdefs.SystemIntegrationsteps.theUserSubmitsTheFormTwo()
+Correct Validation Message:A connection with these credentials already exists
+  Then the user check the duplicate Message                        # stepdefs.SystemIntegrationsteps.theUserCheckTheDuplicateMessage()
+
+Scenario: Check the Validation error message                  # src/test/resources/features/SystemIntegration.feature:50
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:10 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  And the user clicks on Add New Connection Duplicate         # stepdefs.SystemIntegrationsteps.theUserClicksOnConnection()
+  Then Leave the fields Empty                                 # stepdefs.SystemIntegrationsteps.leaveTheFieldsEmpty()
+
+Scenario: SwitchFromDisconnectToConnect                       # src/test/resources/features/SystemIntegration.feature:54
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:16 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then The user Switch the system to Disconnect System        # stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToDisconnectSystem()
+
+Scenario: SwitchFromConnectToDisconnect                       # src/test/resources/features/SystemIntegration.feature:57
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:22 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then The user Switch the system to connect System           # stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToConnectSystem()
+
+Scenario: Search system with none exist connections by keywords # src/test/resources/features/SystemIntegration.feature:60
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:28 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given the user is logged in to the website                    # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
+  And the user navigates to the Bot section and selects a Bot   # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
+  And the user clicks on Integration and then System            # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
+  Then the user search for None exist Connection                # stepdefs.SystemIntegrationsteps.theUserSearchForNoneExistConnection()
+
+@smoke
+Scenario Outline: Invalid login                                   # src/test/resources/features/login.feature:11
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:34 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given user open website and login to the systems                # stepdefs.LoginSteps.user_Open_Website()
+  When User fill email as "MZ_UAT" and "12345679" and click login # stepdefs.LoginSteps.userFillEmailAsAndAndClickLogin(java.lang.String,java.lang.String)
+  Then Error message should appear                                # stepdefs.LoginSteps.errorMessageShouldAppear()
+
+@smoke
+Scenario Outline: Invalid login                                     # src/test/resources/features/login.feature:12
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:40 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given user open website and login to the systems                  # stepdefs.LoginSteps.user_Open_Website()
+  When User fill email as "MZ_UAT33" and "12345678" and click login # stepdefs.LoginSteps.userFillEmailAsAndAndClickLogin(java.lang.String,java.lang.String)
+  Then Error message should appear                                  # stepdefs.LoginSteps.errorMessageShouldAppear()
+
+@smoke
+Scenario Outline: Invalid login                                      # src/test/resources/features/login.feature:13
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:45 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given user open website and login to the systems                   # stepdefs.LoginSteps.user_Open_Website()
+  When User fill email as "MZ_UAT333" and "12345679" and click login # stepdefs.LoginSteps.userFillEmailAsAndAndClickLogin(java.lang.String,java.lang.String)
+  Then Error message should appear                                   # stepdefs.LoginSteps.errorMessageShouldAppear()
+
+@smoke
+Scenario: valid login                              # src/test/resources/features/login.feature:15
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+Connected Successfully
+Dec 09, 2025 9:58:51 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
+  Given user open website and login to the systems # stepdefs.LoginSteps.user_Open_Website()
+  When user fill the data                          # stepdefs.LoginSteps.userFillTheData()
+  Then Validate you are in the dashboard           # stepdefs.LoginSteps.validateYouAreInTheDashboard()
+
+Failed scenarios:
+file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:12 # User opens an API connection successfully
+file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:17 # The User is able to Clear the APis
+file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/SystemIntegration.feature:11 # Edit system connection
+
+36 Scenarios (3 failed, 33 passed)
+198 Steps (3 failed, 5 skipped, 190 passed)
+19m6.368s
+
+
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
+  (Session info: chrome=143.0.7499.41)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [81115ba44f9dd7c00a77f9715c1e7494, findElement {value=//span[text()='AutomationTest123'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57453}, goog:processID: 73300, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57453/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81115ba44f9dd7c00a77f9715c1e7494
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
+	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
+	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:13)
+
+org.junit.ComparisonFailure: ? Worng Validation Message expected:<S[uccess]> but was:<S[aved Successfully]>
+	at stepdefs.APIIntegrationSteps.theUserChecksIfItTheApiIsUnChecked(APIIntegrationSteps.java:41)
+	at ?.The user checks if it the api is UnChecked(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:20)
+
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="Button_label__i00gY">...</span> is not clickable at point (465, 341). Other element would receive the click: <div class="Modal_modal-overlay__3I3VJ" style="color: rgb(0, 0, 0);">...</div>
+  (Session info: chrome=143.0.7499.41)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [244ae932e71fff585439dc15c6827618, clickElement {id=f.D77302DAFD3531A99919B1B143737B4F.d.A14CD77EA273036B7693A5BFF77CA085.e.72}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52086}, goog:processID: 77304, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52086/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (244ae932e71fff585439dc15c6827618)] -> xpath: //span[text()='Connect']]
+Session ID: 244ae932e71fff585439dc15c6827618
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+	at org.example.pages.SystemIntegration.EditConnect(SystemIntegration.java:251)
+	at stepdefs.SystemIntegrationsteps.theUserModifiesOneOrMoreFieldValues(SystemIntegrationsteps.java:122)
+	at ?.the user modifies one or more field values(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/SystemIntegration.feature:13)
+
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19:09 min
+[INFO] Finished at: 2025-12-09T09:58:55+03:00
+[INFO] ------------------------------------------------------------------------

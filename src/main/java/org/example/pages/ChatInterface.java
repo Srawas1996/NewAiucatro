@@ -1,15 +1,19 @@
 package org.example.pages;
 
 import org.example.base.Base;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Scanner;
 
 public class ChatInterface extends Base {
@@ -52,14 +56,36 @@ public class ChatInterface extends Base {
         ClickOnBotNameCanvas.click();
     }
 
-    public void sendMessage() throws InterruptedException {
+    public void sendMessage(String question) throws InterruptedException {
+        Thread.sleep(5000);
         userMessage.click();
         actions.keyDown(Keys.CONTROL).sendKeys(Keys.ENTER).keyUp(Keys.CONTROL).build().perform();
+        if (!botResponse.getText().equals(question)){
+            actions.keyDown(Keys.CONTROL).sendKeys(Keys.ENTER).keyUp(Keys.CONTROL).build().perform();
+        }
     }
 
     public String responseBackFromTheBot() throws InterruptedException {
         Thread.sleep(10000);
         return botResponse.getText();
+    }
+
+    public static File capture(WebDriver driver, String name) {
+        try {
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+            String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
+            File dest = new File("src/main/files/screenshots/" + name + "_" + timestamp + ".png");
+
+            dest.getParentFile().mkdirs();
+            Files.copy(src.toPath(), dest.toPath());
+
+            System.out.println("📸 Screenshot saved: " + dest.getAbsolutePath());
+            return dest;
+
+        } catch (IOException e) {
+            throw new RuntimeException("Screenshot capture failed!", e);
+        }
     }
 
 }

@@ -62,6 +62,7 @@ public class SystemIntegration extends Base {
     @FindBy(xpath = "//span[text()='Connect']")
     WebElement ClickOnConnectEdit;
 
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/span[2]/div[1]/*[name()='svg'][1]")
     WebElement DeleteButton;
 
@@ -285,7 +286,7 @@ public class SystemIntegration extends Base {
 
     public String SwitchToConnectSystem()  {
         connectButton.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(validationMessage));
         return validationMessage.getText();
     }

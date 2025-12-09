@@ -5,13 +5,18 @@ import io.cucumber.java.en.When;
 import org.example.base.Base;
 import org.example.base.ExcelReader;
 import org.example.pages.ChatInterface;
+import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ChatInterfaceSteps extends Base {
 
     ChatInterface chatInterface = new ChatInterface();
+    List<File> failedScreenshots = new ArrayList<>();
 
     @When("the user Navigate to the chat Interface")
     public void theUserNavigateToTheChatInterface(){
@@ -34,7 +39,7 @@ public class ChatInterfaceSteps extends Base {
             String key3 = row[3].toString();
 
             chatInterface.sendMessageToTheBot(question);
-            chatInterface.sendMessage();
+            chatInterface.sendMessage(question);
             Thread.sleep(10000);
 
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
@@ -50,6 +55,11 @@ public class ChatInterfaceSteps extends Base {
                 System.out.println("Original Response: " + messageResponse);
                 System.out.println("Expected Keys: " + key1 + " | " + key2 + " | " + key3);
                 failCount++;
+
+                File screenshot = ChatInterface.capture(driver, "mismatch_" + question.replaceAll("\\W+", "_"));
+
+                // Store file path for sending in email later
+                failedScreenshots.add(screenshot);
             } else {
                 System.out.println("Response returned as expected \n\tQuestion Ask: " + question);
             }
@@ -86,8 +96,8 @@ public class ChatInterfaceSteps extends Base {
             String key3 = row[3].toString();
 
             chatInterface.sendMessageToTheBot(question);
-            chatInterface.sendMessage();
-            Thread.sleep(10000);
+            chatInterface.sendMessage(question);
+            Thread.sleep(11000);
 
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
 
