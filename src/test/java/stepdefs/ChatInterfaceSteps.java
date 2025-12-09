@@ -112,6 +112,9 @@ public class ChatInterfaceSteps extends Base {
                 System.out.println("Original Response: " + messageResponse);
                 System.out.println("Expected Keys: " + key1 + " | " + key2 + " | " + key3);
                 failCount++;
+
+                File screenshot = ChatInterface.capture(driver, "mismatch_" + question.replaceAll("\\W+", "_"));
+                failedScreenshots.add(screenshot);
             } else {
                 System.out.println("Response returned as expected \n\tQuestion Ask: " + question);
             }

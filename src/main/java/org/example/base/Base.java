@@ -47,8 +47,8 @@ public class Base {
 
             final ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--use-fake-ui-for-media-stream");
-            chromeOptions.addArguments("--headless");
-            chromeOptions.addArguments("--disable-gpu");
+//            chromeOptions.addArguments("--headless");
+//            chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--use-fake-device-for-media-stream");
             chromeOptions.setExperimentalOption("prefs", chromePrefs);
             System.out.println("Connected Successfully");

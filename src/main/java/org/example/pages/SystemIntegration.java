@@ -248,9 +248,11 @@ public class SystemIntegration extends Base {
     }
 
     public String EditConnect(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(ClickOnConnectEdit));
         ClickOnConnectEdit.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(validationMessage));
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait2.until(ExpectedConditions.visibilityOf(validationMessage));
         return validationMessage.getText();
     }
 
