@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 3 * * *' # runs every day at 05:00 UTC = 08:00 AM Jordan time
+    - cron: '0 6 * * *' # runs every day at 05:00 UTC = 08:00 AM Jordan time
 
 jobs:
   build-and-run:
