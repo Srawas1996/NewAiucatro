@@ -1,9 +1,6 @@
 package org.example.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,8 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,8 +42,8 @@ public class Base {
 
             final ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--use-fake-ui-for-media-stream");
-            chromeOptions.addArguments("--headless");
-            chromeOptions.addArguments("--disable-gpu");
+//            chromeOptions.addArguments("--headless");
+//            chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--use-fake-device-for-media-stream");
             chromeOptions.setExperimentalOption("prefs", chromePrefs);
             System.out.println("Connected Successfully");

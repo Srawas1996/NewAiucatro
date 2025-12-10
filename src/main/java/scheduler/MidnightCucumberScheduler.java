@@ -15,7 +15,7 @@ public class MidnightCucumberScheduler {
     // --- Email Configuration ---
     private static final String TO_EMAIL = "salim96tr@gmail.com,Mohamad.alzein@cts.ae,edward.layoun@cts.ae,lama.ghusn@cts.ae,louana.ibrahim@cts.ae";
     private static final String FROM_EMAIL = "salim96tr@gmail.com";
-    private static final String PASSWORD = "dghkbhsbtslmhvns"; // App Password for Gmail
+    private static final String PASSWORD = "dghkbhsbtslmhvns"; // Gmail App Password
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final String SMTP_PORT = "587";
 
@@ -26,33 +26,25 @@ public class MidnightCucumberScheduler {
     private static final String SCREENSHOTS_DIR = "src/main/files/screenshots";
 
     public static void main(String[] args) {
+
+        // Detect if running in GitHub Actions
+        boolean runningInGitHub = System.getenv("GITHUB_ACTIONS") != null;
+
+        if (runningInGitHub) {
+            System.out.println("GitHub Actions detected → running immediately (no scheduler)");
+            runCucumberAndEmail();
+            return;
+        }
+
+        // LOCAL MODE → Run at midnight
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-//        long initialDelay = 10;
-        long initialDelay = getDelayUntilMidnight(); //adjust as needed
-        System.out.println("Scheduler started, initial delay: " + initialDelay + "s");
+        long initialDelay = getDelayUntilMidnight();
+
+        System.out.println("Local scheduler started, first run after: " + initialDelay + " seconds");
 
         scheduler.schedule(() -> {
             try {
-                System.out.println("==== Midnight Cucumber Test Started ====");
-                cleanupOldArtifacts();
-
-                ProcessBuilder pb = new ProcessBuilder(
-                        "C:/Program Files/apache-maven-3.9.11-bin/apache-maven-3.9.11/bin/mvn.cmd",
-                        "test"
-                );
-
-                File rawLog = new File(RAW_LOG_PATH);
-                pb.redirectOutput(rawLog);
-                pb.redirectErrorStream(true);
-
-                Process process = pb.start();
-                int exitCode = process.waitFor();
-                System.out.println("==== Cucumber Finished, exit code: " + exitCode + " ====");
-
-                sendEmailReport();
-
-            } catch (Exception e) {
-                e.printStackTrace();
+                runCucumberAndEmail();
             } finally {
                 scheduler.shutdown();
             }
@@ -65,13 +57,38 @@ public class MidnightCucumberScheduler {
         return Duration.between(now, nextMidnight).getSeconds();
     }
 
+    /**
+     * CLEAN CODE → One reusable method
+     */
+    private static void runCucumberAndEmail() {
+        try {
+            System.out.println("==== Running Cucumber Test ====");
+            cleanupOldArtifacts();
+
+            ProcessBuilder pb = new ProcessBuilder("mvn", "test");
+
+            File rawLog = new File(RAW_LOG_PATH);
+            pb.redirectOutput(rawLog);
+            pb.redirectErrorStream(true);
+
+            Process process = pb.start();
+            int exitCode = process.waitFor();
+            System.out.println("==== Cucumber Finished, exit code: " + exitCode + " ====");
+
+            sendEmailReport();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private static void cleanupOldArtifacts() {
         try {
             new File(RAW_LOG_PATH).delete();
             new File(STEP_BY_STEP_LOG_PATH).delete();
 
             File screenshotsFolder = new File(SCREENSHOTS_DIR);
-            if (screenshotsFolder.exists() && screenshotsFolder.isDirectory()) {
+            if (screenshotsFolder.exists()) {
                 File[] screenshots = screenshotsFolder.listFiles((dir, name) ->
                         name.toLowerCase().endsWith(".png") ||
                                 name.toLowerCase().endsWith(".jpg") ||
@@ -114,23 +131,24 @@ public class MidnightCucumberScheduler {
 
             Multipart multipart = new MimeMultipart();
 
-            // TEXT PART
+            // Text
             MimeBodyPart textPart = new MimeBodyPart();
-            textPart.setText("Hello,\n\nPlease find attached the automation test report.\n\nBest regards,\nQA Automation Team");
+            textPart.setText(
+                    "Hello,\n\nPlease find the attached automation test report.\n\nRegards,\nQA Automation"
+            );
             multipart.addBodyPart(textPart);
 
-            // Attach files
+            // Attach results
             attachFile(multipart, reportFile);
             attachFile(multipart, rawLogFile);
             attachFile(multipart, stepByStepFile);
 
-            // Attach screenshots folder
-            if (screenshotsFolder.exists() && screenshotsFolder.isDirectory()) {
+            // Attach screenshots
+            if (screenshotsFolder.exists()) {
                 File[] screenshots = screenshotsFolder.listFiles((dir, name) ->
-                        name.toLowerCase().endsWith(".png") ||
-                                name.toLowerCase().endsWith(".jpg") ||
-                                name.toLowerCase().endsWith(".jpeg")
+                        name.endsWith(".png") || name.endsWith(".jpg") || name.endsWith(".jpeg")
                 );
+
                 if (screenshots != null) {
                     for (File img : screenshots) attachFile(multipart, img);
                 }
@@ -138,7 +156,8 @@ public class MidnightCucumberScheduler {
 
             message.setContent(multipart);
             Transport.send(message);
-            System.out.println("Email sent successfully to " + TO_EMAIL);
+
+            System.out.println("Email sent to: " + TO_EMAIL);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -146,7 +165,6 @@ public class MidnightCucumberScheduler {
         }
     }
 
-    // Helper method to attach a file if it exists
     private static void attachFile(Multipart multipart, File file) throws MessagingException {
         if (file != null && file.exists()) {
             MimeBodyPart part = new MimeBodyPart();
