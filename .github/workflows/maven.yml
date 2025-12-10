@@ -5,35 +5,35 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 6 * * *' # runs every day at 05:00 UTC = 08:00 AM Jordan time
+    - cron: '0 7 * * *' # runs every day at 06:00 UTC = 09:00 AM Jordan time
 
 jobs:
   build-and-run:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Java
-      uses: actions/setup-java@v3
-      with:
-        distribution: temurin
-        java-version: 17
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
 
-    - name: Cache Maven packages
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
-    - name: Build project
-      run: mvn clean package --batch-mode
+      - name: Build project
+        run: mvn clean package --batch-mode
 
-    - name: Run Cucumber tests
-      run: mvn test
+      - name: Run Cucumber tests
+        run: mvn test
 
-    - name: Run Scheduler Main Class
-      run: java -cp target/untitled3-1.0-SNAPSHOT.jar scheduler.MidnightCucumberScheduler
+      - name: Run MidnightCucumberScheduler
+        run: java -cp target/untitled3-1.0-SNAPSHOT.jar scheduler.MidnightCucumberScheduler
