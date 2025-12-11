@@ -65,7 +65,7 @@ public class MidnightCucumberScheduler {
             System.out.println("==== Running Cucumber Test ====");
             cleanupOldArtifacts();
 
-            ProcessBuilder pb = new ProcessBuilder("C://Program Files//Apache//Maven//apache-maven-3.9.11//bin/mvn.cmd","clean" ,"test");
+            ProcessBuilder pb = new ProcessBuilder("C://Program Files//apache-maven-3.9.11-bin//apache-maven-3.9.11//bin//mvn.cmd", "test");
 
             File rawLog = new File(RAW_LOG_PATH);
             pb.redirectOutput(rawLog);
