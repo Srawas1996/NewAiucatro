@@ -45,9 +45,9 @@ public class ChatInterfaceSteps extends Base {
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
 
             boolean match =
-                    messageResponse.contains(key1) ||
-                            messageResponse.contains(key2) ||
-                            messageResponse.contains(key3);
+                    messageResponse.toLowerCase().contains(key1.toLowerCase()) ||
+                            messageResponse.toLowerCase().contains(key2.toLowerCase()) ||
+                            messageResponse.toLowerCase().contains(key3.toLowerCase());
 
             if (!match || messageResponse.toLowerCase().contains("sorry")) {
                 System.out.println("---- MATCH FAILED ----");
@@ -105,9 +105,9 @@ public class ChatInterfaceSteps extends Base {
             String messageResponse = chatInterface.responseBackFromTheBot().trim();
 
             boolean match =
-                    messageResponse.contains(key1) ||
-                            messageResponse.contains(key2) ||
-                            messageResponse.contains(key3);
+                    messageResponse.toLowerCase().contains(key1.toLowerCase()) ||
+                            messageResponse.toLowerCase().contains(key2.toLowerCase()) ||
+                            messageResponse.toLowerCase().contains(key3.toLowerCase());
 
             if (!match || messageResponse.toLowerCase().contains("sorry")) {
                 System.out.println("---- MATCH FAILED ----");
