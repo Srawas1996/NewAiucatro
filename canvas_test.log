@@ -8,8 +8,6 @@ WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
 [INFO] Building untitled3 1.0-SNAPSHOT
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
-Downloading from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/maven-metadata.xml
-Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/io/cucumber/messages/maven-metadata.xml (3.0 kB at 2.6 kB/s)
 [INFO] 
 [INFO] --- resources:3.3.1:resources (default-resources) @ untitled3 ---
 [INFO] skip non existing resourceDirectory C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\resources
@@ -29,479 +27,150 @@ Progress (1): 3.0 kB                    Downloaded from central: https://repo.
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
-Dec 10, 2025 8:28:36 AM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+Dec 12, 2025 7:36:52 AM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
 WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
 Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors.
 See: https://github.com/cucumber/cucumber-jvm/pull/2498
 
 Scenario: User opens an API connection successfully           # src/test/resources/features/ApiInegration.feature:12
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:28:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:36:53 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   When the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c5b9e92c89c81158146edf852a961d92, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53551}, goog:processID: 37944, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53551/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c5b9e92c89c81158146edf852a961d92
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:13)
-
+? Connection name matches successfully: AutomationTest123
   Then the connection name should be displayed                # stepdefs.APIIntegrationSteps.theUserCheckTheConnectionName()
   And all action buttons should be enabled                    # stepdefs.APIIntegrationSteps.theButtonsShouldBeEnable()
 
 Scenario: The User is able to Clear the APis                  # src/test/resources/features/ApiInegration.feature:17
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:28:54 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:00 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ec452dff961e6000e8f87bb3658ffe74, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52166}, goog:processID: 66484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52166/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ec452dff961e6000e8f87bb3658ffe74
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:18)
-
   Then The user Click on Clear On the Api Page                # stepdefs.APIIntegrationSteps.theUserClickOnClear()
   And The user checks if it the api is UnChecked              # stepdefs.APIIntegrationSteps.theUserChecksIfItTheApiIsUnChecked()
 
 Scenario: The User is able to select all the APis             # src/test/resources/features/ApiInegration.feature:22
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:29:09 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:10 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [95cb44987224ccf3c4d1dd0fbf1ff235, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57722}, goog:processID: 64972, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57722/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95cb44987224ccf3c4d1dd0fbf1ff235
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:23)
-
   Then The user Click on Select All                           # stepdefs.APIIntegrationSteps.theUserClickOnSelectAll()
   And The user checks if it the api is checked                # stepdefs.APIIntegrationSteps.theUserChecksIfItTheApiIsChecked()
 
 Scenario: Search for exist API                                # src/test/resources/features/ApiInegration.feature:27
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:29:24 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e93fe4328e515aeadbc8291beaad517c, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63792}, goog:processID: 81208, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63792/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e93fe4328e515aeadbc8291beaad517c
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:28)
-
   Then The user search for exist api connection               # stepdefs.APIIntegrationSteps.theUserSearchForExistApiConnection()
 
 Scenario: The user should be able to Test the connection      # src/test/resources/features/ApiInegration.feature:31
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:29:40 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:22 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6e49df001f939544ba2d2fbed0e0192f, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57803}, goog:processID: 72140, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57803/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6e49df001f939544ba2d2fbed0e0192f
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:32)
-
   And The user Check if the APi is in a untested status       # stepdefs.APIIntegrationSteps.theUserCheckIfTheAPiIsInAUntestedStatus()
   Then The user Click on The Test Connection                  # stepdefs.APIIntegrationSteps.theUserClickOnTheTestConnection()
   Then the user Check if the api is in a healty status        # stepdefs.APIIntegrationSteps.theUserCheckIfTheApiIsInAHealtyStatus()
 
 Scenario: Open the Api Fields                                 # src/test/resources/features/ApiInegration.feature:37
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:29:55 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:30 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [23f58f8e78ed54bbb07355d0702ed758, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58754}, goog:processID: 56148, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58754/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 23f58f8e78ed54bbb07355d0702ed758
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:38)
-
   And The open the Api Field                                  # stepdefs.APIIntegrationSteps.theOpenTheApiField()
   Then The user checks if all the fields are checked          # stepdefs.APIIntegrationSteps.theUserChecksIfAllTheFieldsAreChecked()
 
 Scenario: Change the Frequent To daily for one of the api     # src/test/resources/features/ApiInegration.feature:42
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:30:11 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:36 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f80dd97857d8fef61f9373c77dd408c7, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56564}, goog:processID: 50432, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56564/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f80dd97857d8fef61f9373c77dd408c7
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:43)
-
   Then The User Change to the Daily Frequent                  # stepdefs.APIIntegrationSteps.theUserChangeToTheDailyFrequent()
 
 Scenario: Click on Force Sync for one of the API                # src/test/resources/features/ApiInegration.feature:46
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:30:26 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:43 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                    # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot   # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System            # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                    # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [34f2273c3c2d451e01c3b1f5e5bfe773, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64532}, goog:processID: 35552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64532/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 34f2273c3c2d451e01c3b1f5e5bfe773
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:47)
-
   Then the User is Click on Force Sync and check the Validation # stepdefs.APIIntegrationSteps.theUserIsClickOnForceSync()
   Then the user check if the Data Table is appear               # stepdefs.APIIntegrationSteps.theUserCheckIfTheDataTableIsAppear()
 
 Scenario: switch to APi Logs                                  # src/test/resources/features/ApiInegration.feature:51
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:30:41 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:37:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c36b134013c08247005ce452e00a7de9, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64274}, goog:processID: 78752, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64274/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c36b134013c08247005ce452e00a7de9
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:52)
-
   Then the User Move To API Logs                              # stepdefs.APIIntegrationSteps.theUserMoveToAPILogs()
 
 Scenario: Check the buttons are enable                        # src/test/resources/features/ApiInegration.feature:55
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:30:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:38:02 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then the user click on the Connection Card                  # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b08fea63f48565ee8104292de26f2f03, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62995}, goog:processID: 78060, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62995/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b08fea63f48565ee8104292de26f2f03
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:56)
-
   Then the User Move To API Logs                              # stepdefs.APIIntegrationSteps.theUserMoveToAPILogs()
   Then The User Checks if Refresh Token is enable             # stepdefs.APIIntegrationSteps.theUserChecksIfRefreshTokenIsEnable()
 
 Scenario: Make sure that the the field are saved              # src/test/resources/features/ApiInegration.feature:60
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:31:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:38:08 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   And the user click on the Connection Card                   # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c081c94d38bae4f0a255f760343634a4, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54013}, goog:processID: 56148, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54013/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c081c94d38bae4f0a255f760343634a4
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:61)
-
   And The open the Api Field                                  # stepdefs.APIIntegrationSteps.theOpenTheApiField()
   And the user unchecks any field                             # stepdefs.APIIntegrationSteps.theUserUnchecksAnyField()
   And the user saves the changes                              # stepdefs.APIIntegrationSteps.theUserSavesTheChanges()
@@ -509,45 +178,15 @@ Session ID: c081c94d38bae4f0a255f760343634a4
   Then the field should still be unchecked                    # stepdefs.APIIntegrationSteps.theFieldShouldStillBeUnchecked()
 
 Scenario: Make Sure That the SelectAll And Clear are work Correctly  # src/test/resources/features/ApiInegration.feature:68
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:31:27 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:38:15 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                         # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot        # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System                 # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   And the user click on the Connection Card                          # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [59d6899ae9aee5414cb03fccabf8f76c, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62988}, goog:processID: 77588, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62988/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 59d6899ae9aee5414cb03fccabf8f76c
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:69)
-
   And The open the Api Field                                         # stepdefs.APIIntegrationSteps.theOpenTheApiField()
   When The User Click on Clear                                       # stepdefs.APIIntegrationSteps.theUserClickOnClearInsideFields()
   Then the field should still be unchecked                           # stepdefs.APIIntegrationSteps.theFieldShouldStillBeUnchecked()
@@ -558,59 +197,29 @@ Session ID: 59d6899ae9aee5414cb03fccabf8f76c
   Then the field should still be unchecked                           # stepdefs.APIIntegrationSteps.theFieldShouldStillBeUnchecked()
 
 Scenario: Make sure that the button is disable when the Connection is disconnect # src/test/resources/features/ApiInegration.feature:79
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:31:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:38:22 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                                     # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot                    # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System                             # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   Then The user Switch the system to Disconnect System                           # stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToDisconnectSystem()
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Disconnect']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c4701616b86406754a2c68d4f8893878, findElement {using=xpath, value=//span[text()='Disconnect']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61118}, goog:processID: 22980, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61118/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c4701616b86406754a2c68d4f8893878
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.SystemIntegration.SwitchToDisconnectSystem(SystemIntegration.java:280)
-	at stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToDisconnectSystem(SystemIntegrationsteps.java:200)
-	at ?.The user Switch the system to Disconnect System(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:80)
-
   Then the user click on the Connection Card                                     # stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard()
   Then The user check if the buttons are disable                                 # stepdefs.APIIntegrationSteps.theUserCheckIfTheButtonsAreDisable()
 
 Scenario: Check the response back from the bot (Bau)          # src/test/resources/features/ChatInterface.feature:4
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:31:57 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:38:28 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System          # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   When the user Navigate to the chat Interface                # stepdefs.ChatInterfaceSteps.theUserNavigateToTheChatInterface()
-2025-12-10T05:32:01.288396600Z main ERROR Log4j API could not find a logging provider.
+2025-12-12T04:38:33.094264400Z main ERROR Log4j API could not find a logging provider.
 Response returned as expected 
 	Question Ask: How to apply to the university
 Response returned as expected 
@@ -623,206 +232,217 @@ Response returned as expected
 	Question Ask: What is the body of accreditation for engineering programs?
 Response returned as expected 
 	Question Ask: What are the scholarships available in BAU?
-Response returned as expected 
-	Question Ask: Can I take more than 18 credits in a semester if I’m graduating?
+---- MATCH FAILED ----
+Question: Can I take more than 18 credits in a semester if I’m graduating?
+Original Response: At Beirut Arab University (BAU), students must maintain a minimum of 12 and a maximum of 18 credit hours per semester in the scientific faculties, and a minimum of 9 and a maximum of 18 credit hours in the humanities faculties. If you are graduating, it is recommended to consult with your academic advisor for any exceptions or special permissions regarding credit limits. For further assistance, you can contact the Registrar’s Office at BAU.
+Expected Keys: take more than 18 credits | required to maintain a minimum of 12 and a maximum of 18 credit hours per semester. | recommended that you contact the Registrar’s Office
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Can_I_take_more_than_18_credits_in_a_semester_if_I_m_graduating__2025-12-12_07-41-30.png
 ---- MATCH FAILED ----
 Question: How do I apply as a sophomore?
-Original Response: To apply as a sophomore at the Lebanese American University (LAU), follow these steps:
-Apply Online: Visit LAU's application portal.
-Determine Application Type: Select "Sophomore" as your application type.
+Original Response: To apply as a sophomore at Beirut Arab University (BAU), follow these steps:
+Determine Your Application Type: Select "Sophomore" as your application type.
 Choose Your Major: Decide on the major you wish to pursue.
-Prepare Required Documents: Gather and prepare all necessary documents, which can be found here.
-Upload Documents: Upload your school grades and other required documents.
-Pay Application Fee: Proceed to pay the application fee.
-Submit Application: Submit your completed application.
-After submission, you will receive an email with your LAU credentials to activate your portal and proceed with the admission process.
-For further assistance, contact the Admissions Office at admission@bau.edu.lb or call +961 1 300110 Ext: 2435, 2697, 2832, 2614.
+Prepare Required Documents: Gather all necessary documents, including your school grades and other required materials.
+Submit Your Application Online: Use the i Connect portal to upload your documents and complete the application process.
+Pay for the Application: Proceed with payment for the application fee.
+Submit Your Application: Once submitted, you will receive an email with your BAU credentials to activate your portal.
+For more detailed information or assistance, you can contact the Admissions Office at admission@bau.edu.lb or call +961 1 300110 Ext: 2435, 2697, 2832, 2614.
 Expected Keys: Review Process | Online Application | Required Documentation
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_apply_as_a_sophomore__2025-12-10_08-35-24.png
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_apply_as_a_sophomore__2025-12-12_07-41-56.png
 ---- MATCH FAILED ----
 Question: How can I apply to master's in engineering management online?
-Original Response: To apply for a master's in Engineering Management at Beirut Arab University (BAU) online, follow these steps:
-Apply Online: Visit the BAU application portal.
-Select Program: Choose "Master's in Engineering Management" from the list of available graduate programs.
-Prepare Required Documents: Gather all necessary documents such as transcripts, recommendation letters, and any other required materials.
-Upload Documents: Upload your prepared documents to the application portal.
-Pay Application Fee: Complete the payment of the application fee as specified on the portal.
-Submit Application: Submit your completed application.
-For further assistance or specific inquiries about eligibility and requirements, contact the Admissions Office at admission@bau.edu.lb or call +961 1 300110 Ext: 2435, 2697, 2832, 2614.
-For more detailed information on financial aid and scholarships available for graduate students, visit Financial Aid & Scholarships at BAU.
+Original Response: To apply for a master's in engineering management at Beirut Arab University (BAU) online, follow these steps:
+Visit the BAU Website: Go to the official BAU website and navigate to the "Apply to BAU" section.
+Select Graduate Programs: Choose the graduate programs option and find Engineering Management.
+Create an Account on i Connect: Register or log in to your i Connect account.
+Complete the Application Form: Fill out the required details in the application form.
+Upload Required Documents: Prepare and upload all necessary documents, such as transcripts, recommendation letters, and any other specified materials.
+Pay Application Fee: Proceed with payment of the application fee through the portal.
+Submit Your Application: Submit your completed application.
+For more detailed information or assistance, you can contact the Admissions Office at admission@bau.edu.lb or call +961 1 300110 Ext: 2435, 2697, 2832, 2614.
+If you need further guidance on specific requirements or have additional questions about eligibility criteria, please reach out directly to BAU's Admissions Office.
 Expected Keys: navigate to the admissions section | Complete the Online Application | Review Proces
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_can_I_apply_to_master_s_in_engineering_management_online__2025-12-10_08-35-50.png
----- MATCH FAILED ----
-Question: How can BAU help me find a job?
-Original Response: Beirut Arab University (BAU) offers various resources to help students and alumni find job opportunities. The university has a dedicated Alumni and Career Center that provides career development services, including:
-Job Vacancies: BAU regularly updates its job vacancies on the BAU Careers page. Students and alumni can search for current job openings and apply online.
-Career Development: The center offers career counseling, resume writing workshops, interview preparation sessions, and other professional development activities to enhance employability.
-Networking Opportunities: BAU organizes events such as career fairs, networking events, and industry meet-ups where students can connect with potential employers.
-Internship Programs: The university facilitates internship placements in various industries to provide practical experience and improve job prospects after graduation.
-For more detailed information or specific inquiries about job opportunities and career services at BAU, you can contact the Alumni and Career Center directly through their website or by visiting the campus offices.
-Expected Keys: Career Counseling | Job placement assistance | Review Process
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_can_BAU_help_me_find_a_job__2025-12-10_08-36-16.png
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_can_I_apply_to_master_s_in_engineering_management_online__2025-12-12_07-42-22.png
+Response returned as expected 
+	Question Ask: How can BAU help me find a job?
 ---- MATCH FAILED ----
 Question: Who may use the Library?
-Original Response: The Beirut Arab University (BAU) libraries are accessible to students, faculty, and staff. The libraries offer a wide range of resources including books, journals, theses, dissertations, and multimedia materials. Additionally, they provide access to specialized and multidisciplinary databases as well as open-access resources.
-For more detailed information or specific inquiries about library services at BAU, you can contact the library staff directly through their website or by visiting the campus offices.
+Original Response: The library at Beirut Arab University (BAU) is accessible to students, faculty, and staff. It offers a wide range of services including access to print and digital collections, interlibrary loan services, and information literacy instruction. Users can also reserve books online through the e-booking service and receive notifications about new resources.
+For more detailed information or assistance, you can contact the library staff via email or visit the BAU website.
 Expected Keys: contant the Library directly | interlibrary loans | library usage
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Who_may_use_the_Library__2025-12-10_08-36-41.png
-Response returned as expected 
-	Question Ask: Is it based solely on income or also on assets?
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Who_may_use_the_Library__2025-12-12_07-43-13.png
+---- MATCH FAILED ----
+Question: Is it based solely on income or also on assets?
+Original Response: I'm sorry, I don't have the information on that right now. Could I assist you with something else?
+Expected Keys: Baccalaureate average | Semester Grade Point Average | The scholarship percentages
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Is_it_based_solely_on_income_or_also_on_assets__2025-12-12_07-43-39.png
 ===== Test finished =====
 Total Questions: 12
-Failed Questions: 4
+Failed Questions: 5
   Then The user ask any question                              # stepdefs.ChatInterfaceSteps.theUserAskAnyQuestion()
 
 Scenario: Check the response back from the bot (Canvas)               # src/test/resources/features/ChatInterface.feature:11
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:37:07 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:43:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                          # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   When the user navigates to the Bot section and selects a Bot Canvas # stepdefs.ChatInterfaceSteps.theUserNavigatesToTheBotSectionAndSelectsABotCanvas()
   When the user Navigate to the chat Interface Canvas                 # stepdefs.ChatInterfaceSteps.theUserNavigateToTheChatInterfaceCanvas()
-Response returned as expected 
-	Question Ask: How do I find my school login?
+---- MATCH FAILED ----
+Question: How do I find my school login?
+Original Response: To find your school login for Canvas, you can access it through an institution-specific Canvas URL, your institution's website, or a Canvas Mobile app.
+To search for and find your institution's Canvas URL, use the Canvas URL search page. Enter your institution's name in the search page and be as specific as possible. You can also try alternative names for your institution, such as the name of your school district, abbreviations, or longer institution names.
+Canvas URLs typically use one of the following structures: [your institution's name].instructure.com or canvas.[your institution's name].edu.
+Additionally, some institutions may allow access to Canvas via an authentication system which redirects to Canvas from a school student portal or website.
+For mobile access:
+Download and use the applicable mobile app: Canvas Teacher, Canvas Student, or Canvas Parent.
+Within the app login page, you can search for your institution or manually enter your institution's Canvas URL.
+Alternatively, scan your profile QR code from the web version of Canvas to log in via the mobile app.
+If you need further assistance with finding your school's login information on Canvas, please visit their support resources or contact their help desk directly.
+Expected Keys: Institution-Specific URL | Search for Your School's URL | Mobile App Access
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_find_my_school_login__2025-12-12_07-44-10.png
 ---- MATCH FAILED ----
 Question: As a parent, how do I get an account and log in?
-Original Response: To find your school login for Canvas, you can access it through an institution-specific Canvas URL. Here are the steps:
-Search for Your School's URL: Use the Canvas URL search page to find your institution's specific Canvas URL by entering your institution's name as precisely as possible.
-URL Structure: The URLs typically follow these structures:
-[your institution's name].instructure.com
-canvas.[your institution's name].edu
-Institution-Specific Authentication: Some institutions may allow access via a school student portal or website that redirects to Canvas.
-You can also access Canvas through the mobile app by searching for your institution on the app login page or manually entering your institution’s Canvas URL.
-For further assistance, visit your institution’s website or contact their IT support team.
+Original Response: To find your school login for Canvas, you can access it through an institution-specific Canvas URL, your institution's website, or a Canvas Mobile app.
+To search for and find your institution's Canvas URL, use the Canvas URL search page. Enter your institution's name in the search page and be as specific as possible. You can also try alternative names for your institution, such as the name of your school district, abbreviations, or longer institution names.
+Canvas URLs typically use one of the following structures: [your institution's name].instructure.com or canvas.[your institution's name].edu.
+Additionally, some institutions may allow access to Canvas via an authentication system which redirects to Canvas from a school student portal or website.
+For mobile access:
+Download and use the applicable mobile app: Canvas Teacher, Canvas Student, or Canvas Parent.
+Within the app login page, you can search for your institution or manually enter your institution's Canvas URL.
+Alternatively, scan your profile QR code from the web version of Canvas to log in via the mobile app.
+If you need further assistance with finding your school's login information on Canvas, please visit their support resources or contact their help desk directly.
 Expected Keys: Free Canvas Account | Institution-Specific URL | Mobile App Access
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_As_a_parent_how_do_I_get_an_account_and_log_in__2025-12-10_08-38-06.png
-Response returned as expected 
-	Question Ask: Where do I access parent resources?
-Response returned as expected 
-	Question Ask: How do I get a pairing code?
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_As_a_parent_how_do_I_get_an_account_and_log_in__2025-12-12_07-44-36.png
 ---- MATCH FAILED ----
-Question: My pairing code is invalid. What should I do?
-Original Response: If your pairing code is invalid, please ensure the following:
-Check Expiration: The pairing code expires after seven days or its first use.
-Case Sensitivity: Ensure that you are entering the code exactly as it appears, including any uppercase and lowercase letters.
-If these steps do not resolve the issue, contact your institution's IT support team for further assistance.
-Expected Keys: Generate a New Pairing Code | Share this code with the observer | Check Expiry and Case Sensitivity
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_My_pairing_code_is_invalid_What_should_I_do__2025-12-10_08-39-24.png
+Question: Where do I access parent resources?
+Original Response: As a parent, how do I get an account and log in?Where do I access parent resources?
+Expected Keys: parent resources by visiting | Getting Started Resources | provides comprehensive guides
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Where_do_I_access_parent_resources__2025-12-12_07-45-03.png
 ---- MATCH FAILED ----
-Question: What can I do with a Free Account?
-Original Response: With a Free-for-Teacher Canvas account, you can:
-Course Creation: Build courses from scratch using Canvas’ intuitive tools or import content from Canvas Commons.
-Quizzing and Assignments: Create media-rich quizzes and assignments through the powerful Rich Content Editor.
-Mobile Access: Utilize dedicated mobile apps for students, teachers, and observers to access Canvas on the go.
-Individualized Learning: Use Mastery Paths, Outcomes, and the Learning Mastery Gradebook for personalized learning opportunities.
-Analytics: Leverage course-level analytics to measure student performance and make impactful instructional decisions.
-Additionally, Free-for-Teacher accounts allow collaboration with other educators globally through the Instructure Community.
-For more detailed features comparison between free and paid accounts, please refer to the Canvas Account Comparison resource document available in the Canvas Community.
-Expected Keys: Create and Manage Courses | Quizzes and Assignments | Mobile App Access
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_can_I_do_with_a_Free_Account__2025-12-10_08-39-51.png
+Question: How do I get a pairing code?
+Original Response: To get an account and log in as a parent on Canvas, follow these steps:
+Create Your Account:
+Open a browser and type canvas.instructure.com into your browser.
+Click the "Need a Canvas Account?" link.
+Select "I'm a Parent" to create your account.
+Complete Registration:
+Enter the required information such as your name, email address, and password.
+Agree to the terms of use by clicking the checkbox.
+Confirm that you are not a robot by completing the Captcha form (if enabled).
+Click the "Start Learning" button.
+Log In:
+Use your newly created credentials to log in to Canvas.
+For accessing parent resources, visit the Observer/Parent Getting Started Resources section on Canvas. This section provides guides and video tutorials specifically tailored for parents to help them navigate and utilize Canvas effectively.
+If you need further assistance or specific support related to your institution's setup, please contact their help desk directly.
+Expected Keys: Open User Settings | Pair with Observer | Copy Pairing Code
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_get_a_pairing_code__2025-12-12_07-45-29.png
+Response returned as expected 
+	Question Ask: My pairing code is invalid. What should I do?
+Response returned as expected 
+	Question Ask: What can I do with a Free Account?
 Response returned as expected 
 	Question Ask: I need help with my Free Canvas Account. Where should I go?
 ---- MATCH FAILED ----
 Question: Can I use it even though I'm not a teacher?
-Original Response: Yes, you can use a Free-for-Teacher Canvas account even if you are not a teacher. The Free-for-Teacher account provides essential features and functionality of Canvas LMS, allowing users to create courses, assignments, quizzes, and more. It is designed for educators but can be utilized by anyone interested in exploring the basic features of Canvas.
-For more information on how to sign up and utilize the Free-for-Teacher account, visit the Canvas Community or contact Canvas Support for assistance.
+Original Response: Yes, you can use a Free-for-Teacher Canvas account even if you are not a teacher. The Free-for-Teacher account provides access to many essential features and functionalities of Canvas LMS, including course creation, quizzing and assignments, mobile app access, individualized learning opportunities, analytics, dynamic learning features, community engagement, support resources, and in-app support. This account is designed for educators but can be utilized by anyone interested in exploring Canvas's capabilities.
+For more detailed information or comparisons with paid accounts' features, visiting the Canvas Community or contacting their support team directly is recommended.
 Expected Keys: Create and Manage Courses | Quizzes and Assignments | Mobile App Access
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Can_I_use_it_even_though_I_m_not_a_teacher__2025-12-10_08-40-43.png
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Can_I_use_it_even_though_I_m_not_a_teacher__2025-12-12_07-47-15.png
 ---- MATCH FAILED ----
 Question: What are the limitations?
-Original Response: What are the limitations?
+Original Response: Free-for-Teacher Canvas accounts offer robust course-level features but have certain limitations compared to paid accounts. Here are the key limitations:
+Administrative Controls:
+Free-for-Teacher accounts do not include administrative controls available in paid accounts.
+Course Analytics:
+Limited access to detailed course analytics and usage reports.
+Integration Capabilities:
+Restricted integration with external applications (LTI) and third-party tools.
+User Management:
+Limited ability to manage user enrollments, roles, and permissions within courses.
+Support Resources:
+Access to support resources may be limited compared to those provided for paid accounts.
+For more detailed information or comparisons with paid accounts' features, visiting the Canvas Community or contacting their support team directly is recommended.
 Expected Keys: Course Creation and Management | Integration with Institutional Systems | User Roles and Permissions
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_are_the_limitations__2025-12-10_08-41-10.png
----- MATCH FAILED ----
-Question: How do I get a join code?
-Original Response: An error occurred while processing your question.
-Expected Keys: Contact Your Instructor | Create an Account | contact your instructor or institution for assistance
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_get_a_join_code__2025-12-10_08-41-36.png
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_are_the_limitations__2025-12-12_07-47-41.png
 Response returned as expected 
-	Question Ask: As a current customer, where should I go for help?
+	Question Ask: How do I get a join code?
+---- MATCH FAILED ----
+Question: As a current customer, where should I go for help?
+Original Response: As a current customer, you can seek help through several resources provided by Canvas:
+Canvas Community:
+Access how-to guides, question and answer forums, and special interest groups.
+View the Free-for-Teacher Account FAQ for specific help related to your account.
+Canvas Support:
+Contact Canvas Support directly for further assistance or unresolved issues.
+Institution's Help Desk:
+Reach out to your institution's help desk for support tailored to your specific needs and configurations within Canvas.
+These resources should provide comprehensive support for any issues or questions you may have regarding your Canvas account.
+Expected Keys: Contact Your Instructor or Institution | Create an Account | Confirm that
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_As_a_current_customer_where_should_I_go_for_help__2025-12-12_07-48-34.png
 Response returned as expected 
 	Question Ask: Where do I find the Canvas Help Button?
 ---- MATCH FAILED ----
 Question: What do I do if I can’t access my account?
-Original Response: To find the Canvas Help Button, follow these steps:
-Global Navigation: In the Global Navigation menu, click the "Help" link.
-Help Options: The Help menu will display various options for assistance, including:
-Search the Canvas Guides
-Report a Problem
-Ask the Community
-Chat with Canvas Support (if available)
-Contact your institution's support team
-These options provide access to resources and support for any issues or questions you may have regarding Canvas.
+Original Response: If you can't access your Canvas account, follow these steps:
+Check Login Credentials:
+Ensure you are using the correct username and password.
+If you have forgotten your password, use the "Forgot Password" link on the login page to reset it.
+Browser Settings:
+Make sure your browser is up-to-date and that cookies are enabled.
+Allow pop-ups for Canvas in your browser settings.
+Institution's Help Desk:
+Contact your institution's help desk for assistance with login issues specific to their system.
+Canvas Support:
+Reach out to Canvas Support directly for further assistance if the issue persists.
+These steps should help resolve most access issues with your Canvas account.
 Expected Keys: Contact Support | Check Email for Instructions | Reset Your Password
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_do_I_do_if_I_can_t_access_my_account__2025-12-10_08-42-57.png
----- MATCH FAILED ----
-Question: Where can I find free Canvas courses?
-Original Response: What do I do if I ca Where can I find free Canvas courses?n’t access my account?
-Expected Keys: Canvas Free-for-Teacher platform | Free-for-Teacher account | Canvas Free-for-Teacher
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Where_can_I_find_free_Canvas_courses__2025-12-10_08-43-25.png
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_do_I_do_if_I_can_t_access_my_account__2025-12-12_07-49-27.png
+Response returned as expected 
+	Question Ask: Where can I find free Canvas courses?
 ---- MATCH FAILED ----
 Question: What is the Higher education institutions?
-Original Response: If you can't access your Canvas account, follow these steps:
-Check Your Credentials: Ensure that you are entering the correct username and password.
-Password Reset: Use the "Forgot Password" link on the login page to reset your password.
-Browser Issues: Clear your browser's cache and cookies or try using a different browser.
-Institutional Support: Contact your institution's IT support team for further assistance.
-For free Canvas courses, you can explore options through the Free-for-Teacher accounts at canvas.instructure.com or visit learn.canvas.net for Canvas Network courses.
+Original Response: Higher education institutions are organizations that provide post-secondary education and research opportunities. They offer a range of academic programs, including undergraduate, graduate, and doctoral degrees. These institutions play a crucial role in preparing students for the workforce by addressing skills gaps and promoting lifelong learning.
+Key areas of focus for higher education institutions include:
+Flexible Learning:
+Adapting to the increasing demand for flexible learning models such as blended learning, microcredentials, and short courses.
+Lifelong Education:
+Emphasizing the importance of continuous education throughout an individual's life to keep up with evolving job requirements and personal development.
+Artificial Intelligence Integration:
+Leveraging AI to enhance teaching methodologies, educational content creation, and administrative processes.
+For more detailed insights into how higher education institutions are adapting to these changes, you can explore region-specific reports that provide evidence-based recommendations and actionable strategies for supporting both learners and instructors.
 Expected Keys:  into the world of work and are uniquely |  support both learners and instructors | These institutions play a critical role
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_is_the_Higher_education_institutions__2025-12-10_08-43-52.png
----- MATCH FAILED ----
-Question: What is the K–12 schools and districts
-Original Response: What is the Higher What is the K–12 schools and districtseducation institutions?
-Expected Keys: provide primary and secondary education to students | edtech | schools manage their tech ecosystems efficiently
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_is_the_K_12_schools_and_districts_2025-12-10_08-44-19.png
----- MATCH FAILED ----
-Question: Could you please tell me about the Corporation details
-Original Response: Parchment provides a range of solutions for both K-12 schools and higher education institutions.
-For K-12 schools and districts, Parchment offers:
-Records Management: A scalable suite of digital records and credential management solutions that decrease costs, increase security, and support lifelong learning.
-Enrollment and Lottery: Online enrollment solutions that help administrators spend less time on administrative tasks and more time serving families and students.
-For higher education institutions, Parchment provides:
-Credentials: Streamlining the process of issuing credentials such as transcripts, diplomas, digital badges, Comprehensive Learner Records (CLRs), and certificates to save staff time, reduce costs, and create a modern experience for students.
-Learner Mobility: Simplifying transcript processing, credit transfers, course sharing, and dual enrollment to expand access to opportunities.
-These services are designed to modernize operations by streamlining workflows for more efficient administration while ensuring the privacy and security of student information.
-Expected Keys: helps learners thrive in tomorrow’s landscape | future where education technology | educators
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Could_you_please_tell_me_about_the_Corporation_details_2025-12-10_08-44-47.png
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_What_is_the_Higher_education_institutions__2025-12-12_07-50-21.png
+Response returned as expected 
+	Question Ask: What is the K–12 schools and districts
+Response returned as expected 
+	Question Ask: Could you please tell me about the Corporation details
 ---- MATCH FAILED ----
 Question: How do I check on my invoice or purchase order status?
-Original Response: Parchment provides a range of solutions for both K-12 schools and higher education institutions.
-For K-12 schools and districts, Parchment offers:
-Records Management: A scalable suite of digital records and credential management solutions that decrease costs, increase security, and support lifelong learning.
-Enrollment and Lottery: Online enrollment solutions that help administrators spend less time on administrative tasks and more time serving families and students.
-For higher education institutions, Parchment provides:
-Credentials: Streamlining the process of issuing credentials such as transcripts, diplomas, digital badges, Comprehensive Learner Records (CLRs), and certificates to save staff time, reduce costs, and create a modern experience for students.
-Learner Mobility: Simplifying transcript processing, credit transfers, course sharing, and dual enrollment to expand access to opportunities.
-These services are designed to modernize operations by streamlining workflows for more efficient administration while ensuring the privacy and security of student information.
+Original Response: I'm sorry, I don't have the information on that right now. Could I assist you with something else?
 Expected Keys: Global Reach | Vision | Scholarships
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_check_on_my_invoice_or_purchase_order_status__2025-12-10_08-45-15.png
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_check_on_my_invoice_or_purchase_order_status__2025-12-12_07-51-42.png
+---- MATCH FAILED ----
+Question: Where do I go to search for jobs at Instructure?
+Original Response: To search for jobs at Instructure, you can visit their official website at Instructure.com. Navigate to the "Careers" section where you will find information about current job openings, company culture, and application procedures. For specific inquiries or further assistance, you may contact their corporate communications team directly via email at brian.watkins@instructure.com.
+Expected Keys: invoice | purchase order status | financial transactions
+? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Where_do_I_go_to_search_for_jobs_at_Instructure__2025-12-12_07-52-09.png
 Response returned as expected 
-	Question Ask: Where do I go to search for jobs at Instructure?
----- MATCH FAILED ----
-Question: Where do I go to make a partnership inquiry?
-Original Response: Where do I go to make a partnership inquiry?
-Expected Keys: visit their official website  | Contact Us | This section provides detailed contact
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_Where_do_I_go_to_make_a_partnership_inquiry__2025-12-10_08-46-11.png
----- MATCH FAILED ----
-Question: How do I reset my password?
-Original Response: To make a partnership inquiry with Instructure, you can visit their official website and navigate to the "Contact Us" section. There, you will find options to reach out for various inquiries, including partnerships. Alternatively, you can directly contact their sales or business development team through the provided contact information on the website.
-Expected Keys: Navigate to the Login Page | Enter Your Email Address | Follow the Instructions:
-? Screenshot saved: C:\Users\SalimAlRawas\IdeaProjects\untitled3\src\main\files\screenshots\mismatch_How_do_I_reset_my_password__2025-12-10_08-46-38.png
+	Question Ask: Where do I go to make a partnership inquiry?
+Response returned as expected 
+	Question Ask: How do I reset my password?
 ===== Canvas Test finished =====
 Total Questions: 21
-Failed Questions: 14
+Failed Questions: 11
   Then The user ask any question Canvas                               # stepdefs.ChatInterfaceSteps.theUserAskAnyQuestionCanvas()
 
 Scenario: Creating Folder                                      # src/test/resources/features/KnowleadgeBase.feature:4
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:46:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:53:03 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -831,10 +451,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   And Fill all the information and click save                  # stepdefs.knowledgeBaseSteps.fillAllTheInformationAndClickSave()
 
 Scenario: Added new Doc file inside the Folder                 # src/test/resources/features/KnowleadgeBase.feature:11
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:46:46 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:53:10 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -845,10 +465,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then the user should check if the folder is uploaded         # stepdefs.knowledgeBaseSteps.theUserShouldCheckIfTheFolderIsUploaded()
 
 Scenario: Check The folder is exist                            # src/test/resources/features/KnowleadgeBase.feature:20
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:47:36 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:53:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -856,10 +476,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then The user clicks on the folder                           # stepdefs.knowledgeBaseSteps.theUserClicksOnTheFolder()
 
 Scenario: Search bar for exist Knowledge Base                  # src/test/resources/features/KnowleadgeBase.feature:27
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:47:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:02 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -868,10 +488,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   And check the knowledge base is exist                        # stepdefs.knowledgeBaseSteps.checkTheKnowledgeBaseIsExist()
 
 Scenario: Search For non exist Knowledge Base                  # src/test/resources/features/KnowleadgeBase.feature:35
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:47:47 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:07 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   When the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -880,10 +500,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   And check the Icon is appear                                 # stepdefs.knowledgeBaseSteps.checkTheIconIsAppear()
 
 Scenario: Delete Creation Folder                                     # src/test/resources/features/KnowleadgeBase.feature:43
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:47:53 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:13 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                         # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   When the user navigates to the Bot section and selects a Bot       # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -892,25 +512,25 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then Click on Confirmation Delete and Check the validation message # stepdefs.knowledgeBaseSteps.clickOnConfirmationDelete()
 
 Scenario: Edit system connection                                                               # src/test/resources/features/SystemIntegration.feature:11
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:47:59 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:19 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                                                   # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot                                  # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
   And the user clicks on Integration and then System                                           # stepdefs.SystemIntegrationsteps.theUserClicksOnIntegrationAndThenSystem()
   And the user clicks on Edit System Connection                                                # stepdefs.SystemIntegrationsteps.theUserClicksOnEditSystemConnection()
   When the user modifies one or more field values                                              # stepdefs.SystemIntegrationsteps.theUserModifiesOneOrMoreFieldValues()
-      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="Button_label__i00gY">...</span> is not clickable at point (417, 343). Other element would receive the click: <div class="Input_input-wrapper__dofh3  ">...</div>
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="Button_label__i00gY">...</span> is not clickable at point (465, 341). Other element would receive the click: <div class="Modal_modal-overlay__3I3VJ" style="color: rgb(0, 0, 0);">...</div>
   (Session info: chrome=143.0.7499.41)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4f7d727f82f0a01c9c2e95ca327eb9b8, clickElement {id=f.C9CFD2C338D115496AACD2F7F95D643A.d.F97CB8D5B52A305A77C6395F4C8D30D7.e.67}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49825}, goog:processID: 54808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49825/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (4f7d727f82f0a01c9c2e95ca327eb9b8)] -> xpath: //span[text()='Connect']]
-Session ID: 4f7d727f82f0a01c9c2e95ca327eb9b8
+Command: [7c35115a318821b6239a2d1e30b85ba2, clickElement {id=f.E1F51BAC7328EC88B9B60F6EAE08EE1D.d.D5D0E59311904D6C00D739834C13B3D2.e.68}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55695}, goog:processID: 27612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55695/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7c35115a318821b6239a2d1e30b85ba2)] -> xpath: //span[text()='Connect']]
+Session ID: 7c35115a318821b6239a2d1e30b85ba2
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -926,7 +546,7 @@ Session ID: 4f7d727f82f0a01c9c2e95ca327eb9b8
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
 	at org.example.pages.SystemIntegration.EditConnect(SystemIntegration.java:253)
 	at stepdefs.SystemIntegrationsteps.theUserModifiesOneOrMoreFieldValues(SystemIntegrationsteps.java:122)
 	at ?.the user modifies one or more field values(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/SystemIntegration.feature:13)
@@ -936,10 +556,10 @@ Session ID: 4f7d727f82f0a01c9c2e95ca327eb9b8
   And the user should see the edited created connection listed in the System Connections table # stepdefs.SystemIntegrationsteps.theUserShouldSeeTheEditedCreatedConnectionListedInTheSystemConnectionsTable()
 
 Scenario: Delete System Connection                            # src/test/resources/features/SystemIntegration.feature:18
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:05 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:25 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -949,10 +569,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   And Check the Delete Message                                # stepdefs.SystemIntegrationsteps.checkTheDeleteMessage()
 
 Scenario: Cancel adding a new system connection                    # src/test/resources/features/SystemIntegration.feature:23
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:11 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:32 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                       # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot      # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -962,10 +582,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then the user clicks cancel                                      # stepdefs.SystemIntegrationsteps.theUserClicksCancel()
 
 Scenario: Successfully create a new system connection                                         # src/test/resources/features/SystemIntegration.feature:28
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:38 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                                                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot                                 # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -978,10 +598,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   And the user should see the newly created connection listed in the System Connections table # stepdefs.SystemIntegrationsteps.theUserShouldSeeTheNewlyCreatedConnectionListedInTheSystemConnectionsTable()
 
 Scenario: View system connection details                         # src/test/resources/features/SystemIntegration.feature:36
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:29 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:49 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                     # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot    # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -991,10 +611,10 @@ Correct System Type
   Then The user check if the details are exist in the connection # stepdefs.SystemIntegrationsteps.theUserCheckIfTheDetailsAreExistInTheConnection()
 
 Scenario: Search system with exist connections by keywords    # src/test/resources/features/SystemIntegration.feature:39
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:34 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:54:55 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -1002,10 +622,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then the user search for exist Connection                   # stepdefs.SystemIntegrationsteps.theUserSearchForExistConnection()
 
 Scenario: Check the Duplicate Validation error message             # src/test/resources/features/SystemIntegration.feature:44
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:00 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                       # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot      # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -1017,10 +637,10 @@ Correct Validation Message:A connection with these credentials already exists
   Then the user check the duplicate Message                        # stepdefs.SystemIntegrationsteps.theUserCheckTheDuplicateMessage()
 
 Scenario: Check the Validation error message                  # src/test/resources/features/SystemIntegration.feature:50
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:46 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:06 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -1029,10 +649,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then Leave the fields Empty                                 # stepdefs.SystemIntegrationsteps.leaveTheFieldsEmpty()
 
 Scenario: SwitchFromDisconnectToConnect                       # src/test/resources/features/SystemIntegration.feature:54
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:51 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -1040,10 +660,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then The user Switch the system to Disconnect System        # stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToDisconnectSystem()
 
 Scenario: SwitchFromConnectToDisconnect                       # src/test/resources/features/SystemIntegration.feature:57
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:48:57 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:18 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                  # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -1051,10 +671,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
   Then The user Switch the system to connect System           # stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToConnectSystem()
 
 Scenario: Search system with none exist connections by keywords # src/test/resources/features/SystemIntegration.feature:60
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:49:03 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:25 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given the user is logged in to the website                    # stepdefs.SystemIntegrationsteps.theUserIsLoggedInToTheWebsite()
   And the user navigates to the Bot section and selects a Bot   # stepdefs.SystemIntegrationsteps.theUserNavigatesToTheBotSectionAndSelectsABot()
@@ -1063,10 +683,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
 
 @smoke
 Scenario Outline: Invalid login                                   # src/test/resources/features/login.feature:11
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:49:08 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:30 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given user open website and login to the systems                # stepdefs.LoginSteps.user_Open_Website()
   When User fill email as "MZ_UAT" and "12345679" and click login # stepdefs.LoginSteps.userFillEmailAsAndAndClickLogin(java.lang.String,java.lang.String)
@@ -1074,10 +694,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
 
 @smoke
 Scenario Outline: Invalid login                                     # src/test/resources/features/login.feature:12
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:49:14 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:36 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given user open website and login to the systems                  # stepdefs.LoginSteps.user_Open_Website()
   When User fill email as "MZ_UAT33" and "12345678" and click login # stepdefs.LoginSteps.userFillEmailAsAndAndClickLogin(java.lang.String,java.lang.String)
@@ -1085,10 +705,10 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
 
 @smoke
 Scenario Outline: Invalid login                                      # src/test/resources/features/login.feature:13
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:49:20 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given user open website and login to the systems                   # stepdefs.LoginSteps.user_Open_Website()
   When User fill email as "MZ_UAT333" and "12345679" and click login # stepdefs.LoginSteps.userFillEmailAsAndAndClickLogin(java.lang.String,java.lang.String)
@@ -1096,422 +716,32 @@ WARNING: Unable to find an exact match for CDP version 143, returning the closes
 
 @smoke
 Scenario: valid login                              # src/test/resources/features/login.feature:15
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.40 (resolved driver for Chrome 143)
-[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.40\chromedriver.exe
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\SalimAlRawas\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
 Connected Successfully
-Dec 10, 2025 8:49:26 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 12, 2025 7:55:48 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 143, returning the closest version; found: 142; Please update to a Selenium version that supports CDP version 143
   Given user open website and login to the systems # stepdefs.LoginSteps.user_Open_Website()
   When user fill the data                          # stepdefs.LoginSteps.userFillTheData()
   Then Validate you are in the dashboard           # stepdefs.LoginSteps.validateYouAreInTheDashboard()
 
 Failed scenarios:
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:12 # User opens an API connection successfully
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:17 # The User is able to Clear the APis
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:22 # The User is able to select all the APis
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:27 # Search for exist API
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:31 # The user should be able to Test the connection
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:37 # Open the Api Fields
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:42 # Change the Frequent To daily for one of the api
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:46 # Click on Force Sync for one of the API
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:51 # switch to APi Logs
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:55 # Check the buttons are enable
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:60 # Make sure that the the field are saved
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:68 # Make Sure That the SelectAll And Clear are work Correctly
-file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:79 # Make sure that the button is disable when the Connection is disconnect
 file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/SystemIntegration.feature:11 # Edit system connection
 
-36 Scenarios (14 failed, 22 passed)
-198 Steps (14 failed, 36 skipped, 148 passed)
-20m52.580s
+36 Scenarios (1 failed, 35 passed)
+198 Steps (1 failed, 3 skipped, 194 passed)
+18m58.579s
 
 
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c5b9e92c89c81158146edf852a961d92, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53551}, goog:processID: 37944, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53551/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c5b9e92c89c81158146edf852a961d92
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:13)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ec452dff961e6000e8f87bb3658ffe74, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52166}, goog:processID: 66484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52166/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ec452dff961e6000e8f87bb3658ffe74
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:18)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [95cb44987224ccf3c4d1dd0fbf1ff235, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57722}, goog:processID: 64972, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57722/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95cb44987224ccf3c4d1dd0fbf1ff235
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:23)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e93fe4328e515aeadbc8291beaad517c, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63792}, goog:processID: 81208, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63792/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e93fe4328e515aeadbc8291beaad517c
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:28)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6e49df001f939544ba2d2fbed0e0192f, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57803}, goog:processID: 72140, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57803/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6e49df001f939544ba2d2fbed0e0192f
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:32)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [23f58f8e78ed54bbb07355d0702ed758, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58754}, goog:processID: 56148, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58754/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 23f58f8e78ed54bbb07355d0702ed758
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:38)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f80dd97857d8fef61f9373c77dd408c7, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56564}, goog:processID: 50432, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56564/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f80dd97857d8fef61f9373c77dd408c7
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:43)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [34f2273c3c2d451e01c3b1f5e5bfe773, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64532}, goog:processID: 35552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64532/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 34f2273c3c2d451e01c3b1f5e5bfe773
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:47)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c36b134013c08247005ce452e00a7de9, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64274}, goog:processID: 78752, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64274/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c36b134013c08247005ce452e00a7de9
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:52)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b08fea63f48565ee8104292de26f2f03, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62995}, goog:processID: 78060, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62995/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b08fea63f48565ee8104292de26f2f03
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:56)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c081c94d38bae4f0a255f760343634a4, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54013}, goog:processID: 56148, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54013/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c081c94d38bae4f0a255f760343634a4
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:61)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='AutomationTest123']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [59d6899ae9aee5414cb03fccabf8f76c, findElement {using=xpath, value=//span[text()='AutomationTest123']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62988}, goog:processID: 77588, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62988/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 59d6899ae9aee5414cb03fccabf8f76c
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.APIIntegrations.clickOnTheConnectionCard(APIIntegrations.java:102)
-	at stepdefs.APIIntegrationSteps.theUserClickOnTheConnectionCard(APIIntegrationSteps.java:18)
-	at ?.the user click on the Connection Card(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:69)
-
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Disconnect']"}
-  (Session info: chrome=143.0.7499.41)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c4701616b86406754a2c68d4f8893878, findElement {using=xpath, value=//span[text()='Disconnect']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61118}, goog:processID: 22980, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61118/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c4701616b86406754a2c68d4f8893878
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-	at org.example.pages.SystemIntegration.SwitchToDisconnectSystem(SystemIntegration.java:280)
-	at stepdefs.SystemIntegrationsteps.theUserSwitchTheSystemToDisconnectSystem(SystemIntegrationsteps.java:200)
-	at ?.The user Switch the system to Disconnect System(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/ApiInegration.feature:80)
-
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="Button_label__i00gY">...</span> is not clickable at point (417, 343). Other element would receive the click: <div class="Input_input-wrapper__dofh3  ">...</div>
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="Button_label__i00gY">...</span> is not clickable at point (465, 341). Other element would receive the click: <div class="Modal_modal-overlay__3I3VJ" style="color: rgb(0, 0, 0);">...</div>
   (Session info: chrome=143.0.7499.41)
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4f7d727f82f0a01c9c2e95ca327eb9b8, clickElement {id=f.C9CFD2C338D115496AACD2F7F95D643A.d.F97CB8D5B52A305A77C6395F4C8D30D7.e.67}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49825}, goog:processID: 54808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49825/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (4f7d727f82f0a01c9c2e95ca327eb9b8)] -> xpath: //span[text()='Connect']]
-Session ID: 4f7d727f82f0a01c9c2e95ca327eb9b8
+Command: [7c35115a318821b6239a2d1e30b85ba2, clickElement {id=f.E1F51BAC7328EC88B9B60F6EAE08EE1D.d.D5D0E59311904D6C00D739834C13B3D2.e.68}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\SALIMA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55695}, goog:processID: 27612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55695/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7c35115a318821b6239a2d1e30b85ba2)] -> xpath: //span[text()='Connect']]
+Session ID: 7c35115a318821b6239a2d1e30b85ba2
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
@@ -1525,7 +755,7 @@ Session ID: 4f7d727f82f0a01c9c2e95ca327eb9b8
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
 	at org.example.pages.SystemIntegration.EditConnect(SystemIntegration.java:253)
 	at stepdefs.SystemIntegrationsteps.theUserModifiesOneOrMoreFieldValues(SystemIntegrationsteps.java:122)
 	at ?.the user modifies one or more field values(file:///C:/Users/SalimAlRawas/IdeaProjects/untitled3/src/test/resources/features/SystemIntegration.feature:13)
@@ -1539,6 +769,6 @@ Session ID: 4f7d727f82f0a01c9c2e95ca327eb9b8
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  20:55 min
-[INFO] Finished at: 2025-12-10T08:49:29+03:00
+[INFO] Total time:  19:01 min
+[INFO] Finished at: 2025-12-12T07:55:51+03:00
 [INFO] ------------------------------------------------------------------------

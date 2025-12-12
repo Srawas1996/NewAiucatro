@@ -5,12 +5,12 @@ import io.cucumber.java.en.When;
 import org.example.base.Base;
 import org.example.base.ExcelReader;
 import org.example.pages.ChatInterface;
-import org.jetbrains.annotations.NotNull;
-import org.junit.Assert;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class ChatInterfaceSteps extends Base {
@@ -68,6 +68,9 @@ public class ChatInterfaceSteps extends Base {
         System.out.println("===== Test finished =====");
         System.out.println("Total Questions: " + data.length);
         System.out.println("Failed Questions: " + failCount);
+
+        assertEquals("Some questions did not get the expected response!", 0, failCount);
+
     }
 
     @When("the user navigates to the Bot section and selects a Bot Canvas")
@@ -123,5 +126,7 @@ public class ChatInterfaceSteps extends Base {
         System.out.println("===== Canvas Test finished =====");
         System.out.println("Total Questions: " + data.length);
         System.out.println("Failed Questions: " + failCount);
+
+        assertEquals("Some questions did not get the expected response!", 0, failCount);
     }
 }
