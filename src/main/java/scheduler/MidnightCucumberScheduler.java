@@ -1,6 +1,9 @@
 package scheduler;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -25,6 +28,8 @@ public class MidnightCucumberScheduler {
     private static final String STEP_BY_STEP_LOG_PATH = "canvas_test_step_by_step.log";
     private static final String SCREENSHOTS_DIR = "src/main/files/screenshots";
 
+
+
     public static void main(String[] args) {
 
         // Detect if running in GitHub Actions
@@ -38,6 +43,7 @@ public class MidnightCucumberScheduler {
 
         // LOCAL MODE → Run at midnight
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+//        long initialDelay = getDelayUntilMidnight();
         long initialDelay = 1;
 
         System.out.println("Local scheduler started, first run after: " + initialDelay + " seconds");
@@ -51,11 +57,11 @@ public class MidnightCucumberScheduler {
         }, initialDelay, TimeUnit.SECONDS);
     }
 
-    private static long getDelayUntilMidnight() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime nextMidnight = now.plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
-        return Duration.between(now, nextMidnight).getSeconds();
-    }
+//    private static long getDelayUntilMidnight() {
+//        LocalDateTime now = LocalDateTime.now();
+//        LocalDateTime nextMidnight = now.plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
+//        return Duration.between(now, nextMidnight).getSeconds();
+//    }
 
     /**
      * CLEAN CODE → One reusable method
@@ -83,9 +89,11 @@ public class MidnightCucumberScheduler {
     }
 
     private static void cleanupOldArtifacts() {
+        Path rawLogPath = Paths.get(RAW_LOG_PATH);
+        Path stepByStepLogPath = Paths.get(STEP_BY_STEP_LOG_PATH);
         try {
-            new File(RAW_LOG_PATH).delete();
-            new File(STEP_BY_STEP_LOG_PATH).delete();
+            Files.delete(rawLogPath);
+            Files.delete(stepByStepLogPath);
 
             File screenshotsFolder = new File(SCREENSHOTS_DIR);
             if (screenshotsFolder.exists()) {
@@ -95,7 +103,7 @@ public class MidnightCucumberScheduler {
                                 name.toLowerCase().endsWith(".jpeg")
                 );
                 if (screenshots != null) {
-                    for (File img : screenshots) img.delete();
+                    for (File img : screenshots) Files.delete(img.toPath());
                 }
             }
         } catch (Exception e) {
