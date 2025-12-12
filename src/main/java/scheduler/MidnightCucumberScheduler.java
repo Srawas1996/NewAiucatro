@@ -38,7 +38,8 @@ public class MidnightCucumberScheduler {
 
         // LOCAL MODE → Run at midnight
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-        long initialDelay = getDelayUntilMidnight();
+        // long initialDelay = getDelayUntilMidnight();
+        long initialDelay = 1;
 
         System.out.println("Local scheduler started, first run after: " + initialDelay + " seconds");
 
