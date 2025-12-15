@@ -24,8 +24,6 @@ public class MidnightCucumberScheduler {
 
     // --- Paths ---
     private static final String REPORT_PATH = "target/cucumber-html-report/overview-features.html";
-    private static final String RAW_LOG_PATH = "canvas_test.log";
-    private static final String STEP_BY_STEP_LOG_PATH = "canvas_test_step_by_step.log";
     private static final String SCREENSHOTS_DIR = "src/main/files/screenshots";
 
 
@@ -73,9 +71,7 @@ public class MidnightCucumberScheduler {
 
             ProcessBuilder pb = new ProcessBuilder("C:/Program Files/apache-maven-3.9.11-bin/apache-maven-3.9.11/bin/mvn.cmd", "test");
 
-            File rawLog = new File(RAW_LOG_PATH);
-            pb.redirectOutput(rawLog);
-            pb.redirectErrorStream(true);
+            pb.inheritIO();
 
             Process process = pb.start();
             int exitCode = process.waitFor();
@@ -89,11 +85,7 @@ public class MidnightCucumberScheduler {
     }
 
     private static void cleanupOldArtifacts() {
-        Path rawLogPath = Paths.get(RAW_LOG_PATH);
-        Path stepByStepLogPath = Paths.get(STEP_BY_STEP_LOG_PATH);
         try {
-            Files.delete(rawLogPath);
-            Files.delete(stepByStepLogPath);
 
             File screenshotsFolder = new File(SCREENSHOTS_DIR);
             if (screenshotsFolder.exists()) {
@@ -113,8 +105,6 @@ public class MidnightCucumberScheduler {
 
     private static void sendEmailReport() {
         File reportFile = new File(REPORT_PATH);
-        File rawLogFile = new File(RAW_LOG_PATH);
-        File stepByStepFile = new File(STEP_BY_STEP_LOG_PATH);
         File screenshotsFolder = new File(SCREENSHOTS_DIR);
 
         Properties props = new Properties();
@@ -148,8 +138,6 @@ public class MidnightCucumberScheduler {
 
             // Attach results
             attachFile(multipart, reportFile);
-            attachFile(multipart, rawLogFile);
-            attachFile(multipart, stepByStepFile);
 
             // Attach screenshots
             if (screenshotsFolder.exists()) {
