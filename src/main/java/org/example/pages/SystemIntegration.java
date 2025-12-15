@@ -81,7 +81,7 @@ public class SystemIntegration extends Base {
     @FindBy(xpath = "//div[text()='Enter a valid URL (e.g. https://example.com)']")
     WebElement BaseURLValidation;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/*[name()='svg'][1]")
+    @FindBy(id = "edit-user")
     WebElement EditIcon;
 
     @FindBy(xpath = "//p[text()='Summer School Credit Recovery 22-23']")
@@ -236,8 +236,9 @@ public class SystemIntegration extends Base {
         EditIcon.click();
     }
 
-    public void NameModify(String name){
-        SetConnectionName.sendKeys(name);
+    public void NameModify(){
+        SetConnectionName.clear();
+        SetConnectionName.sendKeys(properties.getProperty("ConnectionName") + "New");
     }
 
     public String ValidationCheckEdit(){
@@ -248,6 +249,8 @@ public class SystemIntegration extends Base {
     }
 
     public void clickConnectEdit(){
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait2.until(ExpectedConditions.visibilityOf(ClickOnConnectEdit));
         ClickOnConnectEdit.click();
     }
 

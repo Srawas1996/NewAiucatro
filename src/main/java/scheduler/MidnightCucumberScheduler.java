@@ -1,17 +1,13 @@
 package scheduler;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.util.*;
+import java.io.File;
+import java.util.Properties;
 import java.util.concurrent.*;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.*;
+import java.time.LocalDateTime;
 
 public class MidnightCucumberScheduler {
 
@@ -26,8 +22,6 @@ public class MidnightCucumberScheduler {
     private static final String REPORT_PATH = "target/cucumber-html-report/overview-features.html";
     private static final String SCREENSHOTS_DIR = "src/main/files/screenshots";
 
-
-
     public static void main(String[] args) {
 
         // Detect if running in GitHub Actions
@@ -39,10 +33,9 @@ public class MidnightCucumberScheduler {
             return;
         }
 
-        // LOCAL MODE → Run at midnight
+        // LOCAL MODE → Run at midnight (example: after 1 second for testing)
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-//        long initialDelay = getDelayUntilMidnight();
-        long initialDelay = 1;
+        long initialDelay = 1; // seconds
 
         System.out.println("Local scheduler started, first run after: " + initialDelay + " seconds");
 
@@ -55,28 +48,23 @@ public class MidnightCucumberScheduler {
         }, initialDelay, TimeUnit.SECONDS);
     }
 
-//    private static long getDelayUntilMidnight() {
-//        LocalDateTime now = LocalDateTime.now();
-//        LocalDateTime nextMidnight = now.plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
-//        return Duration.between(now, nextMidnight).getSeconds();
-//    }
-
-    /**
-     * CLEAN CODE → One reusable method
-     */
     private static void runCucumberAndEmail() {
         try {
             System.out.println("==== Running Cucumber Test ====");
             cleanupOldArtifacts();
 
-            ProcessBuilder pb = new ProcessBuilder("C:/Program Files/apache-maven-3.9.11-bin/apache-maven-3.9.11/bin/mvn.cmd", "test");
+            // Determine Maven command
+            String mvnCommand = getMavenCommand();
 
-            pb.inheritIO();
-
+            // Run Maven test
+            ProcessBuilder pb = new ProcessBuilder(mvnCommand, "clean", "test");
+            pb.inheritIO(); // print Maven output
             Process process = pb.start();
             int exitCode = process.waitFor();
+
             System.out.println("==== Cucumber Finished, exit code: " + exitCode + " ====");
 
+            // Send email report
             sendEmailReport();
 
         } catch (Exception e) {
@@ -84,22 +72,49 @@ public class MidnightCucumberScheduler {
         }
     }
 
-    private static void cleanupOldArtifacts() {
-        try {
+    private static String getMavenCommand() {
+        String os = System.getProperty("os.name").toLowerCase();
+        String mvnCommand;
 
-            File screenshotsFolder = new File(SCREENSHOTS_DIR);
-            if (screenshotsFolder.exists()) {
-                File[] screenshots = screenshotsFolder.listFiles((dir, name) ->
-                        name.toLowerCase().endsWith(".png") ||
-                                name.toLowerCase().endsWith(".jpg") ||
-                                name.toLowerCase().endsWith(".jpeg")
-                );
-                if (screenshots != null) {
-                    for (File img : screenshots) Files.delete(img.toPath());
-                }
+        if (os.contains("win")) {
+            // Windows: try system mvn.cmd first
+            mvnCommand = "mvn.cmd";
+
+            // Fallback to full local path if not in PATH
+            File localMvn = new File("C:/Program Files/apache-maven-3.9.11-bin/apache-maven-3.9.11/bin/mvn.cmd");
+            if (!isCommandAvailable(mvnCommand) && localMvn.exists()) {
+                mvnCommand = localMvn.getAbsolutePath();
             }
+        } else {
+            // Linux/macOS
+            mvnCommand = "mvn";
+        }
+
+        return mvnCommand;
+    }
+
+    // Check if a command exists in PATH
+    private static boolean isCommandAvailable(String command) {
+        try {
+            Process process = new ProcessBuilder(command, "-v").start();
+            boolean finished = process.waitFor(5, TimeUnit.SECONDS);
+            return finished && process.exitValue() == 0;
         } catch (Exception e) {
-            System.err.println("Cleanup error: " + e.getMessage());
+            return false;
+        }
+    }
+
+    private static void cleanupOldArtifacts() {
+        // Add cleanup logic if needed, e.g., delete old screenshots or reports
+        File report = new File(REPORT_PATH);
+        if (report.exists()) report.delete();
+
+        File screenshots = new File(SCREENSHOTS_DIR);
+        if (screenshots.exists() && screenshots.isDirectory()) {
+            File[] files = screenshots.listFiles();
+            if (files != null) {
+                for (File f : files) f.delete();
+            }
         }
     }
 
@@ -131,20 +146,16 @@ public class MidnightCucumberScheduler {
 
             // Text
             MimeBodyPart textPart = new MimeBodyPart();
-            textPart.setText(
-                    "Hello,\n\nPlease find the attached automation test report.\n\nRegards,\nQA Automation"
-            );
+            textPart.setText("Hello,\n\nPlease find the attached automation test report.\n\nRegards,\nQA Automation");
             multipart.addBodyPart(textPart);
 
-            // Attach results
+            // Attach report
             attachFile(multipart, reportFile);
 
             // Attach screenshots
             if (screenshotsFolder.exists()) {
                 File[] screenshots = screenshotsFolder.listFiles((dir, name) ->
-                        name.endsWith(".png") || name.endsWith(".jpg") || name.endsWith(".jpeg")
-                );
-
+                        name.endsWith(".png") || name.endsWith(".jpg") || name.endsWith(".jpeg"));
                 if (screenshots != null) {
                     for (File img : screenshots) attachFile(multipart, img);
                 }

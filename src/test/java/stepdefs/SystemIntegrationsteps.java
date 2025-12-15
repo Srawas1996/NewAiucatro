@@ -118,7 +118,7 @@ public class SystemIntegrationsteps extends Base {
     @When("the user modifies one or more field values")
     public void theUserModifiesOneOrMoreFieldValues() {
         systemIntegration = new SystemIntegration();
-        systemIntegration.NameModify("New");
+        systemIntegration.NameModify();
         systemIntegration.clickConnectEdit();
         String validationMessage = systemIntegration.EditConnect();
         Assert.assertEquals("Wrong Validation Message","Success",validationMessage);
