@@ -1,19 +1,17 @@
-
-name: Build and Run Cucumber + Scheduler
+name: Daily Cucumber Automation
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
   schedule:
-    - cron: '0 1 * * *' # runs every day at 06:00 UTC = 09:00 AM Jordan time
+    - cron: '0 5 * * *' # 08:00 AM Jordan time  -- 3 hour differnet 
 
 jobs:
-  build-and-run:
-    runs-on: windows-latest
+  cucumber-tests:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Java
@@ -22,18 +20,20 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Cache Maven packages
+      - name: Cache Maven
         uses: actions/cache@v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-      - name: Build project
-        run: mvn clean package --batch-mode
 
-      - name: Run Cucumber tests
-        run: mvn test
+      - name: Run Cucumber Tests
+        run: mvn clean test
 
-      - name: Run MidnightCucumberScheduler
-        run: java -cp target/untitled3-1.0-SNAPSHOT.jar scheduler.MidnightCucumberScheduler
+      - name: Send Email Report
+        run: java -jar target/untitled3-1.0-SNAPSHOT.jar
+
+      - name: Upload Cucumber Report (Backup)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: target/cucumber-report
