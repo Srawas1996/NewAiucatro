@@ -27,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
 
       - name: Run Cucumber Tests
-        run: mvn clean test
+        run: mvn clean package
 
       - name: Send Email Report
         run: java -jar target/untitled3-1.0-SNAPSHOT.jar
