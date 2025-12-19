@@ -40,16 +40,31 @@ public class MidnightCucumberScheduler {
     }
 
     private static void runCucumberAndEmail() {
+//        try {
+//            System.out.println("==== Running Cucumber Test ====");
+//            cleanupOldArtifacts();
+//            String mvnCommand = getMavenCommand(); // Run Maven test
+//            ProcessBuilder pb = new ProcessBuilder(mvnCommand, "clean", "test");
+//            pb.inheritIO(); // print Maven output
+//            Process process = pb.start();
+//            int exitCode = process.waitFor();
+//            System.out.println("==== Cucumber Finished, exit code: " + exitCode + " ===="); // Send email report
+//            sendEmailReport();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         try {
-            System.out.println("==== Running Cucumber Test ====");
-            cleanupOldArtifacts();
-            String mvnCommand = getMavenCommand(); // Run Maven test
-            ProcessBuilder pb = new ProcessBuilder(mvnCommand, "clean", "test");
-            pb.inheritIO(); // print Maven output
-            Process process = pb.start();
-            int exitCode = process.waitFor();
-            System.out.println("==== Cucumber Finished, exit code: " + exitCode + " ===="); // Send email report
+            System.out.println("==== Sending Cucumber Report Email ====");
+            File report = new File(REPORT_PATH);
+
+            System.out.println("Looking for report at: " + report.getAbsolutePath());
+
+            if (!report.exists()) {
+                System.err.println("❌ Report not found. Email will be sent without attachment.");
+            }
+
             sendEmailReport();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
