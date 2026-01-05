@@ -1,7 +1,0 @@
-stepdefs\ChatInterfaceSteps.class
-stepdefs\LoginSteps.class
-runners\RunCucumberTest.class
-stepdefs\SystemIntegrationsteps.class
-stepdefs\APIIntegrationSteps.class
-stepdefs\Hocks.class
-stepdefs\knowledgeBaseSteps.class
